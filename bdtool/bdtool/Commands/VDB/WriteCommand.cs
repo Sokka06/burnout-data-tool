@@ -48,15 +48,15 @@ namespace bdtool.Commands.VDB
                 fs.Read(headerBytes, 0, 4);
 
                 // Detect Endianness
-                var endian = Binary.DetectEndianness(headerBytes);
+                var endian = Utilities.Binary.DetectEndianness(headerBytes);
                 Console.WriteLine($"Using '{endian}' endian.");
 
                 // Rewind back to start
                 fs.Seek(0, SeekOrigin.Begin); 
-                var reader = new EndianBinaryReader(fs, endian);
+                var reader = new Binary.EndianBinaryReader(fs, endian);
 
                 var vdbParser = new Parsers.VDBParser();
-                var vdbFile = vdbParser.Parse(reader);
+                var vdbFile = vdbParser.Read(reader);
                 Console.WriteLine($"File Header: {vdbFile.Header}");
 
                 using (var writer = new XMLWriter(parsedPath))

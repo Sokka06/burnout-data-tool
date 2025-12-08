@@ -22,7 +22,15 @@
     },
     "tools verify": {
       "commandName": "Project",
-      "commandLineArgs": "tools verify\r\n\"..\\..\\..\\..\\data\\vlist_ps2_bo4_proto.bin\"\r\n\"..\\..\\..\\..\\data\\vlist_ps2_bo4_proto_MODIFIED.bin\""
+      "commandLineArgs": "tools verify\r\n\"..\\..\\..\\..\\data\\vdb_ps2_bo4_proto.bin\"\r\n\"..\\..\\..\\..\\import\\vdb_ps2_bo4_proto_import.bin\""
+    },
+    "vdb import": {
+      "commandName": "Project",
+      "commandLineArgs": "vdb import\r\n\"..\\..\\..\\..\\extract\\VDB_ps2_bo4_proto.yaml\"\r\n\"..\\..\\..\\..\\import\\VDB_ps2_bo4_proto_import.BIN\"\r\n--endian \"small\""
+    },
+    "vdb export": {
+      "commandName": "Project",
+      "commandLineArgs": "vdb export\r\n\"..\\..\\..\\..\\data\\VDB_ps2_bo4_proto.BIN\"\r\n\"..\\..\\..\\..\\extract\\VDB_ps2_bo4_proto.yaml\""
     }
   }
 }

@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using bdtool.Binary;
 using bdtool.Models.Common;
-using bdtool.Utilities;
 
 namespace bdtool.Parsers
 {
 
     public class DataElementParser : IParser<DataElement>
     {
-        public DataElement Parse(EndianBinaryReader br)
-        {
-            throw new NotImplementedException();
 
-            //var nameBytes = br.ReadBytes(32);
-            //string version = Encoding.UTF8.GetString(nameBytes).TrimEnd('\0');
-            //return new Models.FileHeader(version);
+        public DataElement Read(EndianBinaryReader br)
+        {
+            return new DataElement(0);
+        }
+
+        public void Write(EndianBinaryWriter bw, DataElement obj)
+        {
+
         }
     }
 }

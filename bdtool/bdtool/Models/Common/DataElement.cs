@@ -8,8 +8,12 @@ using System.Xml.Linq;
 
 namespace bdtool.Models.Common
 {
-    public record DataElement(int RawValue) 
+    public record DataElement(int RawValue)
     {
+        public DataElement() : this(default(int))
+        {
+        }
+
         public int AsInt()
         {
             return RawValue;

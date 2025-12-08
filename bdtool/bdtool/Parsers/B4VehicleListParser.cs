@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using bdtool.Binary;
 using bdtool.Models.B4;
-using bdtool.Utilities;
+using bdtool.Models.Common;
 
 namespace bdtool.Parsers
 {
     public class B4VehicleListParser : IParser<B4VehicleList>
     {
-        public B4VehicleList Parse(EndianBinaryReader br)
+
+        public B4VehicleList Read(EndianBinaryReader br)
         {
             var versionNumber = br.ReadInt32();
             var vehicleCount = br.ReadInt32();
@@ -63,7 +65,24 @@ namespace bdtool.Parsers
                 pad.Add(br.ReadUint8());
             }
 
-            return new Models.B4.B4VehicleList(versionNumber, vehicleCount, vehicleIsDriveable, raceCarRanks, vehicleIDs, vehicleMaxCrashScore, vehicleGrudgePoints, vehiclePrice, vehicleDefaultColor, pad);
+            return new Models.B4.B4VehicleList
+            (
+                versionNumber, 
+                vehicleCount, 
+                vehicleIsDriveable, 
+                raceCarRanks, 
+                vehicleIDs, 
+                vehicleMaxCrashScore, 
+                vehicleGrudgePoints, 
+                vehiclePrice, 
+                vehicleDefaultColor, 
+                pad
+            );
+        }
+
+        public void Write(EndianBinaryWriter bw, B4VehicleList obj)
+        {
+
         }
     }
 }

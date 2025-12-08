@@ -21,6 +21,10 @@ namespace bdtool.Models.B4
         List<byte> Pad // 376
     )
     {
+        public B4VehicleList() : this(default, default, default, default, default, default, default, default, default, default)
+        {
+        }
+
         public override string ToString()
         {
             var builder = new StringBuilder();

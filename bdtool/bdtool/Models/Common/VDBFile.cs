@@ -25,6 +25,10 @@ namespace bdtool.Models.Common
         List<DatabaseFileDef> FileDefs
     )
     {
+        public VDBFile() : this(default, default, default, default)
+        {
+        }
+
         public string PrintHeader()
         {
             var builder = new StringBuilder();

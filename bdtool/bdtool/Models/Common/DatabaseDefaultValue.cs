@@ -8,10 +8,14 @@ namespace bdtool.Models.Common
 {
     public record DatabaseDefaultValue
     (
-        DataElement Data,
-        int NameHash
+        int NameHash,
+        DataElement Data
     )
     {
+        public DatabaseDefaultValue() : this(default, default)
+        {
+        }
+
         public override string ToString()
         {
             return $"{NameHash}: {Data}";

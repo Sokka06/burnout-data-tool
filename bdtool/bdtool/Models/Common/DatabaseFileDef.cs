@@ -12,6 +12,10 @@ namespace bdtool.Models.Common
         int FileHash
     )
     {
+        public DatabaseFileDef() : this(default, default)
+        {
+        }
+
         public override string ToString()
         {
             return $"{FileHash}: IsActive: {IsActive}";

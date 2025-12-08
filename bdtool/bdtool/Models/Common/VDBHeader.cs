@@ -16,6 +16,10 @@ namespace bdtool.Models.Common
         int FileDefOffset // address 0x10
     )
     {
+        public VDBHeader() : this(Type: default, DefaultValueCount: default, Unk1: default, FileDefCount: default, FileDefOffset: default)
+        {
+        }
+
         public override string ToString()
         {
             var builder = new StringBuilder();

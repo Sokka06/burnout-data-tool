@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using bdtool.Binary;
 using bdtool.Models.B3;
-using bdtool.Utilities;
+using bdtool.Models.B4;
 
 namespace bdtool.Parsers
 {
     public class B3VehicleListParser : IParser<B3VehicleList>
     {
-        public B3VehicleList Parse(EndianBinaryReader br)
+        public B3VehicleList Read(EndianBinaryReader br)
         {
             var versionNumber = br.ReadInt32();
             var vehicleCount = br.ReadInt32();
@@ -52,6 +53,11 @@ namespace bdtool.Parsers
             }
 
             return new Models.B3.B3VehicleList(versionNumber, vehicleCount, vehicleIsDriveable, raceCarRanks, vehicleIDs, unk1, unk2, pad);
+        }
+
+        public void Write(EndianBinaryWriter bw, B3VehicleList obj)
+        {
+
         }
     }
 }

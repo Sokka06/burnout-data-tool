@@ -47,7 +47,7 @@ namespace bdtool.Commands.Tools
                 }
 
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"\nComparing '{parsedSource.Name}' to '{parsedTarget.Name}'...");
+                Console.WriteLine($"\nComparing '{parsedSource.Name}' to '{parsedTarget.Name}' byte by byte...");
                 Console.ResetColor();
 
                 var comparer = new Utilities.ReadWholeFileAtOnce(parsedSource, parsedTarget);

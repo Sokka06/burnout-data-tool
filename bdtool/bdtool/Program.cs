@@ -14,13 +14,14 @@ namespace bdtool
     {
         static void Main(string[] args)
         {
-
             var root = new RootCommand("Burnout Data Tools");
 
             var vdb = new Command("vdb")
         {
             ReadCommand.Build(),
-            WriteCommand.Build()
+            WriteCommand.Build(),
+            ExportCommand.Build(),
+            ImportCommand.Build()
         };
 
             var vlist = new Command("vlist")
@@ -43,6 +44,7 @@ namespace bdtool
             root.Subcommands.Add(InfoCommand.Build());
 
             var result = root.Parse(args);
+
             /*
             foreach (ParseError parseError in result.Errors)
             {
@@ -52,20 +54,6 @@ namespace bdtool
             }*/
 
             result.Invoke();
-
-            /*var path = args.Length > 0 ? args[0] : "input.dat";
-
-            using var fs = File.OpenRead(path);
-            using var br = new BinaryReader(fs);
-
-            // Example: read a 32-bit little-endian int
-            int value = br.ReadInt32();
-
-            // Example: read a fixed-length string
-            var nameBytes = br.ReadBytes(32);
-            string name = System.Text.Encoding.UTF8.GetString(nameBytes).TrimEnd('\0');
-
-            Console.WriteLine($"Value: {value}, Name: {name}");*/
         }
     }
 }

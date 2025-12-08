@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 using bdtool.Models;
 using static bdtool.Utilities.Binary;
 
-namespace bdtool.Utilities
+namespace bdtool.Binary
 {
-
     public sealed class EndianBinaryReader
     {
         private readonly BinaryReader _br;

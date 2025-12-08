@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using bdtool.Binary;
 using bdtool.Parsers;
 using bdtool.Utilities;
 
@@ -81,7 +82,7 @@ namespace bdtool.Commands.VDB
                 fs.Read(headerBytes, 0, 4);
 
                 // Detect Endianness
-                var endian = Binary.DetectEndianness(headerBytes);
+                var endian = Utilities.Binary.DetectEndianness(headerBytes);
                 Console.WriteLine($"Using '{endian}' endian.");
 
                 // Rewind back to start
@@ -94,7 +95,7 @@ namespace bdtool.Commands.VDB
                 var reader = new EndianBinaryReader(fs, endian);
 
                 var vdbParser = new VDBParser();
-                var vdbFile = vdbParser.Parse(reader);
+                var vdbFile = vdbParser.Read(reader);
 
                 // Check header and warn
                 if (vdbFile.Header.Type != 2)

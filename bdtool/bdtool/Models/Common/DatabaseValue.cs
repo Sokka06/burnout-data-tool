@@ -9,15 +9,17 @@ namespace bdtool.Models.Common
     public record DatabaseValue
     (
         long Address, // not stored in the file.
-        float Value0,
-        float Value1,
-        float Value2,
-        float Value3
+        int Value
     )
     {
+
+        public DatabaseValue() : this(default, default)
+        {
+        }
+
         public override string ToString()
         {
-            return $"{Address}: ({Value0}, {Value1}, {Value2}, {Value3})";
+            return $"{Address}: {Value}";
         }
     }
 }

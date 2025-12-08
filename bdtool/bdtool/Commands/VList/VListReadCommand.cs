@@ -4,6 +4,7 @@ using System.CommandLine;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using bdtool.Binary;
 using bdtool.Parsers;
 using bdtool.Utilities;
 
@@ -73,10 +74,10 @@ namespace bdtool.Commands.VList
                 fs.Read(versionBytes, 0, 4);
 
                 // Detect Endianness
-                var endian = Binary.DetectEndianness(versionBytes);
+                var endian = Utilities.Binary.DetectEndianness(versionBytes);
                 Console.WriteLine($"Using '{endian}' endian.");
 
-                var version = BitConverter.ToInt32(endian == Binary.Endianness.Small ? versionBytes : Binary.Reverse(ref versionBytes), 0);
+                var version = BitConverter.ToInt32(endian == Utilities.Binary.Endianness.Small ? versionBytes : Utilities.Binary.Reverse(ref versionBytes), 0);
                 Console.WriteLine($"VList Version '{version}'.");
 
                 // Rewind back to start
@@ -93,12 +94,12 @@ namespace bdtool.Commands.VList
                     case 6:
                         // VList v6 is the same as B3 Vehicle List
                         var vlistParserBo3 = new B3VehicleListParser();
-                        var vlistFileBo3 = vlistParserBo3.Parse(reader);
+                        var vlistFileBo3 = vlistParserBo3.Read(reader);
                         Console.WriteLine(vlistFileBo3.ToString());
                         break;
                     case 9:
                         var vlistParserBo4 = new B4VehicleListParser();
-                        var vlistFileBo4 = vlistParserBo4.Parse(reader);
+                        var vlistFileBo4 = vlistParserBo4.Read(reader);
                         Console.WriteLine(vlistFileBo4.ToString());
                         break;
                     default:

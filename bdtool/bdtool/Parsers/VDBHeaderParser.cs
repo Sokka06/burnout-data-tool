@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using bdtool.Binary;
 using bdtool.Models.Common;
-using bdtool.Utilities;
 
 namespace bdtool.Parsers
 {
     public class VDBHeaderParser : IParser<VDBHeader>
     {
-        public VDBHeader Parse(EndianBinaryReader br)
+
+        public VDBHeader Read(EndianBinaryReader br)
         {
             var type = br.ReadInt32();
             var defaultValueCount = br.ReadInt32();
@@ -19,6 +20,15 @@ namespace bdtool.Parsers
             var fileDefOffset = br.ReadInt32();
 
             return new Models.Common.VDBHeader(type, defaultValueCount, unk1, fileDefCount, fileDefOffset);
+        }
+
+        public void Write(EndianBinaryWriter bw, VDBHeader obj)
+        {
+            bw.WriteInt32(obj.Type);
+            bw.WriteInt32(obj.DefaultValueCount);
+            bw.WriteInt32(obj.Unk1);
+            bw.WriteInt32(obj.FileDefCount);
+            bw.WriteInt32(obj.FileDefOffset);
         }
     }
 }
