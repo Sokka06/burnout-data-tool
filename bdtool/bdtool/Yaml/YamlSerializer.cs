@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using bdtool.Models.B3;
+using bdtool.Models.B4;
 using YamlDotNet.Core;
 using YamlDotNet.Core.Events;
 using YamlDotNet.Serialization;
@@ -43,6 +45,8 @@ namespace bdtool.Yaml
         public string Serialize<T>(T obj)
         {
             var serializer = new SerializerBuilder()
+                .WithTagMapping("!B3VehicleList", typeof(B3VehicleList))
+                .WithTagMapping("!B4VehicleList", typeof(B4VehicleList))
                 .WithNamingConvention(CamelCaseNamingConvention.Instance)
                 .WithIndentedSequences()
                 .DisableAliases()

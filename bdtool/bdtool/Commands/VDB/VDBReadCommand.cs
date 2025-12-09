@@ -11,7 +11,7 @@ using bdtool.Utilities;
 
 namespace bdtool.Commands.VDB
 {
-    public static class ReadCommand
+    public static class VDBReadCommand
     {
         public static Command Build()
         {

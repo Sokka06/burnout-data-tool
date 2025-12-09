@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using bdtool.Models;
+using YamlDotNet.Core.Tokens;
 using static bdtool.Utilities.Binary;
 
 namespace bdtool.Binary
@@ -49,6 +50,25 @@ namespace bdtool.Binary
             if (_endian == Endianness.Big)
                 Array.Reverse(bytes);
             _br.Write(bytes);
+        }
+
+        public void WriteUlong(ulong value)
+        {
+            var bytes = BitConverter.GetBytes(value);
+            if (_endian == Endianness.Big)
+                Array.Reverse(bytes);
+
+            _br.Write(bytes);
+        }
+
+        public void WriteUint8(byte value)
+        {
+            _br.Write(value);
+        }
+
+        public void WriteInt8(sbyte value)
+        {
+            _br.Write(unchecked((byte)value));
         }
 
         /*public DataElement ReadDataElement()

@@ -92,13 +92,12 @@ namespace bdtool.Commands.VList
                 switch (version)
                 {
                     case 6:
-                        // VList v6 is the same as B3 Vehicle List
-                        var vlistParserBo3 = new B3VehicleListParser();
+                        var vlistParserBo3 = new Parsers.VList.B3VehicleListParser();
                         var vlistFileBo3 = vlistParserBo3.Read(reader);
                         Console.WriteLine(vlistFileBo3.ToString());
                         break;
                     case 9:
-                        var vlistParserBo4 = new B4VehicleListParser();
+                        var vlistParserBo4 = new Parsers.VList.B4VehicleListParser();
                         var vlistFileBo4 = vlistParserBo4.Read(reader);
                         Console.WriteLine(vlistFileBo4.ToString());
                         break;

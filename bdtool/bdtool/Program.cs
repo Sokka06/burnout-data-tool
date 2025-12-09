@@ -18,15 +18,17 @@ namespace bdtool
 
             var vdb = new Command("vdb")
         {
-            ReadCommand.Build(),
-            WriteCommand.Build(),
-            ExportCommand.Build(),
-            ImportCommand.Build()
+            VDBReadCommand.Build(),
+            //VDBWriteCommand.Build(),
+            VDBExportCommand.Build(),
+            VDBImportCommand.Build()
         };
 
             var vlist = new Command("vlist")
         {
-            VListReadCommand.Build()
+            VListReadCommand.Build(),
+            VListExportCommand.Build(),
+            VListImportCommand.Build()
         };
 
             var tools = new Command("tools")

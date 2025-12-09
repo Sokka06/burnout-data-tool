@@ -9,7 +9,7 @@ using bdtool.Utilities;
 
 namespace bdtool.Commands.VDB
 {
-    public static class WriteCommand
+    public static class VDBWriteCommand
     {
         const string DEFAULT_PATH = "Data/Export/ValueDB/Physics.cfg";
 

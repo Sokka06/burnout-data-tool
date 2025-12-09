@@ -13,7 +13,7 @@ using bdtool.Yaml;
 
 namespace bdtool.Commands.VDB
 {
-    public static class ImportCommand
+    public static class VDBImportCommand
     {
         public static Command Build()
         {
@@ -71,15 +71,21 @@ namespace bdtool.Commands.VDB
                 Console.WriteLine("\nDeserializing VDB Data...\n");
                 Console.ResetColor();
 
+                // Deserialize YAML to VDB object
                 var reader = new YamlDeserializer();
-
                 var yamlText = File.ReadAllText(parsedFile.FullName);
                 var vdbObject = reader.Deserialize<VDBFile>(yamlText);
 
-                var vdbFile = File.Create(parsedOut);
+                // Write VDB file
+                using var vdbFile = File.Create(parsedOut);
                 var writer = new EndianBinaryWriter(vdbFile, parsedEndian);
                 var vdbParser = new VDBParser();
                 vdbParser.Write(writer, vdbObject);
+                Console.WriteLine($"Total length: {vdbFile.Length} bytes.");
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"\nVDB file saved to '{Path.GetFullPath(parsedOut)}'");
+                Console.ResetColor();
 
                 return 0;
             });

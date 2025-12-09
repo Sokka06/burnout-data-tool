@@ -7,20 +7,38 @@ using bdtool.Utilities;
 
 namespace bdtool.Models.B3
 {
-    public record B3VehicleList
-    (
-        int VersionNumber, // version 6 for BO3
-        int VehicleCount,
-        List<bool> VehicleIsDriveable, // 128
-        List<int> RaceCarRanks, // 128
-        List<ulong> VehicleIDs, // 128
-        List<int> unk1, // 128
-        List<int> unk2, // 128
-        List<byte> Pad // 1016
-    )
+    /// <summary>
+    /// 
+    /// </summary>
+    public record B3VehicleList() : Common.VList
     {
-        public B3VehicleList() : this(default, default, default, default, default, default, default, default)
+        public int VehicleCount { get; init; }
+        public List<bool> VehicleIsDriveable { get; init; } = [];
+        public List<int> RaceCarRanks { get; init; } = [];
+        public List<ulong> VehicleIDs { get; init; } = [];
+        public List<int> Unk1 { get; init; } = []; // TODO: figure out what's this
+        public List<int> Unk2 { get; init; } = []; // TODO: figure out what's this
+        public List<byte> Pad { get; init; } = []; // TODO: figure out if this really is just padding.
+
+        public B3VehicleList(
+        int vehicleCount,
+        List<bool> vehicleIsDriveable,
+        List<int> raceCarRanks,
+        List<ulong> vehicleIDs,
+        List<int> unk1,
+        List<int> unk2,
+        List<byte> pad,
+        int versionNumber)
+        : this()
         {
+            VersionNumber = versionNumber;
+            VehicleCount = vehicleCount;
+            VehicleIsDriveable = vehicleIsDriveable;
+            RaceCarRanks = raceCarRanks;
+            VehicleIDs = vehicleIDs;
+            Unk1 = unk1;
+            Unk2 = unk2;
+            Pad = pad;
         }
 
         public override string ToString()
@@ -32,7 +50,7 @@ namespace bdtool.Models.B3
             builder.AppendLine(string.Format("{0,-20} {1,-9} {2,-4} {3,-8} {4,-11} {5,-10}", "ID", "Name", "Rank", "Drivable", "Unk1", "Unk2"));
             for (int i = 0; i < VehicleCount; i++)
             {
-                builder.AppendLine(string.Format("{0,-20} {1,-9} {2,-4} {3,-8} {4,-11} {5,-10}", VehicleIDs[i], GtID.GtIDUnCompress(VehicleIDs[i]).TrimEnd(), RaceCarRanks[i], VehicleIsDriveable[i], unk1[i], unk2[i]));
+                builder.AppendLine(string.Format("{0,-20} {1,-9} {2,-4} {3,-8} {4,-11} {5,-10}", VehicleIDs[i], GtID.GtIDUnCompress(VehicleIDs[i]).TrimEnd(), RaceCarRanks[i], VehicleIsDriveable[i], Unk1[i], Unk2[i]));
             }
 
             return builder.ToString();

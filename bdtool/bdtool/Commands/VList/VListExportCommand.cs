@@ -6,24 +6,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using bdtool.Binary;
+using bdtool.Models.Common;
 using bdtool.Parsers;
 using bdtool.Utilities;
 using bdtool.Yaml;
 
-namespace bdtool.Commands.VDB
+namespace bdtool.Commands.VList
 {
-    public static class ExportCommand
+    public static class VListExportCommand
     {
         public static Command Build()
         {
-            var cmd = new Command("export", "Exports a VDB file to a YAML file.");
+            var cmd = new Command("export", "Exports a VList file to a YAML file.");
 
             //var input = new Option<FileInfo>("--input", "-i") { Required = true, Description = "Path to the VDB file" };
             var verbose = new Option<bool>("--verbose", "-v");
 
             var path = new Argument<FileInfo>("path")
             {
-                Description = "Path to the VDB file."
+                Description = "Path to the VList file."
             };
 
             var outPath = new Argument<string>("out")
@@ -64,32 +65,38 @@ namespace bdtool.Commands.VDB
                 var endian = Utilities.Binary.DetectEndianness(headerBytes);
                 Console.WriteLine($"Using '{endian}' endian.");
 
+                var version = BitConverter.ToInt32(endian == Utilities.Binary.Endianness.Small ? headerBytes : Utilities.Binary.Reverse(ref headerBytes), 0);
+                Console.WriteLine($"VList Version '{version}'.");
+
                 // Rewind back to start
                 fs.Seek(0, SeekOrigin.Begin);
 
+                // Parse VList file and serialize to YAML
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("\nParsing VDB Data...\n");
+                Console.WriteLine("Parsing VList Data...");
                 Console.ResetColor();
 
                 var reader = new EndianBinaryReader(fs, endian);
+                var parser = new Parsers.VList.VListParser();
+                var vlist = parser.Read(reader);
 
-                var vdbParser = new VDBParser();
-                var vdbFile = vdbParser.Read(reader);
-
+                // Serialize to YAML
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("\nSerializing VDB Data to YAML...\n");
+                Console.WriteLine("Serializing to YAML...");
                 Console.ResetColor();
 
                 var serializer = new YamlSerializer();
-                var yamlText = serializer.Serialize(vdbFile);
+                var yamlText = serializer.Serialize(vlist);
 
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("\nWriting data to YAML file...\n");
+                Console.WriteLine("Writing data to YAML file...");
                 Console.ResetColor();
+
+                // Write YAML to file
                 File.WriteAllText(parsedOut, yamlText);
 
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"\nYAML file saved to '{Path.GetFullPath(parsedOut)}'\n");
+                Console.WriteLine($"\nYAML file saved to '{Path.GetFullPath(parsedOut)}'");
                 Console.ResetColor();
 
                 return 0;

@@ -5,6 +5,8 @@
 - export vdb to yaml/json/xml for easier editing.
 - import from yaml/json/xml back to vdb.
 - map out all hashname combinations from the games.
+- variable definitions per game.
+- value metadata. are they all floats? number of elements per value.
 
 # Info
 
