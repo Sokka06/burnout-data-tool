@@ -53,7 +53,7 @@ namespace bdtool.Commands.VDB
 
                 // Rewind back to start
                 fs.Seek(0, SeekOrigin.Begin); 
-                var reader = new Binary.EndianBinaryReader(fs, endian);
+                var reader = new Binary.BinaryReaderE(fs, endian);
 
                 var vdbParser = new Parsers.VDBParser();
                 var vdbFile = vdbParser.Read(reader);

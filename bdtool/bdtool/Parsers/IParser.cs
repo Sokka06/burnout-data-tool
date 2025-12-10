@@ -9,7 +9,7 @@ namespace bdtool.Parsers
 {
     public interface IParser<T>
     {
-        T Read(EndianBinaryReader br);
-        void Write(EndianBinaryWriter bw, T obj);
+        T Read(BinaryReaderE br);
+        void Write(BinaryWriterE bw, T obj);
     }
 }

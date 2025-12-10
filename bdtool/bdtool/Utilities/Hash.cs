@@ -199,7 +199,6 @@ namespace bdtool.Utilities
 
             foreach (byte b in data)
             {
-                // The key operation: handle the sign bit, shift, and XOR with table
                 gtHash = (uint)((int)gtHash - (int)(((gtHash & 0x80000000) << 1)) >> 8) ^ HashTable[b ^ (gtHash & 0xFF)];
             }
 

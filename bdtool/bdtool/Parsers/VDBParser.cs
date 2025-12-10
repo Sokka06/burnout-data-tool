@@ -16,7 +16,7 @@ namespace bdtool.Parsers
         private readonly DatabaseValueParser _valueParser = new();
         private readonly DatabaseFileDefParser _defaultFileDefParser = new();
 
-        public VDBFile Read(EndianBinaryReader br)
+        public VDBFile Read(BinaryReaderE br)
         {
             // Parse Header
             Console.WriteLine($"Offset {br.Position}: Parsing header");
@@ -72,7 +72,7 @@ namespace bdtool.Parsers
             return new VDBFile(header, defaultValues, values, fileDefs);
         }
 
-        public void Write(EndianBinaryWriter bw, VDBFile obj)
+        public void Write(BinaryWriterE bw, VDBFile obj)
         {
             // Write Header
             Console.WriteLine($"Offset {bw.Position}: Writing header");

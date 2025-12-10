@@ -12,12 +12,12 @@ namespace bdtool.Parsers
     public class DataElementParser : IParser<DataElement>
     {
 
-        public DataElement Read(EndianBinaryReader br)
+        public DataElement Read(BinaryReaderE br)
         {
             return new DataElement(0);
         }
 
-        public void Write(EndianBinaryWriter bw, DataElement obj)
+        public void Write(BinaryWriterE bw, DataElement obj)
         {
 
         }

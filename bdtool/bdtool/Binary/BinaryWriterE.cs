@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 using bdtool.Models;
@@ -9,22 +10,23 @@ using static bdtool.Utilities.Binary;
 
 namespace bdtool.Binary
 {
-    public sealed class EndianBinaryWriter
+    public sealed class BinaryWriterE
     {
-        private readonly BinaryWriter _br;
+        private readonly BinaryWriter _writer;
         private readonly Endianness _endian;
 
-        public EndianBinaryWriter(Stream output, Endianness endian)
+        public BinaryWriterE(Stream output, Endianness endian)
         {
-            _br = new BinaryWriter(output);
+            _writer = new BinaryWriter(output);
             _endian = endian;
         }
 
-        public long Position => _br.BaseStream.Position;
+        public long Position => _writer.BaseStream.Position;
+        public Stream BaseStream => _writer.BaseStream;
 
         public void Seek(long offset, SeekOrigin origin)
         {
-            _br.BaseStream.Seek(offset, origin);
+            BaseStream.Seek(offset, origin);
         }
 
         public void WriteBytes(byte[] bytes)
@@ -32,7 +34,7 @@ namespace bdtool.Binary
             if (_endian == Endianness.Big)
                 Array.Reverse(bytes);
 
-            _br.Write(bytes);
+            _writer.Write(bytes);
         }
 
         public void WriteInt32(int value)
@@ -40,7 +42,8 @@ namespace bdtool.Binary
             var bytes = BitConverter.GetBytes(value);
             if (_endian == Endianness.Big)
                 Array.Reverse(bytes);
-            _br.Write(bytes);
+
+            _writer.Write(bytes);
         }
 
         public void WriteBool(bool value)
@@ -49,7 +52,8 @@ namespace bdtool.Binary
             var bytes = BitConverter.GetBytes(asInt32);
             if (_endian == Endianness.Big)
                 Array.Reverse(bytes);
-            _br.Write(bytes);
+
+            _writer.Write(bytes);
         }
 
         public void WriteUlong(ulong value)
@@ -58,27 +62,17 @@ namespace bdtool.Binary
             if (_endian == Endianness.Big)
                 Array.Reverse(bytes);
 
-            _br.Write(bytes);
+            _writer.Write(bytes);
         }
 
         public void WriteUint8(byte value)
         {
-            _br.Write(value);
+            _writer.Write(value);
         }
 
         public void WriteInt8(sbyte value)
         {
-            _br.Write(unchecked((byte)value));
+            _writer.Write(unchecked((byte)value));
         }
-
-        /*public DataElement ReadDataElement()
-        {
-            var bytes = _br.ReadBytes(4);
-            if (_endian == Endianness.Big)
-                Array.Reverse(bytes);
-
-            return new DataElement(BitConverter.ToInt32(bytes, 0));
-        }*/
-
     }
 }

@@ -78,7 +78,7 @@ namespace bdtool.Commands.VDB
 
                 // Write VDB file
                 using var vdbFile = File.Create(parsedOut);
-                var writer = new EndianBinaryWriter(vdbFile, parsedEndian);
+                var writer = new BinaryWriterE(vdbFile, parsedEndian);
                 var vdbParser = new VDBParser();
                 vdbParser.Write(writer, vdbObject);
                 Console.WriteLine($"Total length: {vdbFile.Length} bytes.");

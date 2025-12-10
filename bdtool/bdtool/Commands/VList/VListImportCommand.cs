@@ -28,8 +28,8 @@ namespace bdtool.Commands.VList
             var verbose = new Option<bool>("--verbose", "-v");
             var endian = new Option<string>("--endian", "-e")
             {
-                Description = "Selects the endianness of the created file. Big by default.",
-                DefaultValueFactory = parseResult => "big"
+                Description = "Selects the endianness of the created file. Small by default.",
+                DefaultValueFactory = parseResult => "small"
             };
 
             endian.AcceptOnlyFromAmong(["small", "big"]);
@@ -75,21 +75,21 @@ namespace bdtool.Commands.VList
                 Console.ResetColor();
 
                 var yamlText = File.ReadAllText(parsedFile.FullName);
-                var reader = new YamlDeserializer();
-                var vlist = reader.Deserialize<Models.Common.VList>(yamlText);
+                var deserializer = new YamlDeserializer();
+                var vlistDto = deserializer.Deserialize<Dto.VehicleList>(yamlText);
 
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Writing VList data to a file...");
+                Console.WriteLine($"Writing VList data to a file using '{parsedEndian}'...");
                 Console.ResetColor();
 
                 using var vlistFile = File.Create(parsedOut);
-                var writer = new EndianBinaryWriter(vlistFile, parsedEndian);
+                var writer = new BinaryWriterE(vlistFile, parsedEndian);
                 var parser = new Parsers.VList.VListParser();
-                parser.Write(writer, vlist);
+                parser.Write(writer, Converters.VListConverter.FromDto(vlistDto));
                 Console.WriteLine($"Total length: {vlistFile.Length} bytes.");
 
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"\nVList file saved to '{Path.GetFullPath(parsedOut)}'");
+                Console.WriteLine($"\nVList file saved to '{Path.GetFullPath(parsedOut)}' using '{parsedEndian}' endian!");
                 Console.ResetColor();
 
                 /*foreach (var version in versions)

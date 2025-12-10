@@ -45,8 +45,8 @@ namespace bdtool.Yaml
         public string Serialize<T>(T obj)
         {
             var serializer = new SerializerBuilder()
-                .WithTagMapping("!B3VehicleList", typeof(B3VehicleList))
-                .WithTagMapping("!B4VehicleList", typeof(B4VehicleList))
+                .WithTagMapping("!B3VehicleList", typeof(Dto.B3.B3VehicleList))
+                .WithTagMapping("!B4VehicleList", typeof(Dto.B4.B4VehicleList))
                 .WithNamingConvention(CamelCaseNamingConvention.Instance)
                 .WithIndentedSequences()
                 .DisableAliases()

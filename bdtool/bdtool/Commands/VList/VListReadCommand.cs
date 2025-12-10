@@ -87,7 +87,7 @@ namespace bdtool.Commands.VList
                 Console.WriteLine("\nReading VList Data...\n");
                 Console.ResetColor();
 
-                var reader = new EndianBinaryReader(fs, endian);
+                var reader = new BinaryReaderE(fs, endian);
 
                 switch (version)
                 {

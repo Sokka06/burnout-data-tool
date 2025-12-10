@@ -12,7 +12,7 @@ namespace bdtool.Parsers.VList
 {
     public class VListParser : IParser<Models.Common.VList>
     {
-        public virtual Models.Common.VList Read(EndianBinaryReader br)
+        public virtual Models.Common.VList Read(BinaryReaderE br)
         {
             // Read version number
             var version = br.ReadInt32();
@@ -34,7 +34,7 @@ namespace bdtool.Parsers.VList
             return null;
         }
 
-        public virtual void Write(EndianBinaryWriter bw, Models.Common.VList obj)
+        public virtual void Write(BinaryWriterE bw, Models.Common.VList obj)
         {
             switch (obj.VersionNumber)
             {

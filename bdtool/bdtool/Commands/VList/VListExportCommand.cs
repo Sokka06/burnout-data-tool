@@ -29,7 +29,8 @@ namespace bdtool.Commands.VList
 
             var outPath = new Argument<string>("out")
             {
-                Description = "Path to the output directory."
+                Description = "Path to the output directory.",
+                DefaultValueFactory = ParseResult => ""
             };
 
             //cmd.Options.Add(input);
@@ -49,7 +50,12 @@ namespace bdtool.Commands.VList
                 }
 
                 string? parsedOut = parseResult.GetValue(outPath);
-                if (string.IsNullOrEmpty(parsedOut) || Path.GetDirectoryName(parsedOut) == string.Empty)
+                if (string.IsNullOrEmpty(parsedOut))
+                {
+                    parsedOut = Path.ChangeExtension(parsedFile.FullName, "yaml");
+                }
+
+                if (Path.GetDirectoryName(parsedOut) == string.Empty)
                 {
                     Console.WriteLine($"Output path invalid: '{parsedOut}'");
                     return 1;
@@ -76,7 +82,7 @@ namespace bdtool.Commands.VList
                 Console.WriteLine("Parsing VList Data...");
                 Console.ResetColor();
 
-                var reader = new EndianBinaryReader(fs, endian);
+                var reader = new BinaryReaderE(fs, endian);
                 var parser = new Parsers.VList.VListParser();
                 var vlist = parser.Read(reader);
 
@@ -86,7 +92,7 @@ namespace bdtool.Commands.VList
                 Console.ResetColor();
 
                 var serializer = new YamlSerializer();
-                var yamlText = serializer.Serialize(vlist);
+                var yamlText = serializer.Serialize(Converters.VListConverter.ToDto(vlist));
 
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Writing data to YAML file...");

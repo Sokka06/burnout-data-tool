@@ -12,7 +12,7 @@ namespace bdtool.Parsers
     public class DatabaseDefaultValueParser : IParser<DatabaseDefaultValue>
     {
 
-        public DatabaseDefaultValue Read(EndianBinaryReader br)
+        public DatabaseDefaultValue Read(BinaryReaderE br)
         {
             var data = new Models.Common.DataElement(br.ReadInt32());
             var nameHash = br.ReadInt32();
@@ -23,7 +23,7 @@ namespace bdtool.Parsers
             //return new Models.FileHeader(version);
         }
 
-        public void Write(EndianBinaryWriter bw, DatabaseDefaultValue obj)
+        public void Write(BinaryWriterE bw, DatabaseDefaultValue obj)
         {
             bw.WriteInt32(obj.Data.RawValue);
             bw.WriteInt32(obj.NameHash);

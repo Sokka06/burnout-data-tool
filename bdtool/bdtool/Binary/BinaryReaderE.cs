@@ -8,27 +8,31 @@ using static bdtool.Utilities.Binary;
 
 namespace bdtool.Binary
 {
-    public sealed class EndianBinaryReader
+    public sealed class BinaryReaderE
     {
-        private readonly BinaryReader _br;
+        private readonly BinaryReader _reader;
         private readonly Endianness _endian;
 
-        public EndianBinaryReader(Stream input, Endianness endian)
+        public BinaryReaderE(Stream input, Endianness endian)
         {
-            _br = new BinaryReader(input);
+            _reader = new BinaryReader(input);
             _endian = endian;
         }
 
-        public long Position => _br.BaseStream.Position;
+        public long Position => _reader.BaseStream.Position;
+        public Stream BaseStream => _reader.BaseStream;
 
         public void Seek(long offset, SeekOrigin origin)
         {
-            _br.BaseStream.Seek(offset, origin);
+            BaseStream.Seek(offset, origin);
         }
 
         public bool ReadBool()
         {
-            var bytes = _br.ReadBytes(4);
+            if (BaseStream.Length - BaseStream.Position < 4)
+                throw new EndOfStreamException();
+
+            var bytes = _reader.ReadBytes(4);
             if (_endian == Endianness.Big)
                 Array.Reverse(bytes);
 
@@ -37,7 +41,10 @@ namespace bdtool.Binary
 
         public int ReadInt32()
         {
-            var bytes = _br.ReadBytes(4);
+            if (BaseStream.Length - BaseStream.Position < 4)
+                throw new EndOfStreamException();
+
+            var bytes = _reader.ReadBytes(4);
             if (_endian == Endianness.Big)
                 Array.Reverse(bytes);
 
@@ -46,7 +53,10 @@ namespace bdtool.Binary
 
         public uint ReadUInt32()
         {
-            var bytes = _br.ReadBytes(4);
+            if (BaseStream.Length - BaseStream.Position < 4)
+                throw new EndOfStreamException();
+
+            var bytes = _reader.ReadBytes(4);
             if (_endian == Endianness.Big)
                 Array.Reverse(bytes);
 
@@ -55,7 +65,10 @@ namespace bdtool.Binary
 
         public ulong ReadUlong()
         {
-            var bytes = _br.ReadBytes(8);
+            if (BaseStream.Length - BaseStream.Position < 8)
+                throw new EndOfStreamException();
+
+            var bytes = _reader.ReadBytes(8);
             if (_endian == Endianness.Big)
                 Array.Reverse(bytes);
 
@@ -64,20 +77,29 @@ namespace bdtool.Binary
 
         public byte ReadUint8()
         {
-            var bytes = _br.ReadBytes(1);
+            if (BaseStream.Length - BaseStream.Position < 1)
+                throw new EndOfStreamException();
+
+            var bytes = _reader.ReadBytes(1);
             return bytes[0];
         }
 
         public sbyte ReadInt8()
         {
-            var bytes = _br.ReadBytes(1);
+            if (BaseStream.Length - BaseStream.Position < 1)
+                throw new EndOfStreamException();
+
+            var bytes = _reader.ReadBytes(1);
             
             return unchecked((sbyte)bytes[0]);
         }
 
         public float ReadFloat()
         {
-            var bytes = _br.ReadBytes(4);
+            if (BaseStream.Length - BaseStream.Position < 4)
+                throw new EndOfStreamException();
+
+            var bytes = _reader.ReadBytes(4);
             if (_endian == Endianness.Big)
                 Array.Reverse(bytes);
 

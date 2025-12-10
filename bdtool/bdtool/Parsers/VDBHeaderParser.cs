@@ -10,8 +10,7 @@ namespace bdtool.Parsers
 {
     public class VDBHeaderParser : IParser<VDBHeader>
     {
-
-        public VDBHeader Read(EndianBinaryReader br)
+        public VDBHeader Read(BinaryReaderE br)
         {
             var type = br.ReadInt32();
             var defaultValueCount = br.ReadInt32();
@@ -22,7 +21,7 @@ namespace bdtool.Parsers
             return new Models.Common.VDBHeader(type, defaultValueCount, unk1, fileDefCount, fileDefOffset);
         }
 
-        public void Write(EndianBinaryWriter bw, VDBHeader obj)
+        public void Write(BinaryWriterE bw, VDBHeader obj)
         {
             bw.WriteInt32(obj.Type);
             bw.WriteInt32(obj.DefaultValueCount);

@@ -12,13 +12,14 @@ namespace bdtool.Parsers.VList
     public class B3VehicleListParser : VListParser
     {
         private const int MAX_VEHICLES = 128;
+        private const long MAX_LENGTH = 4096;
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="br"></param>
         /// <returns></returns>
-        public override B3VehicleList Read(EndianBinaryReader br)
+        public override B3VehicleList Read(BinaryReaderE br)
         {
             Console.WriteLine($"\nReading header");
             var versionNumber = br.ReadInt32();
@@ -98,9 +99,10 @@ namespace bdtool.Parsers.VList
                 br.Seek(padding * 4, SeekOrigin.Current);
 
             // Pad
-            Console.WriteLine($"\nReading Pad[{1016}]");
+            var paddingEnd = MAX_LENGTH - br.Position; // 1016
+            Console.WriteLine($"\nReading Pad[{paddingEnd}]");
             var pad = new List<byte>();
-            for (int i = 0; i < 1016; i++)
+            for (int i = 0; i < paddingEnd; i++)
             {
                 Console.WriteLine($"Offset {br.Position}: Reading Pad[{i}]");
                 pad.Add(br.ReadUint8());
@@ -110,7 +112,7 @@ namespace bdtool.Parsers.VList
             return new B3VehicleList(vehicleCount, vehicleIsDriveable, raceCarRanks, vehicleIDs, unk1, unk2, pad, versionNumber);
         }
 
-        public override void Write(EndianBinaryWriter bw, Models.Common.VList obj)
+        public override void Write(BinaryWriterE bw, Models.Common.VList obj)
         {
             // TODO: Implement Write method
             if (obj is not B3VehicleList b3Obj)
@@ -193,12 +195,13 @@ namespace bdtool.Parsers.VList
                 bw.Seek(padding * 4, SeekOrigin.Current);
 
             // Pad
-            Console.WriteLine($"\nWriting Pad[{1016}]");
+            var paddingEnd = MAX_LENGTH - bw.Position; // 1016
+            Console.WriteLine($"\nWriting Pad[{paddingEnd}]");
             var pad = new List<byte>();
-            for (int i = 0; i < 1016; i++)
+            for (int i = 0; i < paddingEnd; i++)
             {
                 Console.WriteLine($"Offset {bw.Position}: Writing Pad[{i}]");
-                bw.WriteUint8(b3Obj.Pad[i]);
+                bw.WriteUint8(0); // b3Obj.Pad[i]
             }
             Console.WriteLine($"Finished writing Pad");
         }

@@ -26,19 +26,19 @@
     },
     "vdb import": {
       "commandName": "Project",
-      "commandLineArgs": "vdb import\r\n\"..\\..\\..\\..\\extract\\VDB_ps2_bo4_proto.yaml\"\r\n\"..\\..\\..\\..\\import\\VDB_ps2_bo4_proto_import.BIN\"\r\n--endian \"small\""
+      "commandLineArgs": "vdb import\r\n\"..\\..\\..\\..\\export\\VDB_ps2_bo4_proto.yaml\"\r\n\"..\\..\\..\\..\\import\\VDB_ps2_bo4_proto_import.BIN\"\r\n--endian \"small\""
     },
     "vdb export": {
       "commandName": "Project",
-      "commandLineArgs": "vdb export\r\n\"..\\..\\..\\..\\data\\VDB_ps2_bo4_proto.BIN\"\r\n\"..\\..\\..\\..\\extract\\VDB_ps2_bo4_proto.yaml\""
+      "commandLineArgs": "vdb export\r\n\"..\\..\\..\\..\\data\\VDB_ps2_bo4_proto.BIN\"\r\n\"..\\..\\..\\..\\export\\VDB_ps2_bo4_proto.yaml\""
     },
     "vlist import": {
       "commandName": "Project",
-      "commandLineArgs": "vlist import\r\n\"..\\..\\..\\..\\extract\\vlist_ps2_bo4_proto.yaml\"\r\n\"..\\..\\..\\..\\import\\vlist_ps2_bo4_proto_import.BIN\"\r\n--endian \"small\""
+      "commandLineArgs": "vlist import\r\n\"..\\..\\..\\..\\export\\vlist_ps2_bo4_proto.yaml\"\r\n\"..\\..\\..\\..\\import\\vlist_ps2_bo4_proto_import.BIN\"\r\n--endian \"small\""
     },
     "vlist export": {
       "commandName": "Project",
-      "commandLineArgs": "vlist export\r\n\"..\\..\\..\\..\\data\\vlist_ps2_bo4_proto.BIN\"\r\n\"..\\..\\..\\..\\extract\\vlist_ps2_bo4_proto.yaml\""
+      "commandLineArgs": "vlist export\r\n\"..\\..\\..\\..\\data\\vlist_ps2_bo4_proto.BIN\"\r\n\"..\\..\\..\\..\\export\\vlist_ps2_bo4_proto.yaml\""
     }
   }
 }

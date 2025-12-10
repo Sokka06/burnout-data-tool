@@ -11,14 +11,14 @@ namespace bdtool.Parsers
     public class DatabaseFileDefParser : IParser<DatabaseFileDef>
     {
 
-        public DatabaseFileDef Read(EndianBinaryReader br)
+        public DatabaseFileDef Read(BinaryReaderE br)
         {
             var isActive = br.ReadBool();
             var fileHash = br.ReadInt32();
             return new Models.Common.DatabaseFileDef(isActive, fileHash);
         }
 
-        public void Write(EndianBinaryWriter bw, DatabaseFileDef obj)
+        public void Write(BinaryWriterE bw, DatabaseFileDef obj)
         {
             bw.WriteBool(obj.IsActive);
             bw.WriteInt32(obj.FileHash);

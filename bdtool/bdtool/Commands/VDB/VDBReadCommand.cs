@@ -92,7 +92,7 @@ namespace bdtool.Commands.VDB
                 Console.WriteLine("\nReading VDB Data...\n");
                 Console.ResetColor();
 
-                var reader = new EndianBinaryReader(fs, endian);
+                var reader = new BinaryReaderE(fs, endian);
 
                 var vdbParser = new VDBParser();
                 var vdbFile = vdbParser.Read(reader);

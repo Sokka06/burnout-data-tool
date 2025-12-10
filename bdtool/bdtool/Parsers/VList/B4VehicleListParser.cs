@@ -12,8 +12,9 @@ namespace bdtool.Parsers.VList
     public class B4VehicleListParser : VListParser
     {
         private const int MAX_VEHICLES = 128;
+        private const long MAX_LENGTH = 4096;
 
-        public override B4VehicleList Read(EndianBinaryReader br)
+        public override B4VehicleList Read(BinaryReaderE br)
         {
             // TODO: add console logs
             var versionNumber = br.ReadInt32();
@@ -89,8 +90,9 @@ namespace bdtool.Parsers.VList
             if (vehicleCount < MAX_VEHICLES)
                 br.Seek((MAX_VEHICLES - vehicleCount), SeekOrigin.Current);
 
+            var paddingEnd = MAX_LENGTH - br.Position; // 376
             var pad = new List<byte>();
-            for (int i = 0; i < 376; i++)
+            for (int i = 0; i < paddingEnd; i++)
             {
                 pad.Add(br.ReadUint8());
             }
@@ -110,7 +112,7 @@ namespace bdtool.Parsers.VList
             );
         }
 
-        public override void Write(EndianBinaryWriter bw, Models.Common.VList obj)
+        public override void Write(BinaryWriterE bw, Models.Common.VList obj)
         {
             if (obj is not B4VehicleList b4Obj)
             {
@@ -217,11 +219,12 @@ namespace bdtool.Parsers.VList
                 bw.Seek((MAX_VEHICLES - count), SeekOrigin.Current);
 
             // Pad
-            Console.WriteLine($"\nWriting Pad[{376}]");
-            for (int i = 0; i < 376; i++)
+            var paddingEnd = MAX_LENGTH - bw.Position; // 376
+            Console.WriteLine($"\nWriting Pad[{paddingEnd}]");
+            for (int i = 0; i < paddingEnd; i++)
             {
                 Console.WriteLine($"Offset {bw.Position}: Writing Pad[{i}]");
-                bw.WriteUint8(b4Obj.Pad[i]);
+                bw.WriteUint8(0); // b4Obj.Pad[i]
             }
             Console.WriteLine($"Finished writing Pad");
         }

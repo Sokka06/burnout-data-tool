@@ -17,8 +17,8 @@ namespace bdtool.Yaml
         {
             var deserializer = new DeserializerBuilder()
                 .WithNamingConvention(CamelCaseNamingConvention.Instance)
-                .WithTagMapping("!B3VehicleList", typeof(B3VehicleList))
-                .WithTagMapping("!B4VehicleList", typeof(B4VehicleList))
+                .WithTagMapping("!B3VehicleList", typeof(Dto.B3.B3VehicleList))
+                .WithTagMapping("!B4VehicleList", typeof(Dto.B4.B4VehicleList))
                 .Build();
 
             //yml contains a string containing your YAML

@@ -11,14 +11,14 @@ namespace bdtool.Parsers
     public class DatabaseValueParser : IParser<DatabaseValue>
     {
 
-        public DatabaseValue Read(EndianBinaryReader br)
+        public DatabaseValue Read(BinaryReaderE br)
         {
             var address = br.Position;
             var value = br.ReadInt32();
             return new Models.Common.DatabaseValue(address, value);
         }
 
-        public void Write(EndianBinaryWriter bw, DatabaseValue obj)
+        public void Write(BinaryWriterE bw, DatabaseValue obj)
         {
             Console.WriteLine($"Writing Value at address '{bw.Position}'.");
             if (bw.Position != obj.Address)
