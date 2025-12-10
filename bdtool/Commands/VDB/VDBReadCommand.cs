@@ -71,7 +71,7 @@ namespace bdtool.Commands.VDB
                 FileInfo? parsedFile = parseResult.GetValue(path);
                 if (parsedFile == null || !parsedFile.Exists)
                 {
-                    Console.WriteLine("Input file does not exist.");
+                    Console.WriteLine($"Input file does not exist at '{parsedFile?.FullName}'.");
                     return 1;
                 }
 
