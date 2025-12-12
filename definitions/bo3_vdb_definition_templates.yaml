@@ -1,0 +1,449 @@
+# templates are used to automate definition generation for every vehicle in the vehicles list.
+# use the create_vehicle_variables.py script.
+# %s in the fileName will be replaced with the ID of the vehicle.
+
+vehicles:
+    # Compact
+  - COMPCAR1
+  - COMPCAR2
+  - COMPCAR3
+  - COMPCAR4
+  - COMPCAR5
+  - COMPCAR6
+  - COMPCAR7
+  - COMPCAR8
+  - COMPCAR9
+  - COMPCAR10
+  - COMPCAR11
+  - COMPCAR12
+  - COMPCAR13
+  - COMPCAR14
+  - COMPCAR15
+  - COMPCAR16
+  - COMPCAR17
+  - COMPCAR18
+  - COMPCAR19
+
+    # Muscle
+  - MSCLCAR1
+  - MSCLCAR2
+  - MSCLCAR3
+  - MSCLCAR4
+  - MSCLCAR5
+  - MSCLCAR6
+  - MSCLCAR7
+  - MSCLCAR8
+  - MSCLCAR9
+  - MSCLCAR10
+
+    # Coupe
+  - CUPECAR1
+  - CUPECAR2
+  - CUPECAR3
+  - CUPECAR4
+  - CUPECAR5
+  - CUPECAR6
+  - CUPECAR7
+  - CUPECAR8
+  - CUPECAR9
+  - CUPECAR10
+
+    # Sports
+  - SPRTCAR1
+  - SPRTCAR2
+  - SPRTCAR3
+  - SPRTCAR4
+  - SPRTCAR5
+  - SPRTCAR6
+  - SPRTCAR7
+  - SPRTCAR8
+  - SPRTCAR9
+  - SPRTCAR10
+
+    # Super
+  - SUPRCAR1
+  - SUPRCAR2
+  - SUPRCAR3
+  - SUPRCAR4
+  - SUPRCAR5
+  - SUPRCAR6
+  - SUPRCAR7
+  - SUPRCAR8
+  - SUPRCAR9
+  - SUPRCAR10
+
+    # Special
+  - HSPCCAR20
+  - HSPCCAR21
+  - HSPCCAR22
+  - HSPCCAR23
+  - HSPCCAR24
+  - HSPCCAR25
+
+    # Heavyweight
+  - HEVYCAR1
+  - HEVYCAR2
+  - HEVYCAR3
+  - HEVYCAR4
+  - HEVYCAR5
+  - HEVYCAR6
+  - HEVYCAR7
+  - HEVYCAR8
+  - HEVYCAR9
+  - HEVYCAR10
+  - HEVYCAR11
+  - HEVYCAR12
+  - HEVYCAR13
+  - HEVYCAR14
+  - HEVYCAR15
+  - HEVYCAR16
+  - HEVYCAR17
+  - HEVYCAR18
+  - HEVYCAR19
+  - HEVYCAR20
+  - HEVYCAR21
+  - HEVYCAR22
+  - HEVYCAR23
+  - HEVYCAR24
+  - HEVYCAR25
+  - HEVYCAR26
+  - HEVYCAR27
+  - HEVYCAR28
+  - HEVYCAR29
+  - HEVYCAR30
+  - HEVYCAR31
+  - HEVYCAR32
+  - HEVYCAR33
+  - HEVYCAR34
+  - HEVYCAR35
+  - HEVYCAR36
+
+    # Traffic
+  - TSPCCAR1
+  - TSPCCAR2
+  - TSPCCAR3
+  - TSPCCAR4
+  - TSPCCAR5
+  - TSPCCAR6
+
+variables:
+  - name: "Mass (Kg)"
+    path: "Physics/Vehicle"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+
+    # SUSPENSION FRONT
+  - name: "Attatch Height" # typo in the proto build, present in release?
+    path: "Physics/Suspension/Front"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Spring Length"
+    path: "Physics/Suspension/Front"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Spring Force"
+    path: "Physics/Suspension/Front"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Spring Damping"
+    path: "Physics/Suspension/Front"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+
+    # SUSPENSION REAR
+  - name: "Attatch Height" # typo in the proto build, present in release?
+    path: "Physics/Suspension/Rear"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Spring Length"
+    path: "Physics/Suspension/Rear"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Spring Force"
+    path: "Physics/Suspension/Rear"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Spring Damping"
+    path: "Physics/Suspension/Rear"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+
+    # BODY ROLL
+  - name: "Brake Force Height"
+    path: "Physics/Race Car/Body Roll"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Accel Force Height"
+    path: "Physics/Race Car/Body Roll"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Steer Force Height"
+    path: "Physics/Race Car/Body Roll"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Drift Force Height"
+    path: "Physics/Race Car/Body Roll"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+
+    # LOW SPEED DRIVING MODEL
+  - name: "Speed Limit"
+    path: "Physics/Race Car/LSDM"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Steering Angle"
+    path: "Physics/Race Car/LSDM"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Torque 1"
+    path: "Physics/Race Car/LSDM"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Torque 2"
+    path: "Physics/Race Car/LSDM"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+
+    # MISC
+  - name: "Drag Coef"
+    path: "Physics/Race Car/Misc"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Downforce Coef"
+    path: "Physics/Race Car/Misc"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Wall Collsion Penalty" # typo in the proto build, present in release?
+    path: "Physics/Race Car/Misc"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Accel Multiplier"
+    path: "Physics/Race Car/Misc"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Braking Factor"
+    path: "Physics/Race Car/Misc"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Engine Braking Factor"
+    path: "Physics/Race Car/Misc"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Max Speed In Boost"
+    path: "Physics/Race Car/Misc"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Min Drift Angle In Air"
+    path: "Physics/Race Car/Misc"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "In Air Corkscrew Damping"
+    path: "Physics/Race Car/Misc"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+
+    # TRANSMISSION/ENGINE
+  - name: "Torque"
+    path: "Physics/Transmission/Engine"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Peak Torque Revs"
+    path: "Physics/Transmission/Engine"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Fall Off Torque Revs"
+    path: "Physics/Transmission/Engine"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Idle RPM"
+    path: "Physics/Transmission/Engine"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Max RPM"
+    path: "Physics/Transmission/Engine"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Change Down RPM"
+    path: "Physics/Transmission/Engine"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Change Up RPM"
+    path: "Physics/Transmission/Engine"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+
+    # TRANSMISSION/GEAR RATIOS
+  - name: "Reverse"
+    path: "Physics/Transmission/Gear Ratios"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Neutral"
+    path: "Physics/Transmission/Gear Ratios"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "1st Gear"
+    path: "Physics/Transmission/Gear Ratios"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "2nd Gear"
+    path: "Physics/Transmission/Gear Ratios"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "3rd Gear"
+    path: "Physics/Transmission/Gear Ratios"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "4th Gear"
+    path: "Physics/Transmission/Gear Ratios"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "5th Gear"
+    path: "Physics/Transmission/Gear Ratios"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "6th Gear"
+    path: "Physics/Transmission/Gear Ratios"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Final Gear"
+    path: "Physics/Transmission/Gear Ratios"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+
+    # BOOST
+  - name: "Boost Kick Torque"
+    path: "Physics/Transmission/Boost Kick"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Boost Kick Time"
+    path: "Physics/Transmission/Boost Kick"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+
+    # STEERING
+  - name: "Min Angle (degrees)"
+    path: "Physics/Steering"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Max Angle (degrees)"
+    path: "Physics/Steering"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Min Velocity"
+    path: "Physics/Steering"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Max Velocity"
+    path: "Physics/Steering"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Response"
+    path: "Physics/Steering"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Drag Coef"
+    path: "Physics/Steering"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+
+    # DRIFTING
+  - name: "Slide Max"
+    path: "Physics/Drift"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Slide Min"
+    path: "Physics/Drift"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Turn Momentum Slow"
+    path: "Physics/Drift"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Turn Momentum Fast"
+    path: "Physics/Drift"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Auto Drift Delay"
+    path: "Physics/Drift"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Turn Rate"
+    path: "Physics/Drift"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Min Drift Speed"
+    path: "Physics/Drift"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Max Speed Pressure"
+    path: "Physics/Drift"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Max Drift Angle"
+    path: "Physics/Drift"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+
+    # AGGRESSIVE DRIVING REACTIONS
+  - name: "Steer Away Time (s)"
+    path: "Physics/Aggressive Driving Reaction"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Total Out-Of-Control Time (s)"
+    path: "Physics/Aggressive Driving Reaction"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Steering Max Angle (degrees)"
+    path: "Physics/Aggressive Driving Reaction"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Steering Max Velocity"
+    path: "Physics/Aggressive Driving Reaction"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+  - name: "Steering Drag Coef"
+    path: "Physics/Aggressive Driving Reaction"
+    fileName: "../Export/ValueDB/VehiclePhysics/%s.cfg" 
+    type: RwReal
+
+    # AUDIO
+  - name: "Car Volume"
+    path: "VehicleAudio"
+    fileName: "../Export/ValueDB/VehicleAudio/%s.cfg" 
+    type: RwReal
+  - name: "Wave Attack Offset"
+    path: "VehicleAudio/Turbo"
+    fileName: "../Export/ValueDB/VehicleAudio/%s.cfg" 
+    type: RwInt32
+  - name: "Rpm to Turbo Falloff Lag"
+    path: "VehicleAudio/Turbo"
+    fileName: "../Export/ValueDB/VehicleAudio/%s.cfg" 
+    type: RwReal
+  - name: "Rpm to Turbo Rising Lag"
+    path: "VehicleAudio/Turbo"
+    fileName: "../Export/ValueDB/VehicleAudio/%s.cfg" 
+    type: RwReal
+  - name: "Rpm to Turbo Min Rpm"
+    path: "VehicleAudio/Turbo"
+    fileName: "../Export/ValueDB/VehicleAudio/%s.cfg" 
+    type: RwReal
+  - name: "Rpm to Turbo Max Rpm Volume"
+    path: "VehicleAudio/Turbo"
+    fileName: "../Export/ValueDB/VehicleAudio/%s.cfg" 
+    type: RwReal
+  - name: "Dump Valve Kick-in Min Falloff"
+    path: "VehicleAudio/Turbo"
+    fileName: "../Export/ValueDB/VehicleAudio/%s.cfg" 
+    type: RwReal
+  - name: "Dump Valve Kick-in Max Falloff"
+    path: "VehicleAudio/Turbo"
+    fileName: "../Export/ValueDB/VehicleAudio/%s.cfg" 
+    type: RwReal
+  - name: "Dump Valve Volume Min"
+    path: "VehicleAudio/Turbo"
+    fileName: "../Export/ValueDB/VehicleAudio/%s.cfg" 
+    type: RwReal
+  - name: "Dump Valve Volume Max"
+    path: "VehicleAudio/Turbo"
+    fileName: "../Export/ValueDB/VehicleAudio/%s.cfg" 
+    type: RwReal
