@@ -4,30 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace bdtool.Models.Common
+namespace bdtool.Models.VDB
 {
-    public enum DataType : byte
-    {
-        None = 0,
-        RwInt32 = 1,
-        RwReal = 2,
-        RwBool = 3,
-        unk4 = 4, // unused?
-        CGtV3d = 5,
-        Callback = 6
-    }
 
     public record VDBFile
-    (
-        VDBHeader Header, 
-        List<DatabaseDefaultValue> DefaultValues,
-        List<DatabaseValue> Values,
-        List<DatabaseFileDef> FileDefs
-    )
     {
-        public VDBFile() : this(default, default, default, default)
+        public VDBHeader Header { get; init; }
+        public List<DatabaseDefaultValue> DefaultValues { get; init; }
+        public List<DatabaseValue> Values { get; init; }
+        public List<DatabaseFileDef> FileDefs { get; init; }
+
+        /*public VDBFile() : this(default, default, default, default)
         {
-        }
+        }*/
 
         public string PrintHeader()
         {
@@ -109,5 +98,7 @@ namespace bdtool.Models.Common
 
             return builder.ToString();
         }
+
+
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using bdtool.Binary;
-using bdtool.Models.Common;
+using bdtool.Models.VDB;
 
 namespace bdtool.Parsers
 {
@@ -15,7 +15,7 @@ namespace bdtool.Parsers
         {
             var isActive = br.ReadBool();
             var fileHash = br.ReadInt32();
-            return new Models.Common.DatabaseFileDef(isActive, fileHash);
+            return new Models.VDB.DatabaseFileDef(isActive, fileHash);
         }
 
         public void Write(BinaryWriterE bw, DatabaseFileDef obj)

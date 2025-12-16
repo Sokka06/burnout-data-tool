@@ -6,12 +6,34 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace bdtool.Models.Common
+namespace bdtool.Models.VDB
 {
-    public record DataElement(int RawValue)
+    public record DataElement
     {
+        public int RawValue { get; init; }
+
         public DataElement() : this(default(int))
         {
+        }
+
+        public DataElement(int intValue)
+        {
+            RawValue = intValue;
+        }
+
+        public DataElement (float floatValue)
+        {
+            RawValue = BitConverter.SingleToInt32Bits(floatValue);
+        }
+
+        public DataElement(long longValue)
+        {
+            RawValue = (int)longValue;
+        }
+
+        public DataElement(bool boolValue)
+        {
+            RawValue = boolValue ? 1 : 0;
         }
 
         public int AsInt()
@@ -31,7 +53,8 @@ namespace bdtool.Models.Common
 
         public override string ToString()
         {
-            return $"int ({AsInt()}), float ({AsFloat()}), bool ({AsBool()})";
+            return string.Format("{0,-20} {1,-20} {2,-20}", $"int32 ({AsInt()})", $"float ({AsFloat():F2})", $"bool ({AsBool()})");
+            //return $"int32 ({AsInt()}), float ({AsFloat()}), bool ({AsBool()})";
         }
     }
 

@@ -5,7 +5,9 @@ using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 using bdtool.Models;
+using bdtool.Models.Types;
 using YamlDotNet.Core.Tokens;
+using static bdtool.Dto.VDB;
 using static bdtool.Utilities.Binary;
 
 namespace bdtool.Binary
@@ -73,6 +75,41 @@ namespace bdtool.Binary
         public void WriteInt8(sbyte value)
         {
             _writer.Write(unchecked((byte)value));
+        }
+
+        public void ReadInt16(short value)
+        {
+            var bytes = BitConverter.GetBytes(value);
+            if (_endian == Endianness.Big)
+                Array.Reverse(bytes);
+
+            _writer.Write(bytes);
+        }
+
+        public void ReadV3d(V3d value)
+        {
+            // write 3 floats and padding
+            for (int i = 0; i < 4; i++)
+            {
+                var bytes = BitConverter.GetBytes(value[i]);
+                if (_endian == Endianness.Big)
+                    Array.Reverse(bytes);
+
+                _writer.Write(bytes);
+            }
+        }
+
+        public void ReadV3dPlus(V3dPlus value)
+        {
+            // write 4 floats
+            for (int i = 0; i < 4; i++)
+            {
+                var bytes = BitConverter.GetBytes(value[i]);
+                if (_endian == Endianness.Big)
+                    Array.Reverse(bytes);
+
+                _writer.Write(bytes);
+            }
         }
     }
 }

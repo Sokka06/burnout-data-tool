@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using bdtool.Models;
+using bdtool.Models.Types;
 using static bdtool.Utilities.Binary;
 
 namespace bdtool.Binary
@@ -75,6 +76,16 @@ namespace bdtool.Binary
             return BitConverter.ToUInt64(bytes, 0);
         }
 
+        public short ReadInt16()
+        {
+            if (BaseStream.Length - BaseStream.Position < 2)
+                throw new EndOfStreamException();
+
+            var bytes = _reader.ReadBytes(2);
+
+            return BitConverter.ToInt16(bytes, 0);
+        }
+
         public byte ReadUint8()
         {
             if (BaseStream.Length - BaseStream.Position < 1)
@@ -104,6 +115,46 @@ namespace bdtool.Binary
                 Array.Reverse(bytes);
 
             return BitConverter.ToSingle(bytes, 0);
+        }
+
+        public V3d ReadV3d()
+        {
+            var values = new float[4];
+
+            // read 3 floats and padding
+            for (int i = 0; i < 4; i++)
+            {
+                if (BaseStream.Length - BaseStream.Position < 4)
+                    throw new EndOfStreamException();
+
+                var bytes = _reader.ReadBytes(4);
+                if (_endian == Endianness.Big)
+                    Array.Reverse(bytes);
+
+                values[i] = BitConverter.ToSingle(bytes, 0);
+            }
+
+            return new V3d() { X = values[0], Y = values[1], Z = values[2] };
+        }
+
+        public V3dPlus ReadV3dPlus()
+        {
+            var values = new float[4];
+
+            // read 4 floats
+            for (int i = 0; i < 4; i++)
+            {
+                if (BaseStream.Length - BaseStream.Position < 4)
+                    throw new EndOfStreamException();
+
+                var bytes = _reader.ReadBytes(4);
+                if (_endian == Endianness.Big)
+                    Array.Reverse(bytes);
+
+                values[i] = BitConverter.ToSingle(bytes, 0);
+            }
+
+            return new V3dPlus() { X = values[0], Y = values[1], Z = values[2], Plus = values[3] };
         }
 
         /*public DataElement ReadDataElement()

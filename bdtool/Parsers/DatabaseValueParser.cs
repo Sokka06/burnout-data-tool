@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using bdtool.Binary;
-using bdtool.Models.Common;
+using bdtool.Models.VDB;
+using bdtool.Utilities;
 
 namespace bdtool.Parsers
 {
@@ -15,7 +16,7 @@ namespace bdtool.Parsers
         {
             var address = br.Position;
             var value = br.ReadInt32();
-            return new Models.Common.DatabaseValue(address, value);
+            return new Models.VDB.DatabaseValue() { Address = address, Value = new DataElement(value) };
         }
 
         public void Write(BinaryWriterE bw, DatabaseValue obj)
@@ -23,12 +24,10 @@ namespace bdtool.Parsers
             Console.WriteLine($"Writing Value at address '{bw.Position}'.");
             if (bw.Position != obj.Address)
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine($"Warning: Current address doesn't match original address. '{bw.Position}' - '{obj.Address}'");
-                Console.ResetColor();
+                ConsoleEx.Warning($"Warning: Current address doesn't match original address. '{bw.Position}' - '{obj.Address}'");
             }
 
-            bw.WriteInt32(obj.Value);
+            bw.WriteInt32(obj.Value.RawValue);
         }
     }
 }

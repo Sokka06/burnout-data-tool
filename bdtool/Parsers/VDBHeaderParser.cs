@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using bdtool.Binary;
-using bdtool.Models.Common;
+using bdtool.Models.VDB;
 
 namespace bdtool.Parsers
 {
@@ -18,7 +18,7 @@ namespace bdtool.Parsers
             var fileDefCount = br.ReadInt32();
             var fileDefOffset = br.ReadInt32();
 
-            return new Models.Common.VDBHeader(type, defaultValueCount, unk1, fileDefCount, fileDefOffset);
+            return new Models.VDB.VDBHeader(type, defaultValueCount, unk1, fileDefCount, fileDefOffset);
         }
 
         public void Write(BinaryWriterE bw, VDBHeader obj)

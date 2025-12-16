@@ -5,7 +5,7 @@ using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace bdtool.Models.Common
+namespace bdtool.Models.VDB
 {
     public record VDBHeader
     (
@@ -19,6 +19,8 @@ namespace bdtool.Models.Common
         public VDBHeader() : this(Type: default, DefaultValueCount: default, Unk1: default, FileDefCount: default, FileDefOffset: default)
         {
         }
+
+        public const int HEADER_LENGTH = 20;
 
         public override string ToString()
         {

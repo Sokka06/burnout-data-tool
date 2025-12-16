@@ -1,19 +1,4 @@
-# VDB default value definitions for Burnout 3 Takedown.
-# Default values in the VDB file are accessed using a hash, which is calculated from hashing together name, path and filename.
-
-# Data types: 
-# 0 = none, 
-# 1 = RwInt32
-# 2 = RwReal
-# 3 = RwBool
-# 4 = unused
-# 5 = address to a v3d
-
-# functions where variables are registered
-# FUN_00208b60 
-# FUN_00209670
-
-defaultValues:
+definitions:
   1803659936:
     hash: 1803659936
     name: Mass (Kg)
@@ -463,31 +448,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/COMPCAR1.cfg
-    type: Pointer
+    type: V3d
   591750421:
     hash: 591750421
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/COMPCAR1.cfg
-    type: Pointer
+    type: V3d
   939348151:
     hash: 939348151
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR1.cfg
-    type: Pointer
+    type: V3d
   2010784709:
     hash: 2010784709
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR1.cfg
-    type: Pointer
+    type: V3d
   -206707410:
     hash: -206707410
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR1.cfg
-    type: Pointer
+    type: V3d
   -1845487765:
     hash: -1845487765
     name: Down Angle
@@ -943,31 +928,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/COMPCAR2.cfg
-    type: Pointer
+    type: V3d
   -1692737478:
     hash: -1692737478
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/COMPCAR2.cfg
-    type: Pointer
+    type: V3d
   -1885153896:
     hash: -1885153896
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR2.cfg
-    type: Pointer
+    type: V3d
   -813324566:
     hash: -813324566
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR2.cfg
-    type: Pointer
+    type: V3d
   1274175489:
     hash: 1274175489
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR2.cfg
-    type: Pointer
+    type: V3d
   710906436:
     hash: 710906436
     name: Down Angle
@@ -1423,31 +1408,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/COMPCAR3.cfg
-    type: Pointer
+    type: V3d
   1501219210:
     hash: 1501219210
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/COMPCAR3.cfg
-    type: Pointer
+    type: V3d
   1304624168:
     hash: 1304624168
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR3.cfg
-    type: Pointer
+    type: V3d
   233148250:
     hash: 233148250
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR3.cfg
-    type: Pointer
+    type: V3d
   -1986901583:
     hash: -1986901583
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR3.cfg
-    type: Pointer
+    type: V3d
   -398476300:
     hash: -398476300
     name: Down Angle
@@ -1903,31 +1888,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/COMPCAR4.cfg
-    type: Pointer
+    type: V3d
   -341448091:
     hash: -341448091
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/COMPCAR4.cfg
-    type: Pointer
+    type: V3d
   -14819385:
     hash: -14819385
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR4.cfg
-    type: Pointer
+    type: V3d
   -1086673739:
     hash: -1086673739
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR4.cfg
-    type: Pointer
+    type: V3d
   994929246:
     hash: 994929246
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR4.cfg
-    type: Pointer
+    type: V3d
   1524668443:
     hash: 1524668443
     name: Down Angle
@@ -2383,31 +2368,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/COMPCAR5.cfg
-    type: Pointer
+    type: V3d
   700826581:
     hash: 700826581
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/COMPCAR5.cfg
-    type: Pointer
+    type: V3d
   1031665271:
     hash: 1031665271
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR5.cfg
-    type: Pointer
+    type: V3d
   2103084293:
     hash: 2103084293
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR5.cfg
-    type: Pointer
+    type: V3d
   -114474002:
     hash: -114474002
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR5.cfg
-    type: Pointer
+    type: V3d
   -1736396373:
     hash: -1736396373
     name: Down Angle
@@ -2863,31 +2848,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/COMPCAR6.cfg
-    type: Pointer
+    type: V3d
   -1852160262:
     hash: -1852160262
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/COMPCAR6.cfg
-    type: Pointer
+    type: V3d
   -2061339816:
     hash: -2061339816
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR6.cfg
-    type: Pointer
+    type: V3d
   -989528022:
     hash: -989528022
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR6.cfg
-    type: Pointer
+    type: V3d
   1098041025:
     hash: 1098041025
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR6.cfg
-    type: Pointer
+    type: V3d
   551498884:
     hash: 551498884
     name: Down Angle
@@ -3343,31 +3328,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/COMPCAR7.cfg
-    type: Pointer
+    type: V3d
   1408921418:
     hash: 1408921418
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/COMPCAR7.cfg
-    type: Pointer
+    type: V3d
   1195530984:
     hash: 1195530984
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR7.cfg
-    type: Pointer
+    type: V3d
   124070298:
     hash: 124070298
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR7.cfg
-    type: Pointer
+    type: V3d
   -2095911055:
     hash: -2095911055
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR7.cfg
-    type: Pointer
+    type: V3d
   -490791628:
     hash: -490791628
     name: Down Angle
@@ -3823,31 +3808,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/COMPCAR8.cfg
-    type: Pointer
+    type: V3d
   -777324444:
     hash: -777324444
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/COMPCAR8.cfg
-    type: Pointer
+    type: V3d
   -988623418:
     hash: -988623418
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR8.cfg
-    type: Pointer
+    type: V3d
   -2060075340:
     hash: -2060075340
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR8.cfg
-    type: Pointer
+    type: V3d
   21133407:
     hash: 21133407
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR8.cfg
-    type: Pointer
+    type: V3d
   1626311194:
     hash: 1626311194
     name: Down Angle
@@ -4303,31 +4288,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/COMPCAR9.cfg
-    type: Pointer
+    type: V3d
   332059092:
     hash: 332059092
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/COMPCAR9.cfg
-    type: Pointer
+    type: V3d
   124970102:
     hash: 124970102
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR9.cfg
-    type: Pointer
+    type: V3d
   1196791556:
     hash: 1196791556
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR9.cfg
-    type: Pointer
+    type: V3d
   -1021160977:
     hash: -1021160977
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR9.cfg
-    type: Pointer
+    type: V3d
   -1567644758:
     hash: -1567644758
     name: Down Angle
@@ -4783,31 +4768,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/COMPCAR10.cfg
-    type: Pointer
+    type: V3d
   -397013213:
     hash: -397013213
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/COMPCAR10.cfg
-    type: Pointer
+    type: V3d
   -795183662:
     hash: -795183662
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR10.cfg
-    type: Pointer
+    type: V3d
   1859207857:
     hash: 1859207857
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR10.cfg
-    type: Pointer
+    type: V3d
   -1500705145:
     hash: -1500705145
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR10.cfg
-    type: Pointer
+    type: V3d
   -1604708758:
     hash: -1604708758
     name: Down Angle
@@ -5263,31 +5248,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/COMPCAR11.cfg
-    type: Pointer
+    type: V3d
   708191891:
     hash: 708191891
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/COMPCAR11.cfg
-    type: Pointer
+    type: V3d
   318397538:
     hash: 318397538
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR11.cfg
-    type: Pointer
+    type: V3d
   -1397658879:
     hash: -1397658879
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR11.cfg
-    type: Pointer
+    type: V3d
   1693263671:
     hash: 1693263671
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR11.cfg
-    type: Pointer
+    type: V3d
   1647984602:
     hash: 1647984602
     name: Down Angle
@@ -5743,31 +5728,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/COMPCAR12.cfg
-    type: Pointer
+    type: V3d
   -1838570564:
     hash: -1838570564
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/COMPCAR12.cfg
-    type: Pointer
+    type: V3d
   -1431971507:
     hash: -1431971507
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR12.cfg
-    type: Pointer
+    type: V3d
   351202862:
     hash: 351202862
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR12.cfg
-    type: Pointer
+    type: V3d
   -592272872:
     hash: -592272872
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR12.cfg
-    type: Pointer
+    type: V3d
   -630867211:
     hash: -630867211
     name: Down Angle
@@ -6223,31 +6208,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/COMPCAR13.cfg
-    type: Pointer
+    type: V3d
   1342802444:
     hash: 1342802444
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/COMPCAR13.cfg
-    type: Pointer
+    type: V3d
   1757802749:
     hash: 1757802749
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR13.cfg
-    type: Pointer
+    type: V3d
   -695285858:
     hash: -695285858
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR13.cfg
-    type: Pointer
+    type: V3d
   517114792:
     hash: 517114792
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR13.cfg
-    type: Pointer
+    type: V3d
   403018565:
     hash: 403018565
     name: Down Angle
@@ -6703,31 +6688,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/COMPCAR14.cfg
-    type: Pointer
+    type: V3d
   -489248285:
     hash: -489248285
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/COMPCAR14.cfg
-    type: Pointer
+    type: V3d
   -635776238:
     hash: -635776238
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR14.cfg
-    type: Pointer
+    type: V3d
   1683088497:
     hash: 1683088497
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR14.cfg
-    type: Pointer
+    type: V3d
   -1408391097:
     hash: -1408391097
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR14.cfg
-    type: Pointer
+    type: V3d
   -1428508502:
     hash: -1428508502
     name: Down Angle
@@ -7183,31 +7168,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/COMPCAR15.cfg
-    type: Pointer
+    type: V3d
   548831315:
     hash: 548831315
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/COMPCAR15.cfg
-    type: Pointer
+    type: V3d
   410712738:
     hash: 410712738
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR15.cfg
-    type: Pointer
+    type: V3d
   -1506685503:
     hash: -1506685503
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR15.cfg
-    type: Pointer
+    type: V3d
   1852670455:
     hash: 1852670455
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR15.cfg
-    type: Pointer
+    type: V3d
   1757059354:
     hash: 1757059354
     name: Down Angle
@@ -7663,31 +7648,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/COMPCAR16.cfg
-    type: Pointer
+    type: V3d
   -1729559172:
     hash: -1729559172
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/COMPCAR16.cfg
-    type: Pointer
+    type: V3d
   -1608155251:
     hash: -1608155251
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR16.cfg
-    type: Pointer
+    type: V3d
   510544110:
     hash: 510544110
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR16.cfg
-    type: Pointer
+    type: V3d
   -701365032:
     hash: -701365032
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR16.cfg
-    type: Pointer
+    type: V3d
   -790291403:
     hash: -790291403
     name: Down Angle
@@ -8143,31 +8128,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/COMPCAR17.cfg
-    type: Pointer
+    type: V3d
   1518939340:
     hash: 1518939340
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/COMPCAR17.cfg
-    type: Pointer
+    type: V3d
   1648711229:
     hash: 1648711229
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR17.cfg
-    type: Pointer
+    type: V3d
   -603037346:
     hash: -603037346
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR17.cfg
-    type: Pointer
+    type: V3d
   340929896:
     hash: 340929896
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR17.cfg
-    type: Pointer
+    type: V3d
   310719877:
     hash: 310719877
     name: Down Angle
@@ -8623,31 +8608,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/COMPCAR18.cfg
-    type: Pointer
+    type: V3d
   -656819230:
     hash: -656819230
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/COMPCAR18.cfg
-    type: Pointer
+    type: V3d
   -535445229:
     hash: -535445229
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR18.cfg
-    type: Pointer
+    type: V3d
   1583281776:
     hash: 1583281776
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR18.cfg
-    type: Pointer
+    type: V3d
   -1778206138:
     hash: -1778206138
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR18.cfg
-    type: Pointer
+    type: V3d
   -1865047381:
     hash: -1865047381
     name: Down Angle
@@ -9103,31 +9088,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/COMPCAR19.cfg
-    type: Pointer
+    type: V3d
   448369234:
     hash: 448369234
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/COMPCAR19.cfg
-    type: Pointer
+    type: V3d
   578152611:
     hash: 578152611
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR19.cfg
-    type: Pointer
+    type: V3d
   -1673601088:
     hash: -1673601088
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR19.cfg
-    type: Pointer
+    type: V3d
   1415746550:
     hash: 1415746550
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/COMPCAR19.cfg
-    type: Pointer
+    type: V3d
   1387629339:
     hash: 1387629339
     name: Down Angle
@@ -9583,31 +9568,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/MSCLCAR1.cfg
-    type: Pointer
+    type: V3d
   1466749982:
     hash: 1466749982
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/MSCLCAR1.cfg
-    type: Pointer
+    type: V3d
   1138024892:
     hash: 1138024892
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR1.cfg
-    type: Pointer
+    type: V3d
   66294478:
     hash: 66294478
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR1.cfg
-    type: Pointer
+    type: V3d
   -2021370843:
     hash: -2021370843
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR1.cfg
-    type: Pointer
+    type: V3d
   -433478048:
     hash: -433478048
     name: Down Angle
@@ -10063,31 +10048,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/MSCLCAR2.cfg
-    type: Pointer
+    type: V3d
   -281849551:
     hash: -281849551
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/MSCLCAR2.cfg
-    type: Pointer
+    type: V3d
   -74750829:
     hash: -74750829
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR2.cfg
-    type: Pointer
+    type: V3d
   -1146349599:
     hash: -1146349599
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR2.cfg
-    type: Pointer
+    type: V3d
   1071370506:
     hash: 1071370506
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR2.cfg
-    type: Pointer
+    type: V3d
   1584800591:
     hash: 1584800591
     name: Down Angle
@@ -10543,31 +10528,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/MSCLCAR3.cfg
-    type: Pointer
+    type: V3d
   760445057:
     hash: 760445057
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/MSCLCAR3.cfg
-    type: Pointer
+    type: V3d
   971722019:
     hash: 971722019
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR3.cfg
-    type: Pointer
+    type: V3d
   2043428433:
     hash: 2043428433
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR3.cfg
-    type: Pointer
+    type: V3d
   -38012742:
     hash: -38012742
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR3.cfg
-    type: Pointer
+    type: V3d
   -1676276993:
     hash: -1676276993
     name: Down Angle
@@ -11023,31 +11008,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/MSCLCAR4.cfg
-    type: Pointer
+    type: V3d
   -1618191506:
     hash: -1618191506
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/MSCLCAR4.cfg
-    type: Pointer
+    type: V3d
   -1959498036:
     hash: -1959498036
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR4.cfg
-    type: Pointer
+    type: V3d
   -887939650:
     hash: -887939650
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR4.cfg
-    type: Pointer
+    type: V3d
   1332009813:
     hash: 1332009813
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR4.cfg
-    type: Pointer
+    type: V3d
   784935184:
     hash: 784935184
     name: Down Angle
@@ -11503,31 +11488,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/MSCLCAR5.cfg
-    type: Pointer
+    type: V3d
   1575776990:
     hash: 1575776990
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/MSCLCAR5.cfg
-    type: Pointer
+    type: V3d
   1230260092:
     hash: 1230260092
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR5.cfg
-    type: Pointer
+    type: V3d
   158544910:
     hash: 158544910
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR5.cfg
-    type: Pointer
+    type: V3d
   -1929055515:
     hash: -1929055515
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR5.cfg
-    type: Pointer
+    type: V3d
   -324468576:
     hash: -324468576
     name: Down Angle
@@ -11983,31 +11968,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/MSCLCAR6.cfg
-    type: Pointer
+    type: V3d
   -441190415:
     hash: -441190415
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/MSCLCAR6.cfg
-    type: Pointer
+    type: V3d
   -250887597:
     hash: -250887597
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR6.cfg
-    type: Pointer
+    type: V3d
   -1322471135:
     hash: -1322471135
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR6.cfg
-    type: Pointer
+    type: V3d
   895186890:
     hash: 895186890
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR6.cfg
-    type: Pointer
+    type: V3d
   1425442191:
     hash: 1425442191
     name: Down Angle
@@ -12463,31 +12448,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/MSCLCAR7.cfg
-    type: Pointer
+    type: V3d
   668196417:
     hash: 668196417
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/MSCLCAR7.cfg
-    type: Pointer
+    type: V3d
   862710755:
     hash: 862710755
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR7.cfg
-    type: Pointer
+    type: V3d
   1934399633:
     hash: 1934399633
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR7.cfg
-    type: Pointer
+    type: V3d
   -147104134:
     hash: -147104134
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR7.cfg
-    type: Pointer
+    type: V3d
   -1768510401:
     hash: -1768510401
     name: Down Angle
@@ -12943,31 +12928,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/MSCLCAR8.cfg
-    type: Pointer
+    type: V3d
   -1518122641:
     hash: -1518122641
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/MSCLCAR8.cfg
-    type: Pointer
+    type: V3d
   -1321501491:
     hash: -1321501491
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR8.cfg
-    type: Pointer
+    type: V3d
   -249819201:
     hash: -249819201
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR8.cfg
-    type: Pointer
+    type: V3d
   1969998164:
     hash: 1969998164
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR8.cfg
-    type: Pointer
+    type: V3d
   348535569:
     hash: 348535569
     name: Down Angle
@@ -13423,31 +13408,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/MSCLCAR9.cfg
-    type: Pointer
+    type: V3d
   1742954719:
     hash: 1742954719
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/MSCLCAR9.cfg
-    type: Pointer
+    type: V3d
   1935365501:
     hash: 1935365501
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR9.cfg
-    type: Pointer
+    type: V3d
   863774223:
     hash: 863774223
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR9.cfg
-    type: Pointer
+    type: V3d
   -1223958300:
     hash: -1223958300
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR9.cfg
-    type: Pointer
+    type: V3d
   -693759327:
     hash: -693759327
     name: Down Angle
@@ -13903,31 +13888,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/MSCLCAR10.cfg
-    type: Pointer
+    type: V3d
   2146500378:
     hash: 2146500378
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/MSCLCAR10.cfg
-    type: Pointer
+    type: V3d
   1195148779:
     hash: 1195148779
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR10.cfg
-    type: Pointer
+    type: V3d
   -109596024:
     hash: -109596024
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR10.cfg
-    type: Pointer
+    type: V3d
   824966846:
     hash: 824966846
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/MSCLCAR10.cfg
-    type: Pointer
+    type: V3d
   939320915:
     hash: 939320915
     name: Down Angle
@@ -14383,31 +14368,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/CUPECAR1.cfg
-    type: Pointer
+    type: V3d
   -541233684:
     hash: -541233684
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/CUPECAR1.cfg
-    type: Pointer
+    type: V3d
   -888842162:
     hash: -888842162
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR1.cfg
-    type: Pointer
+    type: V3d
   -1960694980:
     hash: -1960694980
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR1.cfg
-    type: Pointer
+    type: V3d
   257289687:
     hash: 257289687
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR1.cfg
-    type: Pointer
+    type: V3d
   1861754770:
     hash: 1861754770
     name: Down Angle
@@ -14863,31 +14848,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/CUPECAR2.cfg
-    type: Pointer
+    type: V3d
   1742923971:
     hash: 1742923971
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/CUPECAR2.cfg
-    type: Pointer
+    type: V3d
   1935334753:
     hash: 1935334753
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR2.cfg
-    type: Pointer
+    type: V3d
   863874579:
     hash: 863874579
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR2.cfg
-    type: Pointer
+    type: V3d
   -1224054536:
     hash: -1224054536
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR2.cfg
-    type: Pointer
+    type: V3d
   -693658947:
     hash: -693658947
     name: Down Angle
@@ -15343,31 +15328,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/CUPECAR3.cfg
-    type: Pointer
+    type: V3d
   -1518157453:
     hash: -1518157453
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/CUPECAR3.cfg
-    type: Pointer
+    type: V3d
   -1321536303:
     hash: -1321536303
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR3.cfg
-    type: Pointer
+    type: V3d
   -249722973:
     hash: -249722973
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR3.cfg
-    type: Pointer
+    type: V3d
   1969897800:
     hash: 1969897800
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR3.cfg
-    type: Pointer
+    type: V3d
   348631821:
     hash: 348631821
     name: Down Angle
@@ -15823,31 +15808,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/CUPECAR4.cfg
-    type: Pointer
+    type: V3d
   392028828:
     hash: 392028828
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/CUPECAR4.cfg
-    type: Pointer
+    type: V3d
   65394494:
     hash: 65394494
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR4.cfg
-    type: Pointer
+    type: V3d
   1136829516:
     hash: 1136829516
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR4.cfg
-    type: Pointer
+    type: V3d
   -944414041:
     hash: -944414041
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR4.cfg
-    type: Pointer
+    type: V3d
   -1508339486:
     hash: -1508339486
     name: Down Angle
@@ -16303,31 +16288,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/CUPECAR5.cfg
-    type: Pointer
+    type: V3d
   -717370580:
     hash: -717370580
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/CUPECAR5.cfg
-    type: Pointer
+    type: V3d
   -1048183154:
     hash: -1048183154
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR5.cfg
-    type: Pointer
+    type: V3d
   -2120053252:
     hash: -2120053252
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR5.cfg
-    type: Pointer
+    type: V3d
   97864471:
     hash: 97864471
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR5.cfg
-    type: Pointer
+    type: V3d
   1685633362:
     hash: 1685633362
     name: Down Angle
@@ -16783,31 +16768,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/CUPECAR6.cfg
-    type: Pointer
+    type: V3d
   1835159043:
     hash: 1835159043
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/CUPECAR6.cfg
-    type: Pointer
+    type: V3d
   2044361633:
     hash: 2044361633
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR6.cfg
-    type: Pointer
+    type: V3d
   972884179:
     hash: 972884179
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR6.cfg
-    type: Pointer
+    type: V3d
   -1114976712:
     hash: -1114976712
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR6.cfg
-    type: Pointer
+    type: V3d
   -601408387:
     hash: -601408387
     name: Down Angle
@@ -17263,31 +17248,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/CUPECAR7.cfg
-    type: Pointer
+    type: V3d
   -1358796877:
     hash: -1358796877
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/CUPECAR7.cfg
-    type: Pointer
+    type: V3d
   -1145417199:
     hash: -1145417199
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR7.cfg
-    type: Pointer
+    type: V3d
   -73588381:
     hash: -73588381
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR7.cfg
-    type: Pointer
+    type: V3d
   2146101128:
     hash: 2146101128
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR7.cfg
-    type: Pointer
+    type: V3d
   507975117:
     hash: 507975117
     name: Down Angle
@@ -17743,31 +17728,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/CUPECAR8.cfg
-    type: Pointer
+    type: V3d
   760410269:
     hash: 760410269
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/CUPECAR8.cfg
-    type: Pointer
+    type: V3d
   971687231:
     hash: 971687231
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR8.cfg
-    type: Pointer
+    type: V3d
   2043524685:
     hash: 2043524685
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR8.cfg
-    type: Pointer
+    type: V3d
   -38113114:
     hash: -38113114
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR8.cfg
-    type: Pointer
+    type: V3d
   -1676180765:
     hash: -1676180765
     name: Down Angle
@@ -18223,31 +18208,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/CUPECAR9.cfg
-    type: Pointer
+    type: V3d
   -281880275:
     hash: -281880275
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/CUPECAR9.cfg
-    type: Pointer
+    type: V3d
   -74781553:
     hash: -74781553
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR9.cfg
-    type: Pointer
+    type: V3d
   -1146249219:
     hash: -1146249219
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR9.cfg
-    type: Pointer
+    type: V3d
   1071274262:
     hash: 1071274262
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR9.cfg
-    type: Pointer
+    type: V3d
   1584900947:
     hash: 1584900947
     name: Down Angle
@@ -18703,31 +18688,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/CUPECAR10.cfg
-    type: Pointer
+    type: V3d
   -741622381:
     hash: -741622381
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/CUPECAR10.cfg
-    type: Pointer
+    type: V3d
   -351811742:
     hash: -351811742
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR10.cfg
-    type: Pointer
+    type: V3d
   1431105537:
     hash: 1431105537
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR10.cfg
-    type: Pointer
+    type: V3d
   -1659847625:
     hash: -1659847625
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/CUPECAR10.cfg
-    type: Pointer
+    type: V3d
   -1681414950:
     hash: -1681414950
     name: Down Angle
@@ -19183,31 +19168,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SPRTCAR1.cfg
-    type: Pointer
+    type: V3d
   -610360641:
     hash: -610360641
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SPRTCAR1.cfg
-    type: Pointer
+    type: V3d
   -819554531:
     hash: -819554531
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR1.cfg
-    type: Pointer
+    type: V3d
   -1895701393:
     hash: -1895701393
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR1.cfg
-    type: Pointer
+    type: V3d
   192291460:
     hash: 192291460
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR1.cfg
-    type: Pointer
+    type: V3d
   1792790721:
     hash: 1792790721
     name: Down Angle
@@ -19663,31 +19648,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SPRTCAR2.cfg
-    type: Pointer
+    type: V3d
   1673602960:
     hash: 1673602960
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SPRTCAR2.cfg
-    type: Pointer
+    type: V3d
   2004423218:
     hash: 2004423218
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR2.cfg
-    type: Pointer
+    type: V3d
   928932160:
     hash: 928932160
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR2.cfg
-    type: Pointer
+    type: V3d
   -1289115733:
     hash: -1289115733
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR2.cfg
-    type: Pointer
+    type: V3d
   -763079186:
     hash: -763079186
     name: Down Angle
@@ -20143,31 +20128,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SPRTCAR3.cfg
-    type: Pointer
+    type: V3d
   -1583280608:
     hash: -1583280608
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SPRTCAR3.cfg
-    type: Pointer
+    type: V3d
   -1256637566:
     hash: -1256637566
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR3.cfg
-    type: Pointer
+    type: V3d
   -180467472:
     hash: -180467472
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR3.cfg
-    type: Pointer
+    type: V3d
   1900645915:
     hash: 1900645915
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR3.cfg
-    type: Pointer
+    type: V3d
   283409502:
     hash: 283409502
     name: Down Angle
@@ -20623,31 +20608,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SPRTCAR4.cfg
-    type: Pointer
+    type: V3d
   327036367:
     hash: 327036367
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SPRTCAR4.cfg
-    type: Pointer
+    type: V3d
   130422893:
     hash: 130422893
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR4.cfg
-    type: Pointer
+    type: V3d
   1205955359:
     hash: 1205955359
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR4.cfg
-    type: Pointer
+    type: V3d
   -1013535244:
     hash: -1013535244
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR4.cfg
-    type: Pointer
+    type: V3d
   -1573167183:
     hash: -1573167183
     name: Down Angle
@@ -21103,31 +21088,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SPRTCAR5.cfg
-    type: Pointer
+    type: V3d
   -786561921:
     hash: -786561921
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SPRTCAR5.cfg
-    type: Pointer
+    type: V3d
   -978964003:
     hash: -978964003
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR5.cfg
-    type: Pointer
+    type: V3d
   -2055126353:
     hash: -2055126353
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR5.cfg
-    type: Pointer
+    type: V3d
   32932932:
     hash: 32932932
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR5.cfg
-    type: Pointer
+    type: V3d
   1616606721:
     hash: 1616606721
     name: Down Angle
@@ -21583,31 +21568,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SPRTCAR6.cfg
-    type: Pointer
+    type: V3d
   1765900624:
     hash: 1765900624
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SPRTCAR6.cfg
-    type: Pointer
+    type: V3d
   2113516786:
     hash: 2113516786
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR6.cfg
-    type: Pointer
+    type: V3d
   1038010240:
     hash: 1038010240
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR6.cfg
-    type: Pointer
+    type: V3d
   -1180106389:
     hash: -1180106389
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR6.cfg
-    type: Pointer
+    type: V3d
   -670764242:
     hash: -670764242
     name: Down Angle
@@ -22063,31 +22048,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SPRTCAR7.cfg
-    type: Pointer
+    type: V3d
   -1423857440:
     hash: -1423857440
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SPRTCAR7.cfg
-    type: Pointer
+    type: V3d
   -1080451774:
     hash: -1080451774
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR7.cfg
-    type: Pointer
+    type: V3d
   -4264400:
     hash: -4264400
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR7.cfg
-    type: Pointer
+    type: V3d
   2076780763:
     hash: 2076780763
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR7.cfg
-    type: Pointer
+    type: V3d
   442817182:
     hash: 442817182
     name: Down Angle
@@ -22543,31 +22528,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SPRTCAR8.cfg
-    type: Pointer
+    type: V3d
   695287758:
     hash: 695287758
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SPRTCAR8.cfg
-    type: Pointer
+    type: V3d
   1036585580:
     hash: 1036585580
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR8.cfg
-    type: Pointer
+    type: V3d
   2112780574:
     hash: 2112780574
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR8.cfg
-    type: Pointer
+    type: V3d
   -107364363:
     hash: -107364363
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR8.cfg
-    type: Pointer
+    type: V3d
   -1741402704:
     hash: -1741402704
     name: Down Angle
@@ -23023,31 +23008,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SPRTCAR9.cfg
-    type: Pointer
+    type: V3d
   -351201666:
     hash: -351201666
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SPRTCAR9.cfg
-    type: Pointer
+    type: V3d
   -5692452:
     hash: -5692452
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR9.cfg
-    type: Pointer
+    type: V3d
   -1081192274:
     hash: -1081192274
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR9.cfg
-    type: Pointer
+    type: V3d
   1006212677:
     hash: 1006212677
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR9.cfg
-    type: Pointer
+    type: V3d
   1515480064:
     hash: 1515480064
     name: Down Angle
@@ -23503,31 +23488,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SPRTCAR10.cfg
-    type: Pointer
+    type: V3d
   565026322:
     hash: 565026322
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SPRTCAR10.cfg
-    type: Pointer
+    type: V3d
   425845987:
     hash: 425845987
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR10.cfg
-    type: Pointer
+    type: V3d
   -1490365568:
     hash: -1490365568
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR10.cfg
-    type: Pointer
+    type: V3d
   1870045110:
     hash: 1870045110
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SPRTCAR10.cfg
-    type: Pointer
+    type: V3d
   1772193627:
     hash: 1772193627
     name: Down Angle
@@ -23983,31 +23968,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SUPRCAR1.cfg
-    type: Pointer
+    type: V3d
   398286905:
     hash: 398286905
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SUPRCAR1.cfg
-    type: Pointer
+    type: V3d
   50681243:
     hash: 50681243
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR1.cfg
-    type: Pointer
+    type: V3d
   1126311657:
     hash: 1126311657
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR1.cfg
-    type: Pointer
+    type: V3d
   -950673406:
     hash: -950673406
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR1.cfg
-    type: Pointer
+    type: V3d
   -1493691833:
     hash: -1493691833
     name: Down Angle
@@ -24463,31 +24448,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SUPRCAR2.cfg
-    type: Pointer
+    type: V3d
   -1344084714:
     hash: -1344084714
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SUPRCAR2.cfg
-    type: Pointer
+    type: V3d
   -1151676236:
     hash: -1151676236
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR2.cfg
-    type: Pointer
+    type: V3d
   -75652154:
     hash: -75652154
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR2.cfg
-    type: Pointer
+    type: V3d
   2131387693:
     hash: 2131387693
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR2.cfg
-    type: Pointer
+    type: V3d
   514299752:
     hash: 514299752
     name: Down Angle
@@ -24943,31 +24928,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SUPRCAR3.cfg
-    type: Pointer
+    type: V3d
   1837288614:
     hash: 1837288614
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SUPRCAR3.cfg
-    type: Pointer
+    type: V3d
   2033907972:
     hash: 2033907972
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR3.cfg
-    type: Pointer
+    type: V3d
   958237302:
     hash: 958237302
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR3.cfg
-    type: Pointer
+    type: V3d
   -1117107043:
     hash: -1117107043
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR3.cfg
-    type: Pointer
+    type: V3d
   -590889256:
     hash: -590889256
     name: Down Angle
@@ -25423,31 +25408,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SUPRCAR4.cfg
-    type: Pointer
+    type: V3d
   -547492023:
     hash: -547492023
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SUPRCAR4.cfg
-    type: Pointer
+    type: V3d
   -874128661:
     hash: -874128661
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR4.cfg
-    type: Pointer
+    type: V3d
   -1950176871:
     hash: -1950176871
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR4.cfg
-    type: Pointer
+    type: V3d
   263548786:
     hash: 263548786
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR4.cfg
-    type: Pointer
+    type: V3d
   1847106871:
     hash: 1847106871
     name: Down Angle
@@ -25903,31 +25888,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SUPRCAR5.cfg
-    type: Pointer
+    type: V3d
   490587897:
     hash: 490587897
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SUPRCAR5.cfg
-    type: Pointer
+    type: V3d
   159773531:
     hash: 159773531
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR5.cfg
-    type: Pointer
+    type: V3d
   1235386409:
     hash: 1235386409
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR5.cfg
-    type: Pointer
+    type: V3d
   -841660734:
     hash: -841660734
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR5.cfg
-    type: Pointer
+    type: V3d
   -1401375609:
     hash: -1401375609
     name: Down Angle
@@ -26383,31 +26368,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SUPRCAR6.cfg
-    type: Pointer
+    type: V3d
   -1520286762:
     hash: -1520286762
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SUPRCAR6.cfg
-    type: Pointer
+    type: V3d
   -1311082892:
     hash: -1311082892
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR6.cfg
-    type: Pointer
+    type: V3d
   -235076346:
     hash: -235076346
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR6.cfg
-    type: Pointer
+    type: V3d
   1972028397:
     hash: 1972028397
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR6.cfg
-    type: Pointer
+    type: V3d
   338112936:
     hash: 338112936
     name: Down Angle
@@ -26863,31 +26848,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SUPRCAR7.cfg
-    type: Pointer
+    type: V3d
   1728211558:
     hash: 1728211558
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SUPRCAR7.cfg
-    type: Pointer
+    type: V3d
   1941594052:
     hash: 1941594052
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR7.cfg
-    type: Pointer
+    type: V3d
   865938614:
     hash: 865938614
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR7.cfg
-    type: Pointer
+    type: V3d
   -1209341347:
     hash: -1209341347
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR7.cfg
-    type: Pointer
+    type: V3d
   -699983848:
     hash: -699983848
     name: Down Angle
@@ -27343,31 +27328,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SUPRCAR8.cfg
-    type: Pointer
+    type: V3d
   -447546040:
     hash: -447546040
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SUPRCAR8.cfg
-    type: Pointer
+    type: V3d
   -236271382:
     hash: -236271382
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR8.cfg
-    type: Pointer
+    type: V3d
   -1311917160:
     hash: -1311917160
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR8.cfg
-    type: Pointer
+    type: V3d
   901414259:
     hash: 901414259
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR8.cfg
-    type: Pointer
+    type: V3d
   1410830134:
     hash: 1410830134
     name: Down Angle
@@ -27823,31 +27808,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SUPRCAR9.cfg
-    type: Pointer
+    type: V3d
   657642744:
     hash: 657642744
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SUPRCAR9.cfg
-    type: Pointer
+    type: V3d
   864739674:
     hash: 864739674
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR9.cfg
-    type: Pointer
+    type: V3d
   1940754984:
     hash: 1940754984
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR9.cfg
-    type: Pointer
+    type: V3d
   -136686397:
     hash: -136686397
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR9.cfg
-    type: Pointer
+    type: V3d
   -1770543482:
     hash: -1770543482
     name: Down Angle
@@ -28303,31 +28288,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/SUPRCAR10.cfg
-    type: Pointer
+    type: V3d
   -625304635:
     hash: -625304635
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/SUPRCAR10.cfg
-    type: Pointer
+    type: V3d
   -495525580:
     hash: -495525580
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR10.cfg
-    type: Pointer
+    type: V3d
   1547556439:
     hash: 1547556439
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR10.cfg
-    type: Pointer
+    type: V3d
   -1805542815:
     hash: -1805542815
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/SUPRCAR10.cfg
-    type: Pointer
+    type: V3d
   -1833532788:
     hash: -1833532788
     name: Down Angle
@@ -28783,31 +28768,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HSPCCAR20.cfg
-    type: Pointer
+    type: V3d
   -342721442:
     hash: -342721442
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HSPCCAR20.cfg
-    type: Pointer
+    type: V3d
   -748812625:
     hash: -748812625
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HSPCCAR20.cfg
-    type: Pointer
+    type: V3d
   1830105548:
     hash: 1830105548
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HSPCCAR20.cfg
-    type: Pointer
+    type: V3d
   -1521910278:
     hash: -1521910278
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HSPCCAR20.cfg
-    type: Pointer
+    type: V3d
   -1549900521:
     hash: -1549900521
     name: Down Angle
@@ -29263,31 +29248,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HSPCCAR21.cfg
-    type: Pointer
+    type: V3d
   703747566:
     hash: 703747566
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HSPCCAR21.cfg
-    type: Pointer
+    type: V3d
   289287967:
     hash: 289287967
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HSPCCAR21.cfg
-    type: Pointer
+    type: V3d
   -1351280516:
     hash: -1351280516
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HSPCCAR21.cfg
-    type: Pointer
+    type: V3d
   1730761802:
     hash: 1730761802
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HSPCCAR21.cfg
-    type: Pointer
+    type: V3d
   1644055719:
     hash: 1644055719
     name: Down Angle
@@ -29743,31 +29728,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HSPCCAR22.cfg
-    type: Pointer
+    type: V3d
   -1850879807:
     hash: -1850879807
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HSPCCAR22.cfg
-    type: Pointer
+    type: V3d
   -1453217232:
     hash: -1453217232
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HSPCCAR22.cfg
-    type: Pointer
+    type: V3d
   388668755:
     hash: 388668755
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HSPCCAR22.cfg
-    type: Pointer
+    type: V3d
   -545861275:
     hash: -545861275
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HSPCCAR22.cfg
-    type: Pointer
+    type: V3d
   -643708536:
     hash: -643708536
     name: Down Angle
@@ -30223,31 +30208,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HSPCCAR23.cfg
-    type: Pointer
+    type: V3d
   1406007665:
     hash: 1406007665
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HSPCCAR23.cfg
-    type: Pointer
+    type: V3d
   1795261312:
     hash: 1795261312
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HSPCCAR23.cfg
-    type: Pointer
+    type: V3d
   -716524317:
     hash: -716524317
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HSPCCAR23.cfg
-    type: Pointer
+    type: V3d
   488044757:
     hash: 488044757
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HSPCCAR23.cfg
-    type: Pointer
+    type: V3d
   465690680:
     hash: 465690680
     name: Down Angle
@@ -30703,31 +30688,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HSPCCAR24.cfg
-    type: Pointer
+    type: V3d
   -518858082:
     hash: -518858082
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HSPCCAR24.cfg
-    type: Pointer
+    type: V3d
   -639721361:
     hash: -639721361
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HSPCCAR24.cfg
-    type: Pointer
+    type: V3d
   1737856780:
     hash: 1737856780
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HSPCCAR24.cfg
-    type: Pointer
+    type: V3d
   -1345725638:
     hash: -1345725638
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HSPCCAR24.cfg
-    type: Pointer
+    type: V3d
   -1457601577:
     hash: -1457601577
     name: Down Angle
@@ -31183,31 +31168,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HSPCCAR25.cfg
-    type: Pointer
+    type: V3d
   594735918:
     hash: 594735918
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HSPCCAR25.cfg
-    type: Pointer
+    type: V3d
   465471967:
     hash: 465471967
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HSPCCAR25.cfg
-    type: Pointer
+    type: V3d
   -1510621508:
     hash: -1510621508
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HSPCCAR25.cfg
-    type: Pointer
+    type: V3d
   1839854218:
     hash: 1839854218
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HSPCCAR25.cfg
-    type: Pointer
+    type: V3d
   1803479655:
     hash: 1803479655
     name: Down Angle
@@ -31663,31 +31648,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR1.cfg
-    type: Pointer
+    type: V3d
   522229925:
     hash: 522229925
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR1.cfg
-    type: Pointer
+    type: V3d
   194555143:
     hash: 194555143
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR1.cfg
-    type: Pointer
+    type: V3d
   1270865525:
     hash: 1270865525
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR1.cfg
-    type: Pointer
+    type: V3d
   -808970082:
     hash: -808970082
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR1.cfg
-    type: Pointer
+    type: V3d
   -1369052453:
     hash: -1369052453
     name: Down Angle
@@ -32143,31 +32128,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR2.cfg
-    type: Pointer
+    type: V3d
   -1484841590:
     hash: -1484841590
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR2.cfg
-    type: Pointer
+    type: V3d
   -1278793688:
     hash: -1278793688
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR2.cfg
-    type: Pointer
+    type: V3d
   -203400358:
     hash: -203400358
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR2.cfg
-    type: Pointer
+    type: V3d
   2006425009:
     hash: 2006425009
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR2.cfg
-    type: Pointer
+    type: V3d
   372928500:
     hash: 372928500
     name: Down Angle
@@ -32623,31 +32608,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR3.cfg
-    type: Pointer
+    type: V3d
   1696543802:
     hash: 1696543802
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR3.cfg
-    type: Pointer
+    type: V3d
   1906770328:
     hash: 1906770328
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR3.cfg
-    type: Pointer
+    type: V3d
   830501610:
     hash: 830501610
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR3.cfg
-    type: Pointer
+    type: V3d
   -1242057727:
     hash: -1242057727
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR3.cfg
-    type: Pointer
+    type: V3d
   -732281276:
     hash: -732281276
     name: Down Angle
@@ -33103,31 +33088,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR4.cfg
-    type: Pointer
+    type: V3d
   -675276843:
     hash: -675276843
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR4.cfg
-    type: Pointer
+    type: V3d
   -1015537033:
     hash: -1015537033
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR4.cfg
-    type: Pointer
+    type: V3d
   -2090905339:
     hash: -2090905339
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR4.cfg
-    type: Pointer
+    type: V3d
   120100846:
     hash: 120100846
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR4.cfg
-    type: Pointer
+    type: V3d
   1720018347:
     hash: 1720018347
     name: Down Angle
@@ -33583,31 +33568,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR5.cfg
-    type: Pointer
+    type: V3d
   362823269:
     hash: 362823269
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR5.cfg
-    type: Pointer
+    type: V3d
   18353095:
     hash: 18353095
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR5.cfg
-    type: Pointer
+    type: V3d
   1094678709:
     hash: 1094678709
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR5.cfg
-    type: Pointer
+    type: V3d
   -985088418:
     hash: -985088418
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR5.cfg
-    type: Pointer
+    type: V3d
   -1528476645:
     hash: -1528476645
     name: Down Angle
@@ -34063,31 +34048,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR6.cfg
-    type: Pointer
+    type: V3d
   -1375749302:
     hash: -1375749302
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR6.cfg
-    type: Pointer
+    type: V3d
   -1186492696:
     hash: -1186492696
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR6.cfg
-    type: Pointer
+    type: V3d
   -111084134:
     hash: -111084134
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR6.cfg
-    type: Pointer
+    type: V3d
   2098674545:
     hash: 2098674545
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR6.cfg
-    type: Pointer
+    type: V3d
   482003252:
     hash: 482003252
     name: Down Angle
@@ -34543,31 +34528,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR7.cfg
-    type: Pointer
+    type: V3d
   1872728826:
     hash: 1872728826
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR7.cfg
-    type: Pointer
+    type: V3d
   2066196312:
     hash: 2066196312
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR7.cfg
-    type: Pointer
+    type: V3d
   989910058:
     hash: 989910058
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR7.cfg
-    type: Pointer
+    type: V3d
   -1082715455:
     hash: -1082715455
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR7.cfg
-    type: Pointer
+    type: V3d
   -556081020:
     hash: -556081020
     name: Down Angle
@@ -35023,31 +35008,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR8.cfg
-    type: Pointer
+    type: V3d
   -305199660:
     hash: -305199660
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR8.cfg
-    type: Pointer
+    type: V3d
   -109629322:
     hash: -109629322
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR8.cfg
-    type: Pointer
+    type: V3d
   -1185922300:
     hash: -1185922300
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR8.cfg
-    type: Pointer
+    type: V3d
   1026000367:
     hash: 1026000367
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR8.cfg
-    type: Pointer
+    type: V3d
   1552578474:
     hash: 1552578474
     name: Down Angle
@@ -35503,31 +35488,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR9.cfg
-    type: Pointer
+    type: V3d
   800009316:
     hash: 800009316
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR9.cfg
-    type: Pointer
+    type: V3d
   991369670:
     hash: 991369670
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR9.cfg
-    type: Pointer
+    type: V3d
   2066770612:
     hash: 2066770612
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR9.cfg
-    type: Pointer
+    type: V3d
   -12080033:
     hash: -12080033
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR9.cfg
-    type: Pointer
+    type: V3d
   -1628807654:
     hash: -1628807654
     name: Down Angle
@@ -35983,31 +35968,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR10.cfg
-    type: Pointer
+    type: V3d
   587979090:
     hash: 587979090
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR10.cfg
-    type: Pointer
+    type: V3d
   466068387:
     hash: 466068387
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR10.cfg
-    type: Pointer
+    type: V3d
   -1517513536:
     hash: -1517513536
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR10.cfg
-    type: Pointer
+    type: V3d
   1842403574:
     hash: 1842403574
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR10.cfg
-    type: Pointer
+    type: V3d
   1795670043:
     hash: 1795670043
     name: Down Angle
@@ -36463,31 +36448,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR11.cfg
-    type: Pointer
+    type: V3d
   -513019678:
     hash: -513019678
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR11.cfg
-    type: Pointer
+    type: V3d
   -643331565:
     hash: -643331565
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR11.cfg
-    type: Pointer
+    type: V3d
   1743568240:
     hash: 1743568240
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR11.cfg
-    type: Pointer
+    type: V3d
   -1347358394:
     hash: -1347358394
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR11.cfg
-    type: Pointer
+    type: V3d
   -1452807765:
     hash: -1452807765
     name: Down Angle
@@ -36943,31 +36928,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR12.cfg
-    type: Pointer
+    type: V3d
   1496610253:
     hash: 1496610253
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR12.cfg
-    type: Pointer
+    type: V3d
   1643646780:
     hash: 1643646780
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR12.cfg
-    type: Pointer
+    type: V3d
   -541902753:
     hash: -541902753
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR12.cfg
-    type: Pointer
+    type: V3d
   401568873:
     hash: 401568873
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR12.cfg
-    type: Pointer
+    type: V3d
   288910468:
     hash: 288910468
     name: Down Angle
@@ -37423,31 +37408,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR13.cfg
-    type: Pointer
+    type: V3d
   -1688970115:
     hash: -1688970115
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR13.cfg
-    type: Pointer
+    type: V3d
   -1550309748:
     hash: -1550309748
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR13.cfg
-    type: Pointer
+    type: V3d
   500371951:
     hash: 500371951
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR13.cfg
-    type: Pointer
+    type: V3d
   -712024615:
     hash: -712024615
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR13.cfg
-    type: Pointer
+    type: V3d
   -749189836:
     hash: -749189836
     name: Down Angle
@@ -37903,31 +37888,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR14.cfg
-    type: Pointer
+    type: V3d
   697008018:
     hash: 697008018
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR14.cfg
-    type: Pointer
+    type: V3d
   289867107:
     hash: 289867107
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR14.cfg
-    type: Pointer
+    type: V3d
   -1358155264:
     hash: -1358155264
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR14.cfg
-    type: Pointer
+    type: V3d
   1733328438:
     hash: 1733328438
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR14.cfg
-    type: Pointer
+    type: V3d
   1636263643:
     hash: 1636263643
     name: Down Angle
@@ -38383,31 +38368,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR15.cfg
-    type: Pointer
+    type: V3d
   -336898526:
     hash: -336898526
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR15.cfg
-    type: Pointer
+    type: V3d
   -752407341:
     hash: -752407341
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR15.cfg
-    type: Pointer
+    type: V3d
   1835801520:
     hash: 1835801520
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR15.cfg
-    type: Pointer
+    type: V3d
   -1523558522:
     hash: -1523558522
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR15.cfg
-    type: Pointer
+    type: V3d
   -1545121941:
     hash: -1545121941
     name: Down Angle
@@ -38863,31 +38848,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR16.cfg
-    type: Pointer
+    type: V3d
   1404359437:
     hash: 1404359437
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR16.cfg
-    type: Pointer
+    type: V3d
   1803069948:
     hash: 1803069948
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR16.cfg
-    type: Pointer
+    type: V3d
   -718037345:
     hash: -718037345
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR16.cfg
-    type: Pointer
+    type: V3d
   493867689:
     hash: 493867689
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR16.cfg
-    type: Pointer
+    type: V3d
   465095236:
     hash: 465095236
     name: Down Angle
@@ -39343,31 +39328,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR17.cfg
-    type: Pointer
+    type: V3d
   -1848313155:
     hash: -1848313155
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR17.cfg
-    type: Pointer
+    type: V3d
   -1458012084:
     hash: -1458012084
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR17.cfg
-    type: Pointer
+    type: V3d
   391362351:
     hash: 391362351
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR17.cfg
-    type: Pointer
+    type: V3d
   -552600807:
     hash: -552600807
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR17.cfg
-    type: Pointer
+    type: V3d
   -640097292:
     hash: -640097292
     name: Down Angle
@@ -39823,31 +39808,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR18.cfg
-    type: Pointer
+    type: V3d
   327445907:
     hash: 327445907
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR18.cfg
-    type: Pointer
+    type: V3d
   726144866:
     hash: 726144866
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR18.cfg
-    type: Pointer
+    type: V3d
   -1794957311:
     hash: -1794957311
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR18.cfg
-    type: Pointer
+    type: V3d
   1566534711:
     hash: 1566534711
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR18.cfg
-    type: Pointer
+    type: V3d
   1535669466:
     hash: 1535669466
     name: Down Angle
@@ -40303,31 +40288,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR19.cfg
-    type: Pointer
+    type: V3d
   -773569501:
     hash: -773569501
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR19.cfg
-    type: Pointer
+    type: V3d
   -383238446:
     hash: -383238446
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR19.cfg
-    type: Pointer
+    type: V3d
   1466108337:
     hash: 1466108337
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR19.cfg
-    type: Pointer
+    type: V3d
   -1623243385:
     hash: -1623243385
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR19.cfg
-    type: Pointer
+    type: V3d
   -1712824982:
     hash: -1712824982
     name: Down Angle
@@ -40783,31 +40768,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR20.cfg
-    type: Pointer
+    type: V3d
   2002959246:
     hash: 2002959246
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR20.cfg
-    type: Pointer
+    type: V3d
   1336852863:
     hash: 1336852863
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR20.cfg
-    type: Pointer
+    type: V3d
   -236587492:
     hash: -236587492
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR20.cfg
-    type: Pointer
+    type: V3d
   968473130:
     hash: 968473130
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR20.cfg
-    type: Pointer
+    type: V3d
   1064215239:
     hash: 1064215239
     name: Down Angle
@@ -41263,31 +41248,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR21.cfg
-    type: Pointer
+    type: V3d
   -1258122690:
     hash: -1258122690
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR21.cfg
-    type: Pointer
+    type: V3d
   -1915819825:
     hash: -1915819825
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR21.cfg
-    type: Pointer
+    type: V3d
   864411564:
     hash: 864411564
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR21.cfg
-    type: Pointer
+    type: V3d
   -69626982:
     hash: -69626982
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR21.cfg
-    type: Pointer
+    type: V3d
   -49378441:
     hash: -49378441
     name: Down Angle
@@ -41743,31 +41728,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR22.cfg
-    type: Pointer
+    type: V3d
   224204561:
     hash: 224204561
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR22.cfg
-    type: Pointer
+    type: V3d
   898723296:
     hash: 898723296
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR22.cfg
-    type: Pointer
+    type: V3d
   -1948624253:
     hash: -1948624253
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR22.cfg
-    type: Pointer
+    type: V3d
   1132861109:
     hash: 1132861109
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR22.cfg
-    type: Pointer
+    type: V3d
   1162939992:
     hash: 1162939992
     name: Down Angle
@@ -42223,31 +42208,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR23.cfg
-    type: Pointer
+    type: V3d
   -818069855:
     hash: -818069855
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR23.cfg
-    type: Pointer
+    type: V3d
   -135183280:
     hash: -135183280
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR23.cfg
-    type: Pointer
+    type: V3d
   1236955955:
     hash: 1236955955
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR23.cfg
-    type: Pointer
+    type: V3d
   -2115617019:
     hash: -2115617019
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR23.cfg
-    type: Pointer
+    type: V3d
   -2026821656:
     hash: -2026821656
     name: Down Angle
@@ -42703,31 +42688,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR24.cfg
-    type: Pointer
+    type: V3d
   2111970638:
     hash: 2111970638
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR24.cfg
-    type: Pointer
+    type: V3d
   1160669119:
     hash: 1160669119
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR24.cfg
-    type: Pointer
+    type: V3d
   -77246244:
     hash: -77246244
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR24.cfg
-    type: Pointer
+    type: V3d
   859380970:
     hash: 859380970
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR24.cfg
-    type: Pointer
+    type: V3d
   904791047:
     hash: 904791047
     name: Down Angle
@@ -43183,31 +43168,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR25.cfg
-    type: Pointer
+    type: V3d
   -1081985794:
     hash: -1081985794
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR25.cfg
-    type: Pointer
+    type: V3d
   -2024911345:
     hash: -2024911345
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR25.cfg
-    type: Pointer
+    type: V3d
   956660076:
     hash: 956660076
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR25.cfg
-    type: Pointer
+    type: V3d
   -245811878:
     hash: -245811878
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR25.cfg
-    type: Pointer
+    type: V3d
   -141677129:
     hash: -141677129
     name: Down Angle
@@ -43663,31 +43648,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR26.cfg
-    type: Pointer
+    type: V3d
   131969489:
     hash: 131969489
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR26.cfg
-    type: Pointer
+    type: V3d
   1058130720:
     hash: 1058130720
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR26.cfg
-    type: Pointer
+    type: V3d
   -2124743613:
     hash: -2124743613
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR26.cfg
-    type: Pointer
+    type: V3d
   1225175157:
     hash: 1225175157
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR26.cfg
-    type: Pointer
+    type: V3d
   1339140248:
     hash: 1339140248
     name: Down Angle
@@ -44143,31 +44128,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR27.cfg
-    type: Pointer
+    type: V3d
   -977430431:
     hash: -977430431
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR27.cfg
-    type: Pointer
+    type: V3d
   -42868080:
     hash: -42868080
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR27.cfg
-    type: Pointer
+    type: V3d
   1127929331:
     hash: 1127929331
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR27.cfg
-    type: Pointer
+    type: V3d
   -1956210235:
     hash: -1956210235
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR27.cfg
-    type: Pointer
+    type: V3d
   -1917746904:
     hash: -1917746904
     name: Down Angle
@@ -44623,31 +44608,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR28.cfg
-    type: Pointer
+    type: V3d
   1206718287:
     hash: 1206718287
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR28.cfg
-    type: Pointer
+    type: V3d
   2132899262:
     hash: 2132899262
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR28.cfg
-    type: Pointer
+    type: V3d
   -1050000675:
     hash: -1050000675
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR28.cfg
-    type: Pointer
+    type: V3d
   154537707:
     hash: 154537707
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR28.cfg
-    type: Pointer
+    type: V3d
   266409478:
     hash: 266409478
     name: Down Angle
@@ -45103,31 +45088,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR29.cfg
-    type: Pointer
+    type: V3d
   -2054347009:
     hash: -2054347009
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR29.cfg
-    type: Pointer
+    type: V3d
   -1119790066:
     hash: -1119790066
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR29.cfg
-    type: Pointer
+    type: V3d
   51014509:
     hash: 51014509
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR29.cfg
-    type: Pointer
+    type: V3d
   -883546277:
     hash: -883546277
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR29.cfg
-    type: Pointer
+    type: V3d
   -847167562:
     hash: -847167562
     name: Down Angle
@@ -45583,31 +45568,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR30.cfg
-    type: Pointer
+    type: V3d
   1136748587:
     hash: 1136748587
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR30.cfg
-    type: Pointer
+    type: V3d
   2064454362:
     hash: 2064454362
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR30.cfg
-    type: Pointer
+    type: V3d
   -985258567:
     hash: -985258567
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR30.cfg
-    type: Pointer
+    type: V3d
   219834767:
     hash: 219834767
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR30.cfg
-    type: Pointer
+    type: V3d
   198013282:
     hash: 198013282
     name: Down Angle
@@ -46063,31 +46048,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR31.cfg
-    type: Pointer
+    type: V3d
   -2120138341:
     hash: -2120138341
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR31.cfg
-    type: Pointer
+    type: V3d
   -1184023702:
     hash: -1184023702
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR31.cfg
-    type: Pointer
+    type: V3d
   119933961:
     hash: 119933961
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR31.cfg
-    type: Pointer
+    type: V3d
   -814071745:
     hash: -814071745
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR31.cfg
-    type: Pointer
+    type: V3d
   -911386414:
     hash: -911386414
     name: Down Angle
@@ -46543,31 +46528,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR32.cfg
-    type: Pointer
+    type: V3d
   972997812:
     hash: 972997812
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR32.cfg
-    type: Pointer
+    type: V3d
   20102725:
     hash: 20102725
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR32.cfg
-    type: Pointer
+    type: V3d
   -1082554074:
     hash: -1082554074
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR32.cfg
-    type: Pointer
+    type: V3d
   1998963984:
     hash: 1998963984
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR32.cfg
-    type: Pointer
+    type: V3d
   1911741949:
     hash: 1911741949
     name: Down Angle
@@ -47023,31 +47008,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR33.cfg
-    type: Pointer
+    type: V3d
   -73470716:
     hash: -73470716
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR33.cfg
-    type: Pointer
+    type: V3d
   -1017997323:
     hash: -1017997323
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR33.cfg
-    type: Pointer
+    type: V3d
   2098831510:
     hash: 2098831510
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR33.cfg
-    type: Pointer
+    type: V3d
   -1253708640:
     hash: -1253708640
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR33.cfg
-    type: Pointer
+    type: V3d
   -1282214835:
     hash: -1282214835
     name: Down Angle
@@ -47503,31 +47488,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR34.cfg
-    type: Pointer
+    type: V3d
   1229049579:
     hash: 1229049579
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR34.cfg
-    type: Pointer
+    type: V3d
   1905112090:
     hash: 1905112090
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR34.cfg
-    type: Pointer
+    type: V3d
   -809073799:
     hash: -809073799
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR34.cfg
-    type: Pointer
+    type: V3d
   127586127:
     hash: 127586127
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR34.cfg
-    type: Pointer
+    type: V3d
   21878690:
     hash: 21878690
     name: Down Angle
@@ -47983,31 +47968,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR35.cfg
-    type: Pointer
+    type: V3d
   -1960712357:
     hash: -1960712357
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR35.cfg
-    type: Pointer
+    type: V3d
   -1276273238:
     hash: -1276273238
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR35.cfg
-    type: Pointer
+    type: V3d
   229026505:
     hash: 229026505
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR35.cfg
-    type: Pointer
+    type: V3d
   -973412609:
     hash: -973412609
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR35.cfg
-    type: Pointer
+    type: V3d
   -1020396014:
     hash: -1020396014
     name: Down Angle
@@ -48463,31 +48448,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/HEVYCAR36.cfg
-    type: Pointer
+    type: V3d
   863920756:
     hash: 863920756
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/HEVYCAR36.cfg
-    type: Pointer
+    type: V3d
   196221061:
     hash: 196221061
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR36.cfg
-    type: Pointer
+    type: V3d
   -1241960474:
     hash: -1241960474
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR36.cfg
-    type: Pointer
+    type: V3d
   2107990992:
     hash: 2107990992
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/HEVYCAR36.cfg
-    type: Pointer
+    type: V3d
   2071100221:
     hash: 2071100221
     name: Down Angle
@@ -48943,31 +48928,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/TSPCCAR1.cfg
-    type: Pointer
+    type: V3d
   -1027492615:
     hash: -1027492615
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/TSPCCAR1.cfg
-    type: Pointer
+    type: V3d
   -696680101:
     hash: -696680101
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR1.cfg
-    type: Pointer
+    type: V3d
   -1772162519:
     hash: -1772162519
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR1.cfg
-    type: Pointer
+    type: V3d
   304690370:
     hash: 304690370
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR1.cfg
-    type: Pointer
+    type: V3d
   1938081415:
     hash: 1938081415
     name: Down Angle
@@ -49423,31 +49408,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/TSPCCAR2.cfg
-    type: Pointer
+    type: V3d
   2057187798:
     hash: 2057187798
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/TSPCCAR2.cfg
-    type: Pointer
+    type: V3d
   1847985268:
     hash: 1847985268
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR2.cfg
-    type: Pointer
+    type: V3d
   771847942:
     hash: 771847942
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR2.cfg
-    type: Pointer
+    type: V3d
   -1435061779:
     hash: -1435061779
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR2.cfg
-    type: Pointer
+    type: V3d
   -874822744:
     hash: -874822744
     name: Down Angle
@@ -49903,31 +49888,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/TSPCCAR3.cfg
-    type: Pointer
+    type: V3d
   -1191307162:
     hash: -1191307162
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/TSPCCAR3.cfg
-    type: Pointer
+    type: V3d
   -1404686908:
     hash: -1404686908
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR3.cfg
-    type: Pointer
+    type: V3d
   -329163082:
     hash: -329163082
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR3.cfg
-    type: Pointer
+    type: V3d
   1746311261:
     hash: 1746311261
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR3.cfg
-    type: Pointer
+    type: V3d
   163277336:
     hash: 163277336
     name: Down Angle
@@ -50383,31 +50368,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/TSPCCAR4.cfg
-    type: Pointer
+    type: V3d
   169950089:
     hash: 169950089
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/TSPCCAR4.cfg
-    type: Pointer
+    type: V3d
   513347115:
     hash: 513347115
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR4.cfg
-    type: Pointer
+    type: V3d
   1589542233:
     hash: 1589542233
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR4.cfg
-    type: Pointer
+    type: V3d
   -624313422:
     hash: -624313422
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR4.cfg
-    type: Pointer
+    type: V3d
   -1151055369:
     hash: -1151055369
     name: Down Angle
@@ -50863,31 +50848,31 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/TSPCCAR5.cfg
-    type: Pointer
+    type: V3d
   -935259591:
     hash: -935259591
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/TSPCCAR5.cfg
-    type: Pointer
+    type: V3d
   -587651173:
     hash: -587651173
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR5.cfg
-    type: Pointer
+    type: V3d
   -1663150871:
     hash: -1663150871
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR5.cfg
-    type: Pointer
+    type: V3d
   413766146:
     hash: 413766146
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR5.cfg
-    type: Pointer
+    type: V3d
   2030329927:
     hash: 2030329927
     name: Down Angle
@@ -51343,74 +51328,34 @@ defaultValues:
     name: Camera Offset
     path: Camera/Bumper
     fileName: ../Export/ValueDB/Camera/TSPCCAR6.cfg
-    type: Pointer
+    type: V3d
   1881052950:
     hash: 1881052950
     name: Camera Offset
     path: Camera/Look Back
     fileName: ../Export/ValueDB/Camera/TSPCCAR6.cfg
-    type: Pointer
+    type: V3d
   1688642228:
     hash: 1688642228
     name: Camera Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR6.cfg
-    type: Pointer
+    type: V3d
   612487622:
     hash: 612487622
     name: Focus Offset
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR6.cfg
-    type: Pointer
+    type: V3d
   -1594484947:
     hash: -1594484947
     name: Spring Coeff
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR6.cfg
-    type: Pointer
+    type: V3d
   -1050942104:
     hash: -1050942104
     name: Down Angle
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR6.cfg
     type: RwReal
-
-values:
-  24800:
-    type: V3d
-  24816:
-    type: V3d
-  24832:
-    type: V3d
-
-files:
-  # TODO: add all vehicles, e.g. "../Export/ValueDB/VehiclePhysics/COMPCAR1.cfg"
-  1612807551:
-    fileName: "../Export/ValueDB/AI/defaults.cfg"
-  -1855381442:
-    fileName: "../Export/ValueDB/Score.cfg"
-  
-  # SOUND
-  1571511488:
-    fileName: "../export/ValueDB/Sound/Traffic.cfg"
-  -890391739:
-    fileName: "../export/ValueDB/Sound/Boost.cfg"
-  -1712763987:
-    fileName: "../export/ValueDB/Sound/LTrain.cfg"
-  -1438327639:
-    fileName: "../export/ValueDB/Sound/Payload.cfg"
-  # TODO add all tracks, e.g. "../export/ValueDB/Sound/Tracks/%s.cfg"
-  253732835:
-    fileName: "../export/ValueDB/Sound/HUD.cfg"
-  1944874370:
-    fileName: "../export/ValueDB/Sound/Esm.cfg"
-  1784927270:
-    fileName: "../export/ValueDB/Sound/Voice.cfg"
-  # TODO: add all vehicle AI audio, e.g. "../Export/ValueDB/VehicleAudioAI/COMPCAR1.cfg"
-  # TODO: add all vehicle audio, e.g. "../Export/ValueDB/VehicleAudio/COMPCAR1.cfg"
-  793358070:
-    fileName: "../export/ValueDB/Sound/Misc.cfg"
-  -2065244796:
-    fileName: "../export/ValueDB/Sound/Skids.cfg"
-  1822065915:
-    fileName: "../export/ValueDB/Sound/Surface.cfg"

@@ -2,7 +2,14 @@
 # use the create_vehicle_variables.py script.
 # %s in the fileName will be replaced with the ID of the vehicle.
 
-vehicles:
+# Data Types:
+# None
+# RwInt32
+# RwReal
+# RwBool
+# V3d
+
+items:
     # Compact
   - COMPCAR1
   - COMPCAR2
@@ -446,4 +453,30 @@ variables:
   - name: "Dump Valve Volume Max"
     path: "VehicleAudio/Turbo"
     fileName: "../Export/ValueDB/VehicleAudio/%s.cfg" 
+    type: RwReal
+
+    # CAMERA
+  - name: "Camera Offset"
+    path: "Camera/Bumper"
+    fileName: "../Export/ValueDB/Camera/%s.cfg" 
+    type: Pointer # V3d
+  - name: "Camera Offset"
+    path: "Camera/Look Back"
+    fileName: "../Export/ValueDB/Camera/%s.cfg" 
+    type: Pointer # V3d
+  - name: "Camera Offset"
+    path: "Camera/Follow"
+    fileName: "../Export/ValueDB/Camera/%s.cfg" 
+    type: Pointer # V3d
+  - name: "Focus Offset"
+    path: "Camera/Follow"
+    fileName: "../Export/ValueDB/Camera/%s.cfg" 
+    type: Pointer # V3d
+  - name: "Spring Coeff"
+    path: "Camera/Follow"
+    fileName: "../Export/ValueDB/Camera/%s.cfg" 
+    type: Pointer # V3d
+  - name: "Down Angle"
+    path: "Camera/Follow"
+    fileName: "../Export/ValueDB/Camera/%s.cfg" 
     type: RwReal

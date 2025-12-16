@@ -202,7 +202,7 @@ namespace bdtool.Utilities
                 gtHash = (uint)((int)gtHash - (int)(((gtHash & 0x80000000) << 1)) >> 8) ^ HashTable[b ^ (gtHash & 0xFF)];
             }
 
-            Console.WriteLine($"0x{gtHash:X8} ({gtHash})");
+            //Console.WriteLine($"0x{gtHash:X8} ({gtHash})");
             return (int)gtHash;
         }
     }

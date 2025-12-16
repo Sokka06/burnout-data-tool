@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using bdtool.Binary;
+using bdtool.Dto;
 using bdtool.Models.Common;
 using bdtool.Parsers;
 using bdtool.Utilities;
@@ -19,15 +20,19 @@ namespace bdtool.Commands.VDB
         {
             var cmd = new Command("import", "Build a VDB file from a YAML VDB file created with this tool.");
 
-            //var input = new Option<FileInfo>("--input", "-i") { Required = true, Description = "Path to the VDB file" };
-            var verbose = new Option<bool>("--verbose", "-v");
-            var endian = new Option<string>("--endian", "-e")
-            {
-                Description = "Selects the endianness of the created file. Big by default.",
-                DefaultValueFactory = parseResult => "big"
+            var formatOpt = new Option<VDBFormat>("--format", "-f") 
+            { 
+                Description = "Specifies the format. Raw is a more accurate representation of the file, while DTO (Data Transfer Object) is more readable and easier to edit.", 
+                DefaultValueFactory = ParseResult => VDBFormat.Raw 
             };
+            var endian = new Option<Utilities.Binary.Endianness>("--endian", "-e")
+            {
+                Description = "Selects the endianness of the created file. Small by default.",
+                DefaultValueFactory = parseResult => Utilities.Binary.Endianness.Small
+            };
+            var verbose = new Option<bool>("--verbose", "-v");
 
-            endian.AcceptOnlyFromAmong(["small", "big"]);
+            //endian.AcceptOnlyFromAmong(["small", "big"]);
 
             var path = new Argument<FileInfo>("path")
             {
@@ -44,48 +49,60 @@ namespace bdtool.Commands.VDB
             cmd.Arguments.Add(path);
             cmd.Arguments.Add(outPath);
 
-            cmd.Options.Add(verbose);
             cmd.Options.Add(endian);
+            cmd.Options.Add(formatOpt);
+            cmd.Options.Add(verbose);
 
             cmd.SetAction(parseResult =>
             {
                 FileInfo? parsedFile = parseResult.GetValue(path);
                 if (parsedFile == null || !parsedFile.Exists)
                 {
-                    Console.WriteLine("Input file does not exist.");
+                    ConsoleEx.Error("Input file does not exist.");
                     return 1;
                 }
 
                 string? parsedOut = parseResult.GetValue(outPath);
                 if (string.IsNullOrEmpty(parsedOut) || Path.GetDirectoryName(parsedOut) == string.Empty)
                 {
-                    Console.WriteLine($"Output path invalid: '{parsedOut}'");
+                    ConsoleEx.Error($"Output path invalid: '{parsedOut}'");
                     return 1;
                 }
 
-                var parsedEndian = parseResult.GetValue(endian) == "small" ? Utilities.Binary.Endianness.Small : Utilities.Binary.Endianness.Big;
-
-                //using var fs = File.OpenRead(parsedFile.FullName);
-
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("\nDeserializing VDB Data...\n");
-                Console.ResetColor();
+                var parsedFormat = parseResult.GetValue(formatOpt);
+                var parsedEndian = parseResult.GetValue(endian);
 
                 // Deserialize YAML to VDB object
                 var reader = new YamlDeserializer();
                 var yamlText = File.ReadAllText(parsedFile.FullName);
-                var vdbObject = reader.Deserialize<VDBFile>(yamlText);
 
-                // Write VDB file
                 using var vdbFile = File.Create(parsedOut);
                 var writer = new BinaryWriterE(vdbFile, parsedEndian);
                 var vdbParser = new VDBParser();
-                vdbParser.Write(writer, vdbObject);
-                Console.WriteLine($"Total length: {vdbFile.Length} bytes.");
 
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"\nVDB file saved to '{Path.GetFullPath(parsedOut)}'");
-                Console.ResetColor();
+                var vdb = default(Models.VDB.VDBFile);
+
+                // Write VDB file
+                ConsoleEx.Info($"\nDeserializing VDB Data to YAML from '{parsedFormat}' format...\n");
+
+                switch (parsedFormat)
+                {
+                    case VDBFormat.Raw:
+                        vdb = reader.Deserialize<Models.VDB.VDBFile>(yamlText);
+                        break;
+                    case VDBFormat.Dto:
+                        vdb = Converters.VDBConverter.FromDto(reader.Deserialize<Dto.VDB>(yamlText));
+                        break;
+                    default:
+                        throw new Exception("Something went VERY wrong while figuring out the format.");
+                }
+
+                vdbParser.Write(writer, vdb);
+
+                ConsoleEx.Break();
+                ConsoleEx.Info($"Total length: {vdbFile.Length} bytes.");
+                ConsoleEx.Info($"VDB file saved to '{Path.GetFullPath(parsedOut)}'");
+                ConsoleEx.Break();
 
                 return 0;
             });

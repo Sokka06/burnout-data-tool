@@ -16,7 +16,7 @@ namespace bdtool.Commands.Tools
             var cmd = new Command("hash", "Calculates Hash for string");
 
             //var input = new Option<string>("--input") { Required = true, Description = "Text to hash" };
-            var endianess = new Option<string>("--endianess") { Description = "Endianness (small or big)", DefaultValueFactory = ParseResult => "small" };
+            var endian = new Option<string>("--endian") { Description = "Endian (small or big)", DefaultValueFactory = ParseResult => "big" };
             var verbose = new Option<bool>("--verbose") { DefaultValueFactory = ParseResult => false } ;
 
             var value = new Argument<string>("value")
@@ -24,11 +24,11 @@ namespace bdtool.Commands.Tools
                 Description = "Text to hash",
             };
 
-            endianess.AcceptOnlyFromAmong("small", "big");
+            endian.AcceptOnlyFromAmong("small", "big");
 
             cmd.Arguments.Add(value);
             //cmd.Options.Add(input);
-            cmd.Options.Add(endianess);
+            cmd.Options.Add(endian);
             cmd.Options.Add(verbose);
 
             cmd.SetAction(parseResult =>
@@ -40,7 +40,7 @@ namespace bdtool.Commands.Tools
                     return 1;
                 }
 
-                var parsedEndianess = parseResult.GetValue(endianess) == "small" ? Endianness.Small : Endianness.Big;
+                var parsedEndianess = parseResult.GetValue(endian) == "small" ? Endianness.Small : Endianness.Big;
                 var parsedVerbose = parseResult.GetValue(verbose);
 
                 var hashedText = Utilities.Hash.CalculateHash(parsedText);

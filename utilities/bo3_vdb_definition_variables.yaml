@@ -1,19 +1,4 @@
-# VDB default value definitions for Burnout 3 Takedown.
-# Default values in the VDB file are accessed using a hash, which is calculated from hashing together name, path and filename.
-
-# Data types: 
-# 0 = none, 
-# 1 = RwInt32
-# 2 = RwReal
-# 3 = RwBool
-# 4 = unused
-# 5 = address to a v3d
-
-# functions where variables are registered
-# FUN_00208b60 
-# FUN_00209670
-
-defaultValues:
+definitions:
   1803659936:
     hash: 1803659936
     name: Mass (Kg)
@@ -51374,43 +51359,3 @@ defaultValues:
     path: Camera/Follow
     fileName: ../Export/ValueDB/Camera/TSPCCAR6.cfg
     type: RwReal
-
-values:
-  24800:
-    type: V3d
-  24816:
-    type: V3d
-  24832:
-    type: V3d
-
-files:
-  # TODO: add all vehicles, e.g. "../Export/ValueDB/VehiclePhysics/COMPCAR1.cfg"
-  1612807551:
-    fileName: "../Export/ValueDB/AI/defaults.cfg"
-  -1855381442:
-    fileName: "../Export/ValueDB/Score.cfg"
-  
-  # SOUND
-  1571511488:
-    fileName: "../export/ValueDB/Sound/Traffic.cfg"
-  -890391739:
-    fileName: "../export/ValueDB/Sound/Boost.cfg"
-  -1712763987:
-    fileName: "../export/ValueDB/Sound/LTrain.cfg"
-  -1438327639:
-    fileName: "../export/ValueDB/Sound/Payload.cfg"
-  # TODO add all tracks, e.g. "../export/ValueDB/Sound/Tracks/%s.cfg"
-  253732835:
-    fileName: "../export/ValueDB/Sound/HUD.cfg"
-  1944874370:
-    fileName: "../export/ValueDB/Sound/Esm.cfg"
-  1784927270:
-    fileName: "../export/ValueDB/Sound/Voice.cfg"
-  # TODO: add all vehicle AI audio, e.g. "../Export/ValueDB/VehicleAudioAI/COMPCAR1.cfg"
-  # TODO: add all vehicle audio, e.g. "../Export/ValueDB/VehicleAudio/COMPCAR1.cfg"
-  793358070:
-    fileName: "../export/ValueDB/Sound/Misc.cfg"
-  -2065244796:
-    fileName: "../export/ValueDB/Sound/Skids.cfg"
-  1822065915:
-    fileName: "../export/ValueDB/Sound/Surface.cfg"

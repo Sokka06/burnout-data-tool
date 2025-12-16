@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace bdtool.Commands.Tools
 {
-    public static class VerifyCommand
+    public static class CompareCommand
     {
         public static Command Build()
         {
-            var cmd = new Command("verify", "Compare source file to target file byte by byte. Note that endianness is not converted, files that use a different endian will differ immediately.");
+            var cmd = new Command("compare", "Compare source file to target file byte by byte. Note that endianness is not converted, files that use a different endian will differ immediately.");
 
             var verbose = new Option<bool>("--verbose", "-v");
 

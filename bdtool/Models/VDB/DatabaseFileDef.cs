@@ -4,22 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace bdtool.Models.Common
+namespace bdtool.Models.VDB
 {
-    public record DatabaseValue
+    public record DatabaseFileDef
     (
-        long Address, // not stored in the file.
-        int Value
+        bool IsActive,
+        int FileHash
     )
     {
-
-        public DatabaseValue() : this(default, default)
+        public DatabaseFileDef() : this(default, default)
         {
         }
 
         public override string ToString()
         {
-            return $"{Address}: {Value}";
+            return $"{FileHash}: IsActive: {IsActive}";
         }
     }
 }

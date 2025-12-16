@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using bdtool.Binary;
-using bdtool.Models.B3;
 using bdtool.Models.Common;
-using YamlDotNet.Core;
+using bdtool.Parsers.VList;
 
-namespace bdtool.Parsers.VList
+namespace bdtool.Parsers.VData
 {
-    public class VListParser : IParser<Models.Common.VList>
+    public class VehicleDataParser : IParser<VehicleData>
     {
-        public virtual Models.Common.VList Read(BinaryReaderE br)
+        public virtual VehicleData Read(BinaryReaderE br)
         {
             // Read version number
             var version = br.ReadInt32();
@@ -22,10 +21,11 @@ namespace bdtool.Parsers.VList
 
             switch (version)
             {
-                case 6:
-                    return new B3VehicleListParser().Read(br);
-                case 9:
-                    return new B4VehicleListParser().Read(br);
+                case 23:
+                    return new B3VehicleDataParser().Read(br);
+                case 29:
+                    //return new B4VehicleDataParser().Read(br);
+                    break;
                 default:
                     Console.WriteLine($"No Parser for VList Version '{version}'.");
                     break;
@@ -34,15 +34,15 @@ namespace bdtool.Parsers.VList
             throw new NotImplementedException();
         }
 
-        public virtual void Write(BinaryWriterE bw, Models.Common.VList obj)
+        public virtual void Write(BinaryWriterE bw, VehicleData obj)
         {
             switch (obj.VersionNumber)
             {
-                case 6:
-                    new B3VehicleListParser().Write(bw, obj);
+                case 23:
+                    new B3VehicleDataParser().Write(bw, obj);
                     break;
-                case 9:
-                    new B4VehicleListParser().Write(bw, obj);
+                case 29:
+                    //new B4VehicleDataParser().Write(bw, obj);
                     break;
                 default:
                     Console.WriteLine($"No Parser for VList Version '{obj.VersionNumber}'.");

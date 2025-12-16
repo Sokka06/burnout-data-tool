@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using bdtool.Models.B3;
 using bdtool.Models.B4;
+using bdtool.Models.VDB;
 using YamlDotNet.Core;
 using YamlDotNet.Core.Events;
 using YamlDotNet.Serialization;
@@ -20,7 +21,7 @@ namespace bdtool.Yaml
 
         public override void Emit(SequenceStartEventInfo eventInfo, IEmitter emitter)
         {
-            if (typeof(IEnumerable<Models.Common.DatabaseValue>).IsAssignableFrom(eventInfo.Source.Type))
+            if (typeof(IEnumerable<DatabaseValue>).IsAssignableFrom(eventInfo.Source.Type))
             {
                 eventInfo = new SequenceStartEventInfo(eventInfo.Source)
                 {
@@ -28,7 +29,7 @@ namespace bdtool.Yaml
                 };
             }
 
-            if (typeof(IEnumerable<Models.Common.DataElement>).IsAssignableFrom(eventInfo.Source.Type))
+            if (typeof(IEnumerable<DataElement>).IsAssignableFrom(eventInfo.Source.Type))
             {
                 eventInfo = new SequenceStartEventInfo(eventInfo.Source)
                 {
@@ -47,6 +48,7 @@ namespace bdtool.Yaml
             var serializer = new SerializerBuilder()
                 .WithTagMapping("!B3VehicleList", typeof(Dto.B3.B3VehicleList))
                 .WithTagMapping("!B4VehicleList", typeof(Dto.B4.B4VehicleList))
+                //.WithTypeConverter(new DataValueYamlConverter())
                 .WithNamingConvention(CamelCaseNamingConvention.Instance)
                 .WithIndentedSequences()
                 .DisableAliases()

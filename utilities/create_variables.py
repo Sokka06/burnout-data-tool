@@ -49,12 +49,11 @@ if __name__ == "__main__":
         template_root = yaml.safe_load(f)
 
     variables = template_root["variables"]
-    vehicles = template_root["vehicles"]
+    items = template_root["items"]
 
     output = {"definitions": {}}
 
-    for v in vehicles:
-        #filled = []
+    for v in items:
         for idx, t in enumerate(variables):
             name = t["name"]
             path = t["path"]
@@ -72,15 +71,11 @@ if __name__ == "__main__":
 
             output["definitions"][hsh] = entry
 
-            #filled.append(entry)
-
-        #output[v] = filled
-
     outputPath = input("Path to output YAML: ")
 
     with open(outputPath, "w") as f:
         yaml.dump(output, f, sort_keys=False, default_flow_style=False, Dumper=MyDumper)
 
-    vehicleCount = len(vehicles)
+    itemCount = len(items)
     variableCount = sum(len(vars_list) for vars_list in output.values())
-    print(f'Created {variableCount} variables for {vehicleCount} vehicles!')
+    print(f'Created {variableCount} variables for {itemCount} items!')

@@ -39,6 +39,10 @@
     "vlist export": {
       "commandName": "Project",
       "commandLineArgs": "vlist export\r\n\"..\\..\\..\\..\\data\\vlist_ps2_bo4_proto.BIN\"\r\n\"..\\..\\..\\..\\export\\vlist_ps2_bo4_proto.yaml\""
+    },
+    "bgv read": {
+      "commandName": "Project",
+      "commandLineArgs": "vdata read\r\n\"..\\..\\..\\..\\data\\vlist_ps2_bo4_proto.bin\"\r\n--verbose"
     }
   }
 }

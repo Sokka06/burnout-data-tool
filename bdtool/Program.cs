@@ -5,6 +5,7 @@ using System.CommandLine.Parsing;
 using System.IO;
 using bdtool.Commands;
 using bdtool.Commands.Tools;
+using bdtool.Commands.VData;
 using bdtool.Commands.VDB;
 using bdtool.Commands.VList;
 
@@ -19,7 +20,6 @@ namespace bdtool
             var vdb = new Command("vdb")
         {
             VDBReadCommand.Build(),
-            //VDBWriteCommand.Build(),
             VDBExportCommand.Build(),
             VDBImportCommand.Build()
         };
@@ -31,17 +31,23 @@ namespace bdtool
             VListImportCommand.Build()
         };
 
+            var vdata = new Command("vdata")
+            {
+                VDataReadCommand.Build(),
+            };
+
             var tools = new Command("tools")
         {
             HashCommand.Build(),
             HashNameCommand.Build(),
             IDCommand.Build(),
-            VerifyCommand.Build(),
+            CompareCommand.Build(),
             ReverseCommand.Build()
         };
 
             root.Subcommands.Add(vdb);
             root.Subcommands.Add(vlist);
+            root.Subcommands.Add(vdata);
             root.Subcommands.Add(tools);
             root.Subcommands.Add(InfoCommand.Build());
 
