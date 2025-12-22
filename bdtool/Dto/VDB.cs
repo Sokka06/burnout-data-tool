@@ -33,7 +33,7 @@ namespace bdtool.Dto
         public record Value()
         {
             public long Address { get; init; }
-            public int RawValue { get; init; }
+            //public int RawValue { get; init; }
             public required DataValue Data { get; init; }
         }
 
@@ -68,7 +68,7 @@ namespace bdtool.Dto
             public DataType Type { get; init; }
         }
 
-        public record FileDef()
+        public record FileDef
         {
             public int NameHash { get; init; }
             public required string FileName { get; init; }

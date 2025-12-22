@@ -15,9 +15,9 @@ namespace bdtool.Binary
     public sealed class BinaryWriterE
     {
         private readonly BinaryWriter _writer;
-        private readonly Endianness _endian;
+        private readonly Endian _endian;
 
-        public BinaryWriterE(Stream output, Endianness endian)
+        public BinaryWriterE(Stream output, Endian endian)
         {
             _writer = new BinaryWriter(output);
             _endian = endian;
@@ -33,7 +33,7 @@ namespace bdtool.Binary
 
         public void WriteBytes(byte[] bytes)
         {
-            if (_endian == Endianness.Big)
+            if (_endian == Endian.Big)
                 Array.Reverse(bytes);
 
             _writer.Write(bytes);
@@ -42,7 +42,7 @@ namespace bdtool.Binary
         public void WriteInt32(int value)
         {
             var bytes = BitConverter.GetBytes(value);
-            if (_endian == Endianness.Big)
+            if (_endian == Endian.Big)
                 Array.Reverse(bytes);
 
             _writer.Write(bytes);
@@ -52,7 +52,7 @@ namespace bdtool.Binary
         {
             var asInt32 = Convert.ToInt32(value);
             var bytes = BitConverter.GetBytes(asInt32);
-            if (_endian == Endianness.Big)
+            if (_endian == Endian.Big)
                 Array.Reverse(bytes);
 
             _writer.Write(bytes);
@@ -61,7 +61,7 @@ namespace bdtool.Binary
         public void WriteUlong(ulong value)
         {
             var bytes = BitConverter.GetBytes(value);
-            if (_endian == Endianness.Big)
+            if (_endian == Endian.Big)
                 Array.Reverse(bytes);
 
             _writer.Write(bytes);
@@ -80,7 +80,7 @@ namespace bdtool.Binary
         public void ReadInt16(short value)
         {
             var bytes = BitConverter.GetBytes(value);
-            if (_endian == Endianness.Big)
+            if (_endian == Endian.Big)
                 Array.Reverse(bytes);
 
             _writer.Write(bytes);
@@ -92,7 +92,7 @@ namespace bdtool.Binary
             for (int i = 0; i < 4; i++)
             {
                 var bytes = BitConverter.GetBytes(value[i]);
-                if (_endian == Endianness.Big)
+                if (_endian == Endian.Big)
                     Array.Reverse(bytes);
 
                 _writer.Write(bytes);
@@ -105,7 +105,7 @@ namespace bdtool.Binary
             for (int i = 0; i < 4; i++)
             {
                 var bytes = BitConverter.GetBytes(value[i]);
-                if (_endian == Endianness.Big)
+                if (_endian == Endian.Big)
                     Array.Reverse(bytes);
 
                 _writer.Write(bytes);

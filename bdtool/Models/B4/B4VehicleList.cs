@@ -58,7 +58,7 @@ namespace bdtool.Models.B4
             builder.AppendLine(string.Format("{0,-20} {1,-12} {2,-4} {3,-8} {4,-13} {5,-12} {6,-6} {7,-10}", "GtId", "ID", "Rank", "Drivable", "MaxCrashScore", "GrudgePoints", "Price", "DefaultColor"));
             for (int i = 0; i < VehicleCount; i++)
             {
-                builder.AppendLine(string.Format("{0,-20} {1,-12} {2,-4} {3,-8} {4,-13} {5,-12} {6,-6} {7,-10}", VehicleIDs[i], GtID.GtIDUnCompress(VehicleIDs[i]).TrimEnd(), RaceCarRanks[i], VehicleIsDriveable[i], VehicleMaxCrashScore[i], VehicleGrudgePoints[i], VehiclePrice[i], VehicleDefaultColor[i]));
+                builder.AppendLine(string.Format("{0,-20} {1,-12} {2,-4} {3,-8} {4,-13} {5,-12} {6,-6} {7,-10}", VehicleIDs[i], GtID.Uncompress(VehicleIDs[i]).TrimEnd(), RaceCarRanks[i], VehicleIsDriveable[i], VehicleMaxCrashScore[i], VehicleGrudgePoints[i], VehiclePrice[i], VehicleDefaultColor[i]));
                 //builder.AppendLine($"{VehicleIDs[i]} ({GtID.GtIDUnCompress(VehicleIDs[i]).TrimEnd()})    {RaceCarRanks[i]}   {VehicleIsDriveable[i]} {VehicleMaxCrashScore[i]}   {VehicleGrudgePoints[i]}   {VehiclePrice[i]}  {VehicleDefaultColor[i]}");
             }
 

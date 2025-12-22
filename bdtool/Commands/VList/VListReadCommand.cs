@@ -17,49 +17,49 @@ namespace bdtool.Commands.VList
             var cmd = new Command("read", "Prints out VList file data. By default prints all sections, pass bool arguments to print only some sections.");
 
             //var input = new Option<FileInfo>("--input", "-i") { Required = true, Description = "Path to the VList file" };
-            var verbose = new Option<bool>("--verbose", "-v");
+            var verboseOpt = new Option<bool>("--verbose", "-v");
 
-            var path = new Argument<FileInfo>("path")
+            var pathArg = new Argument<FileInfo>("path")
             {
                 Description = "Path to the VList file."
             };
 
-            var header = new Argument<bool>("header")
+            var headerArg = new Argument<bool>("header")
             {
                 Description = "Print header.",
                 DefaultValueFactory = parseResult => true
             };
 
-            var defaultValues = new Argument<bool>("default")
+            var defaultValuesArg = new Argument<bool>("default")
             {
                 Description = "Print default values.",
                 DefaultValueFactory = parseResult => true
             };
 
-            var values = new Argument<bool>("values")
+            var valuesArg = new Argument<bool>("values")
             {
                 Description = "Print values.",
                 DefaultValueFactory = parseResult => true
             };
 
-            var fileDefs = new Argument<bool>("defs")
+            var fileDefsArg = new Argument<bool>("defs")
             {
                 Description = "Print file defs.",
                 DefaultValueFactory = parseResult => true
             };
 
             //cmd.Options.Add(input);
-            cmd.Options.Add(verbose);
+            cmd.Options.Add(verboseOpt);
 
-            cmd.Arguments.Add(path);
-            cmd.Arguments.Add(header);
-            cmd.Arguments.Add(defaultValues);
-            cmd.Arguments.Add(values);
-            cmd.Arguments.Add(fileDefs);
+            cmd.Arguments.Add(pathArg);
+            cmd.Arguments.Add(headerArg);
+            cmd.Arguments.Add(defaultValuesArg);
+            cmd.Arguments.Add(valuesArg);
+            cmd.Arguments.Add(fileDefsArg);
 
             cmd.SetAction(parseResult =>
             {
-                FileInfo? parsedFile = parseResult.GetValue(path);
+                var parsedFile = parseResult.GetValue(pathArg);
                 if (parsedFile == null || !parsedFile.Exists)
                 {
                     Console.WriteLine("Input file does not exist.");
@@ -69,26 +69,23 @@ namespace bdtool.Commands.VList
 
                 using var fs = File.OpenRead(parsedFile.FullName);
 
-                // Peek the first 4 bytes to get endianess.
-                byte[] versionBytes = new byte[4];
+                // Peek the first 4 bytes to get endian.
+                var versionBytes = new byte[4];
                 fs.Read(versionBytes, 0, 4);
 
-                // Detect Endianness
-                var endian = Utilities.Binary.DetectEndianness(versionBytes);
-                Console.WriteLine($"Using '{endian}' endian.");
+                // Detect endian
+                var endian = Utilities.Binary.DetectEndian(versionBytes);
+                ConsoleEx.Info($"Using '{endian}' endian.");
 
-                var version = BitConverter.ToInt32(endian == Utilities.Binary.Endianness.Small ? versionBytes : Utilities.Binary.Reverse(ref versionBytes), 0);
-                Console.WriteLine($"VList Version '{version}'.");
+                var version = BitConverter.ToInt32(endian == Utilities.Binary.Endian.Little ? versionBytes : Utilities.Binary.Reverse(ref versionBytes), 0);
+                ConsoleEx.Info($"VList Version '{version}'.");
 
                 // Rewind back to start
                 fs.Seek(0, SeekOrigin.Begin);
 
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("\nReading VList Data...\n");
-                Console.ResetColor();
-
+                ConsoleEx.Info("\nReading VList Data...\n");
                 var reader = new BinaryReaderE(fs, endian);
-
+                
                 switch (version)
                 {
                     case 6:
@@ -102,7 +99,7 @@ namespace bdtool.Commands.VList
                         Console.WriteLine(vlistFileBo4.ToString());
                         break;
                     default:
-                        Console.WriteLine($"No Parser for Version '{version}'.");
+                        ConsoleEx.Error($"No Parser for Version '{version}'.");
                         break;
                 }
 

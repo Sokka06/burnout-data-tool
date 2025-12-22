@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using bdtool.Utilities;
-using static bdtool.Utilities.Binary;
 
 namespace bdtool.Commands.Tools
 {
@@ -15,37 +14,35 @@ namespace bdtool.Commands.Tools
     {
         public static Command Build()
         {
-            var cmd = new Command("reverse", "Reverses a hex value. Used to convert a small endian value to big endian and vice versa.");
+            var cmd = new Command("reverse", "Reverses a hex value. Used to convert a little endian value to big endian and vice versa.");
 
-            var value = new Argument<string>("value")
+            var valueArg = new Argument<string>("value")
             {
                 Description = "Hex value to be reversed",
             };
 
-            var verbose = new Option<bool>("--verbose") { DefaultValueFactory = ParseResult => false };
+            var verboseOpt = new Option<bool>("--verbose") { DefaultValueFactory = ParseResult => false };
 
-            cmd.Arguments.Add(value);
-            cmd.Options.Add(verbose);
+            cmd.Arguments.Add(valueArg);
+            cmd.Options.Add(verboseOpt);
 
             cmd.SetAction(parseResult =>
             {
-                var parsedText = parseResult.GetValue(value);
+                var parsedText = parseResult.GetValue(valueArg);
                 if (string.IsNullOrEmpty(parsedText))
                 {
-                    Console.WriteLine("No Hex value given.");
+                    ConsoleEx.Error("No Hex value given.");
                     return 1;
                 }
 
                 // prepare hex text.
                 parsedText = (parsedText.StartsWith("0x", StringComparison.OrdinalIgnoreCase) ? parsedText[2..] : parsedText).Trim();
 
-                var parsedVerbose = parseResult.GetValue(verbose);
+                var parsedVerbose = parseResult.GetValue(verboseOpt);
 
                 if (parsedVerbose)
                 {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"\nReversing Hex value '{parsedText}'");
-                    Console.ResetColor();
+                    ConsoleEx.Info($"\nReversing Hex value '{parsedText}'");
                 }
 
                 // reverse bytes.
@@ -54,7 +51,7 @@ namespace bdtool.Commands.Tools
 
                 parsedText = Utilities.Binary.BytesToHex(bytes);
 
-                Console.WriteLine($"{parsedText}");
+                ConsoleEx.Info($"{parsedText}");
 
                 return 0;
             });

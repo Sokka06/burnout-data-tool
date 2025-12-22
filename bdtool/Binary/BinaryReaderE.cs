@@ -12,9 +12,9 @@ namespace bdtool.Binary
     public sealed class BinaryReaderE
     {
         private readonly BinaryReader _reader;
-        private readonly Endianness _endian;
+        private readonly Endian _endian;
 
-        public BinaryReaderE(Stream input, Endianness endian)
+        public BinaryReaderE(Stream input, Endian endian)
         {
             _reader = new BinaryReader(input);
             _endian = endian;
@@ -34,7 +34,7 @@ namespace bdtool.Binary
                 throw new EndOfStreamException();
 
             var bytes = _reader.ReadBytes(4);
-            if (_endian == Endianness.Big)
+            if (_endian == Endian.Big)
                 Array.Reverse(bytes);
 
             return BitConverter.ToInt32(bytes, 0) != 0;
@@ -46,7 +46,7 @@ namespace bdtool.Binary
                 throw new EndOfStreamException();
 
             var bytes = _reader.ReadBytes(4);
-            if (_endian == Endianness.Big)
+            if (_endian == Endian.Big)
                 Array.Reverse(bytes);
 
             return BitConverter.ToInt32(bytes, 0);
@@ -58,7 +58,7 @@ namespace bdtool.Binary
                 throw new EndOfStreamException();
 
             var bytes = _reader.ReadBytes(4);
-            if (_endian == Endianness.Big)
+            if (_endian == Endian.Big)
                 Array.Reverse(bytes);
 
             return BitConverter.ToUInt32(bytes, 0);
@@ -70,7 +70,7 @@ namespace bdtool.Binary
                 throw new EndOfStreamException();
 
             var bytes = _reader.ReadBytes(8);
-            if (_endian == Endianness.Big)
+            if (_endian == Endian.Big)
                 Array.Reverse(bytes);
 
             return BitConverter.ToUInt64(bytes, 0);
@@ -111,7 +111,7 @@ namespace bdtool.Binary
                 throw new EndOfStreamException();
 
             var bytes = _reader.ReadBytes(4);
-            if (_endian == Endianness.Big)
+            if (_endian == Endian.Big)
                 Array.Reverse(bytes);
 
             return BitConverter.ToSingle(bytes, 0);
@@ -128,7 +128,7 @@ namespace bdtool.Binary
                     throw new EndOfStreamException();
 
                 var bytes = _reader.ReadBytes(4);
-                if (_endian == Endianness.Big)
+                if (_endian == Endian.Big)
                     Array.Reverse(bytes);
 
                 values[i] = BitConverter.ToSingle(bytes, 0);
@@ -148,7 +148,7 @@ namespace bdtool.Binary
                     throw new EndOfStreamException();
 
                 var bytes = _reader.ReadBytes(4);
-                if (_endian == Endianness.Big)
+                if (_endian == Endian.Big)
                     Array.Reverse(bytes);
 
                 values[i] = BitConverter.ToSingle(bytes, 0);

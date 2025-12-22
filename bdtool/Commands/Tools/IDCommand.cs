@@ -4,6 +4,7 @@ using System.CommandLine;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using bdtool.Utilities;
 
 namespace bdtool.Commands.Tools
 {
@@ -16,63 +17,58 @@ namespace bdtool.Commands.Tools
             var compressCmd = new Command("compress", "Compresses a string");
             var uncompressCmd = new Command("uncompress", "Uncompresses an ulong to string");
 
-            var input = new Argument<string>("input") {
+            var inputArg = new Argument<string>("input") {
                 Description = "Input value"
             };
 
-            //var input = new Option<string>("--input") { Required = true, Description = "Input value" };
-            var verbose = new Option<bool>("--verbose") { DefaultValueFactory = ParseResult => false };
+            var verboseOpt = new Option<bool>("--verbose") { DefaultValueFactory = ParseResult => false };
 
-            compressCmd.Arguments.Add(input);
-            uncompressCmd.Arguments.Add(input);
-            compressCmd.Options.Add(verbose);
-            uncompressCmd.Options.Add(verbose);
+            compressCmd.Arguments.Add(inputArg);
+            uncompressCmd.Arguments.Add(inputArg);
+            compressCmd.Options.Add(verboseOpt);
+            uncompressCmd.Options.Add(verboseOpt);
 
             cmd.Add(uncompressCmd);
             cmd.Add(compressCmd);
 
             uncompressCmd.SetAction(parseResult =>
             {
-                string? parsedLong = parseResult.GetValue(input);
+                var parsedLong = parseResult.GetValue(inputArg);
                 if (string.IsNullOrEmpty(parsedLong))
                 {
-                    Console.WriteLine("No ulong value given.");
+                    ConsoleEx.Error("No ulong value given.");
                     return 1;
                 }
 
-                bool parsedVerbose = parseResult.GetValue(verbose);
+                var parsedVerbose = parseResult.GetValue(verboseOpt);
 
                 if (parsedVerbose)
                 {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"\nCompressing ulong '{parsedLong}'");
-                    Console.ResetColor();
+                    ConsoleEx.Info($"\nCompressing ulong '{parsedLong}'");
                 }
 
-                var uncompressedText = Utilities.GtID.GtIDUnCompress(ulong.Parse(parsedLong));
-                Console.WriteLine(uncompressedText);
+                var uncompressedText = GtID.Uncompress(ulong.Parse(parsedLong));
+                ConsoleEx.Info(uncompressedText);
                 return 0;
             });
 
             compressCmd.SetAction(parseResult =>
             {
-                string? parsedText = parseResult.GetValue(input);
+                var parsedText = parseResult.GetValue(inputArg);
                 if (string.IsNullOrEmpty(parsedText))
                 {
-                    Console.WriteLine("No text given.");
+                    ConsoleEx.Error("No text given.");
                     return 1;
                 }
 
-                bool parsedVerbose = parseResult.GetValue(verbose);
+                var parsedVerbose = parseResult.GetValue(verboseOpt);
 
                 if (parsedVerbose)
                 {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"\nCompressing Text '{parsedText}'");
-                    Console.ResetColor();
+                    ConsoleEx.Info($"\nCompressing Text '{parsedText}'");
                 }
 
-                var compressedText = Utilities.GtID.GtIDCompress(parsedText);
+                var compressedText = GtID.Compress(parsedText);
                 Console.WriteLine(compressedText);
                 return 0;
             });

@@ -18,23 +18,19 @@ namespace bdtool.Commands.VData
         {
             var cmd = new Command("read", "Prints out Vehicle Data from BGV/BTV files.");
 
-            //var input = new Option<FileInfo>("--input", "-i") { Required = true, Description = "Path to the VDB file" };
-            var verbose = new Option<bool>("--verbose", "-v");
+            var verboseOpt = new Option<bool>("--verbose", "-v");
 
-            var path = new Argument<FileInfo>("path")
+            var pathArg = new Argument<FileInfo>("path")
             {
                 Description = "Path to the BGV/BTV file."
             };
 
-            //cmd.Options.Add(input);
-
-            cmd.Arguments.Add(path);
-
-            cmd.Options.Add(verbose);
+            cmd.Arguments.Add(pathArg);
+            cmd.Options.Add(verboseOpt);
 
             cmd.SetAction(parseResult =>
             {
-                FileInfo? parsedFile = parseResult.GetValue(path);
+                var parsedFile = parseResult.GetValue(pathArg);
                 if (parsedFile == null || !parsedFile.Exists)
                 {
                     Console.WriteLine($"Input file does not exist at '{parsedFile?.FullName}'.");
@@ -44,27 +40,24 @@ namespace bdtool.Commands.VData
                 using var fs = File.OpenRead(parsedFile.FullName);
 
                 // Peek the first 4 bytes to get endianess.
-                byte[] headerBytes = new byte[4];
+                var headerBytes = new byte[4];
                 fs.Read(headerBytes, 0, 4);
 
-                // Detect Endianness
-                var endian = Utilities.Binary.DetectEndianness(headerBytes);
-                Console.WriteLine($"Using '{endian}' endian.");
+                // Detect endian
+                var endian = Utilities.Binary.DetectEndian(headerBytes);
+                ConsoleEx.Info($"Using '{endian}' endian.");
 
                 // Rewind back to start
                 fs.Seek(0, SeekOrigin.Begin);
 
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"\nReading {parsedFile.Extension.Substring(1).ToUpper()} Data...\n");
-                Console.ResetColor();
+                ConsoleEx.Info($"\nReading {parsedFile.Extension.Substring(1).ToUpper()} Data...\n");
 
                 var reader = new BinaryReaderE(fs, endian);
 
                 var vdataParser = new VehicleDataParser();
                 var vdata = vdataParser.Read(reader);
 
-                Console.WriteLine(vdata.ToString());
-
+                ConsoleEx.Info(vdata.ToString());
                 return 0;
             });
 

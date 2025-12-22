@@ -13,19 +13,19 @@ namespace bdtool.Commands
         {
             var cmd = new Command("info", "Prints info about the different data files.");
 
-            var section = new Argument<string>("section")
+            var sectionArg = new Argument<string>("section")
             {
                 Description = "Selects a section to print info about."
             };
 
-            section.AcceptOnlyFromAmong("vdb", "vlist");
+            sectionArg.AcceptOnlyFromAmong("vdb", "vlist");
 
             //cmd.Options.Add(section);
-            cmd.Arguments.Add(section);
+            cmd.Arguments.Add(sectionArg);
 
             cmd.SetAction(parseResult =>
             {
-                string? parsedSection = parseResult.GetValue(section);
+                var parsedSection = parseResult.GetValue(sectionArg);
                 if (string.IsNullOrEmpty(parsedSection))
                 {
                     Console.WriteLine("No data type selected. Use \"vdb\", \"vlist\" values to select a type.");

@@ -15,7 +15,7 @@ namespace bdtool.Utilities
         /// <returns></returns>
         public static string GtIDConvertToString(ulong id)
         {
-            string result = GtIDUnCompress(id);
+            string result = Uncompress(id);
             return result.TrimEnd(' ');
         }
 
@@ -23,7 +23,7 @@ namespace bdtool.Utilities
         /// Converts a compressed ID back to a string.
         /// GtIDUnCompress__FUlPc from BO4 Prototype for PS2.
         /// </summary>
-        public static string GtIDUnCompress(ulong id)
+        public static string Uncompress(ulong id)
         {
             char[] buffer = new char[12];
 
@@ -54,7 +54,7 @@ namespace bdtool.Utilities
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static ulong GtIDCompress(string str)
+        public static ulong Compress(string str)
         {
             ulong GVar3 = 0;
             int iVar4 = 0;

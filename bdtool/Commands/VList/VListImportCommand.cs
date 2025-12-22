@@ -18,79 +18,71 @@ namespace bdtool.Commands.VList
 {
     public static class VListImportCommand
     {
-        private static readonly int[] versions = new int[] { 6, 9 };
+        private static readonly int[] versions = [6, 9];
 
         public static Command Build()
         {
             var cmd = new Command("import", "Build a VList file from a YAML VList file created with this tool.");
 
             //var input = new Option<FileInfo>("--input", "-i") { Required = true, Description = "Path to the VDB file" };
-            var verbose = new Option<bool>("--verbose", "-v");
-            var endian = new Option<string>("--endian", "-e")
+            var verboseOpt = new Option<bool>("--verbose", "-v");
+            var endianOpt = new Option<Utilities.Binary.Endian>("--endian", "-e")
             {
                 Description = "Selects the endianness of the created file. Small by default.",
-                DefaultValueFactory = parseResult => "small"
+                DefaultValueFactory = parseResult => Utilities.Binary.Endian.Little
             };
 
-            endian.AcceptOnlyFromAmong(["small", "big"]);
+            //endianOpt.AcceptOnlyFromAmong("little", "big");
 
-            var path = new Argument<FileInfo>("path")
+            var pathArg = new Argument<FileInfo>("path")
             {
                 Description = "Path to the YAML VList file."
             };
 
-            var outPath = new Argument<string>("out")
+            var outPathArg = new Argument<string>("out")
             {
                 Description = "Path to the output directory."
             };
 
-            //cmd.Options.Add(input);
+            cmd.Arguments.Add(pathArg);
+            cmd.Arguments.Add(outPathArg);
 
-            cmd.Arguments.Add(path);
-            cmd.Arguments.Add(outPath);
-
-            cmd.Options.Add(verbose);
-            cmd.Options.Add(endian);
+            cmd.Options.Add(verboseOpt);
+            cmd.Options.Add(endianOpt);
 
             cmd.SetAction(parseResult =>
             {
-                FileInfo? parsedFile = parseResult.GetValue(path);
+                var parsedFile = parseResult.GetValue(pathArg);
                 if (parsedFile == null || !parsedFile.Exists)
                 {
                     Console.WriteLine("Input file does not exist.");
                     return 1;
                 }
 
-                string? parsedOut = parseResult.GetValue(outPath);
+                var parsedOut = parseResult.GetValue(outPathArg);
                 if (string.IsNullOrEmpty(parsedOut) || Path.GetDirectoryName(parsedOut) == string.Empty)
                 {
                     Console.WriteLine($"Output path invalid: '{parsedOut}'");
                     return 1;
                 }
 
-                var parsedEndian = parseResult.GetValue(endian) == "small" ? Utilities.Binary.Endianness.Small : Utilities.Binary.Endianness.Big;
+                var parsedEndian = parseResult.GetValue(endianOpt);
 
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Deserializing VList Data...");
-                Console.ResetColor();
+                ConsoleEx.Info("Deserializing VList Data...");
 
                 var yamlText = File.ReadAllText(parsedFile.FullName);
                 var deserializer = new YamlDeserializer();
                 var vlistDto = deserializer.Deserialize<Dto.VehicleList>(yamlText);
 
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"Writing VList data to a file using '{parsedEndian}'...");
-                Console.ResetColor();
+                ConsoleEx.Info($"Writing VList data to a file using '{parsedEndian}'...");
 
                 using var vlistFile = File.Create(parsedOut);
                 var writer = new BinaryWriterE(vlistFile, parsedEndian);
                 var parser = new Parsers.VList.VListParser();
                 parser.Write(writer, Converters.VListConverter.FromDto(vlistDto));
-                Console.WriteLine($"Total length: {vlistFile.Length} bytes.");
-
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"\nVList file saved to '{Path.GetFullPath(parsedOut)}' using '{parsedEndian}' endian!");
-                Console.ResetColor();
+                
+                ConsoleEx.Info($"Total length: {vlistFile.Length} bytes.");
+                ConsoleEx.Info($"\nVList file saved to '{Path.GetFullPath(parsedOut)}' using '{parsedEndian}' endian!");
 
                 /*foreach (var version in versions)
                 {

@@ -30,42 +30,36 @@ namespace bdtool.Commands.VDB
             var definitionsOpt = new Option<string>("--definitions", "-d") { Description = "", DefaultValueFactory = ParseResult => "" };
             //var paddingOpt = new Option<int>("--padding", "-p") { Description = "Adjusts the padding length in bytes after Default values are parsed. The amount varies per game and platform, try 4 or 12. If some values seem to be missing, adjust in increments of 4.", DefaultValueFactory = ParseResult => 4 };
             var formatOpt = new Option<VDBFormat>("--format", "-f") { Description = "Specifies the format. Raw is a more accurate representation of the file, while DTO (Data Transfer Object) is more readable and easier to edit.", DefaultValueFactory = ParseResult => VDBFormat.Raw };
-            var verbose = new Option<bool>("--verbose", "-v");
+            var verboseOpt = new Option<bool>("--verbose", "-v");
 
-            var path = new Argument<FileInfo>("path")
+            var pathArg = new Argument<FileInfo>("path")
             {
                 Description = "Path to the VDB file."
             };
 
-            var outPath = new Argument<string>("out")
+            var outPathArg = new Argument<string>("out")
             {
                 Description = "Path to the output directory."
             };
-
-            //cmd.Options.Add(input);
-
-            //var raw = new Command("raw", "Export VDB in raw format.");
-
-            //cmd.Subcommands.Add(raw);
-
-            cmd.Arguments.Add(path);
-            cmd.Arguments.Add(outPath);
+            
+            cmd.Arguments.Add(pathArg);
+            cmd.Arguments.Add(outPathArg);
 
             cmd.Options.Add(definitionsOpt);
             //cmd.Options.Add(paddingOpt);
             cmd.Options.Add(formatOpt);
-            cmd.Options.Add(verbose);
+            cmd.Options.Add(verboseOpt);
 
             cmd.SetAction(parseResult =>
             {
-                FileInfo? parsedFile = parseResult.GetValue(path);
+                var parsedFile = parseResult.GetValue(pathArg);
                 if (parsedFile == null || !parsedFile.Exists)
                 {
                     ConsoleEx.Error("Input file does not exist.");
                     return 1;
                 }
 
-                string? parsedOut = parseResult.GetValue(outPath);
+                var parsedOut = parseResult.GetValue(outPathArg);
                 if (string.IsNullOrEmpty(parsedOut) || Path.GetDirectoryName(parsedOut) == string.Empty)
                 {
                     ConsoleEx.Error($"Output path invalid: '{parsedOut}'");
@@ -83,11 +77,11 @@ namespace bdtool.Commands.VDB
                 using var fs = File.OpenRead(parsedFile.FullName);
 
                 // Peek the first 4 bytes to get endianess.
-                byte[] headerBytes = new byte[4];
+                var headerBytes = new byte[4];
                 fs.Read(headerBytes, 0, 4);
 
-                // Detect Endianness
-                var endian = Utilities.Binary.DetectEndianness(headerBytes);
+                // Detect endian
+                var endian = Utilities.Binary.DetectEndian(headerBytes);
                 ConsoleEx.Info($"\nUsing '{endian}' endian.");
 
                 // Rewind back to start

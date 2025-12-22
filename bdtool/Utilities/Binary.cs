@@ -8,21 +8,19 @@ namespace bdtool.Utilities
 {
     public static class  Binary
     {
-        public enum Endianness
+        public enum Endian
         {
-            Small,
+            Little,
             Big
         }
 
-        public static Endianness DetectEndianness(byte[] headerBytes)
+        public static Endian DetectEndian(byte[] headerBytes)
         {
-            int le = BitConverter.ToInt32(headerBytes, 0);
-            int be = BitConverter.ToInt32(headerBytes.Reverse().ToArray(), 0);
+            var le = BitConverter.ToInt32(headerBytes, 0);
+            var be = BitConverter.ToInt32(headerBytes.Reverse().ToArray(), 0);
 
-            // Choose whichever looks valid.
-            // You can refine this as you learn more about the format.
-            if (le is >= 0 and <= 1000) return Endianness.Small;
-            if (be is >= 0 and <= 1000) return Endianness.Big;
+            if (le is >= 0 and <= 1000) return Endian.Little;
+            if (be is >= 0 and <= 1000) return Endian.Big;
 
             throw new InvalidDataException("Unable to detect byte order.");
         }
@@ -49,7 +47,7 @@ namespace bdtool.Utilities
         {
             var sb = new StringBuilder(bytes.Length * 2);
             foreach (byte b in bytes)
-                sb.AppendFormat("{0:X2}", b);
+                sb.Append($"{b:X2}");
             return sb.ToString();
         }
     }

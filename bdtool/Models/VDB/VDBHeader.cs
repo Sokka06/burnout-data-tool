@@ -11,7 +11,7 @@ namespace bdtool.Models.VDB
     (
         int Type, // address 0x0
         int DefaultValueCount, // address 0x4
-        int Unk1,  // address 0x8. todo: confirm name/purpose.
+        int Unk1,  // address 0x8. todo: confirm name/purpose. seems to match count of vectors in the values section.
         int FileDefCount, // address 0xc
         int FileDefOffset // address 0x10
     )

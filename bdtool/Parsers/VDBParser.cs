@@ -80,10 +80,13 @@ namespace bdtool.Parsers
 
             Console.WriteLine($"Offset {br.Position}: Finished parsing Values");
 
-            // Parse File Definitions
-            Console.WriteLine($"Offset {br.Position}: Seeking to FileDefOffset");
-            br.Seek(header.FileDefOffset, SeekOrigin.Begin);
+            if (br.Position != header.FileDefOffset)
+            {
+                Console.WriteLine($"Offset {br.Position}: Seeking to FileDefOffset");
+                br.Seek(header.FileDefOffset, SeekOrigin.Begin);
+            }
 
+            // Parse File Definitions
             Console.WriteLine($"Offset {br.Position}: Parsing File Definitions");
             var fileDefs = new List<DatabaseFileDef>(header.FileDefCount);
             for (int i = 0; i < header.FileDefCount; i++)
@@ -134,8 +137,11 @@ namespace bdtool.Parsers
             Console.WriteLine($"Offset {bw.Position}: Finished writing Values");
 
             // Write File Definitions
-            Console.WriteLine($"Offset {bw.Position}: Seeking to FileDefOffset");
-            bw.Seek(obj.Header.FileDefOffset, SeekOrigin.Begin);
+            if (bw.Position != obj.Header.FileDefOffset)
+            {
+                Console.WriteLine($"Offset {bw.Position}: Seeking to FileDefOffset");
+                bw.Seek(obj.Header.FileDefOffset, SeekOrigin.Begin);
+            }
 
             Console.WriteLine($"Offset {bw.Position}: Writing File Definitions");
             for (int i = 0; i < obj.FileDefs.Count; i++)

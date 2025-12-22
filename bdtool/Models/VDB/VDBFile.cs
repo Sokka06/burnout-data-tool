@@ -23,7 +23,7 @@ namespace bdtool.Models.VDB
             var builder = new StringBuilder();
 
             builder.AppendLine("[Header]");
-            builder.AppendLine(Header.ToString());
+            builder.Append(Header.ToString());
             return builder.ToString();
         }
 
@@ -74,27 +74,6 @@ namespace bdtool.Models.VDB
             builder.AppendLine(PrintDefaultValues());
             builder.AppendLine(PrintValues());
             builder.AppendLine(PrintFileDefs());
-
-            /*builder.AppendLine("[Header]");
-            builder.AppendLine(Header.ToString());
-
-            builder.AppendLine("\n[Default Values]");
-            foreach (var val in DefaultValues)
-            {
-                builder.AppendLine(val.ToString());
-            }
-
-            builder.AppendLine("\n[Values]");
-            foreach (var val in Values)
-            {
-                builder.AppendLine(val.ToString());
-            }
-
-            builder.AppendLine("\n[File Defs]");
-            foreach (var fileDef in FileDefs)
-            {
-                builder.AppendLine(fileDef.ToString());
-            }*/
 
             return builder.ToString();
         }

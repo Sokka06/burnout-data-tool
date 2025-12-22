@@ -85,7 +85,7 @@ namespace bdtool.Converters
                     {
                         var entry = b3List.Entries[i];
 
-                        idsb3.Add(GtID.GtIDCompress(entry.Id));
+                        idsb3.Add(GtID.Compress(entry.Id));
                         isDriveableb3.Add(entry.Driveable);
                         raceCarRanksb3.Add(entry.Rank);
                         unk1b3.Add(entry.Unk1);
@@ -115,7 +115,7 @@ namespace bdtool.Converters
                     {
                         var entry = b4List.Entries[i];
 
-                        idsb4.Add(GtID.GtIDCompress(entry.Id));
+                        idsb4.Add(GtID.Compress(entry.Id));
                         isDriveableb4.Add(entry.Driveable);
                         raceCarRanksb4.Add(entry.Rank);
                         maxCrashScores.Add(entry.MaxCrashScore);

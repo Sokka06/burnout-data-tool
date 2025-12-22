@@ -16,7 +16,7 @@ namespace bdtool.Utilities
         /// </summary>
         public static string CreateVehiclePathFromID(ulong vehicleId)
         {
-            var id = GtID.GtIDUnCompress(vehicleId).TrimEnd(' ', '\0');
+            var id = GtID.Uncompress(vehicleId).TrimEnd(' ', '\0');
 
             // Split into segments: first 4, next 2, rest
             string part1 = id.Length > 0 ? id.Substring(0, Math.Min(4, id.Length)) : "";
@@ -33,7 +33,7 @@ namespace bdtool.Utilities
         /// <returns></returns>
         public static string CreateVehiclePathFromID2(ulong vehicleId)
         {
-            var id = GtID.GtIDUnCompress(vehicleId);
+            var id = GtID.Uncompress(vehicleId);
 
             // Replicate the C trimming logic: find first space and truncate
             int nullPos = id.IndexOf(' ');

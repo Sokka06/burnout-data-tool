@@ -4,6 +4,7 @@ using System.CommandLine;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using bdtool.Utilities;
 
 namespace bdtool.Commands.Tools
 {
@@ -35,20 +36,19 @@ namespace bdtool.Commands.Tools
                 FileInfo? parsedSource = parseResult.GetValue(source);
                 if (parsedSource == null || !parsedSource.Exists)
                 {
-                    Console.WriteLine("Source file does not exist.");
+                    ConsoleEx.Error("Source file does not exist.");
                     return 1;
                 }
 
                 FileInfo? parsedTarget = parseResult.GetValue(target);
                 if (parsedTarget == null || !parsedTarget.Exists)
                 {
-                    Console.WriteLine("Target file does not exist.");
+                    ConsoleEx.Error("Target file does not exist.");
                     return 1;
                 }
 
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"\nComparing '{parsedSource.Name}' to '{parsedTarget.Name}' byte to byte...");
-                Console.ResetColor();
+                ConsoleEx.Break();
+                ConsoleEx.Info($"Comparing '{parsedSource.Name}' to '{parsedTarget.Name}' byte to byte...");
 
                 var comparer = new Utilities.ReadWholeFileAtOnce(parsedSource, parsedTarget);
                 var areSame = comparer.Compare(out var position);
@@ -56,14 +56,13 @@ namespace bdtool.Commands.Tools
                 if (areSame)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"\nResult: Both files match perfectly!\n");
+                    Console.WriteLine($"Result: Both files match perfectly!");
                     Console.ResetColor();
                 }
                 else
                 {
-                    // if 
+                    // Files didn't match
 
-                    // Get next 4 bytes at position
                     var sourceBytes = new byte[4];
                     var targetBytes = new byte[4];
 
@@ -84,11 +83,11 @@ namespace bdtool.Commands.Tools
                         }
                     }
 
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"\nResult: '{parsedSource.Name}' does NOT match '{parsedTarget.Name}' at position '{position} (0x{position:X})' out of '{parsedSource.Length}' total,");
-                    Console.WriteLine($"[{BitConverter.ToString(sourceBytes).Replace("-", " ")}] - [{BitConverter.ToString(targetBytes).Replace("-", " ")}].\n");
-                    Console.ResetColor();
+                    ConsoleEx.Warning($"Result: '{parsedSource.Name}' does NOT match '{parsedTarget.Name}' at position '{position} (0x{position:X})' out of '{parsedSource.Length}' total,");
+                    ConsoleEx.Warning($"[{BitConverter.ToString(sourceBytes).Replace("-", " ")}] - [{BitConverter.ToString(targetBytes).Replace("-", " ")}].");
                 }
+
+                ConsoleEx.Break();
 
                 return 0;
             });

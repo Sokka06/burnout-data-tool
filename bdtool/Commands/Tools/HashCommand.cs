@@ -16,7 +16,7 @@ namespace bdtool.Commands.Tools
             var cmd = new Command("hash", "Calculates Hash for string");
 
             //var input = new Option<string>("--input") { Required = true, Description = "Text to hash" };
-            var endian = new Option<string>("--endian") { Description = "Endian (small or big)", DefaultValueFactory = ParseResult => "big" };
+            //var endian = new Option<Endian>("--endian") { Description = "Endian (Little or Big)", DefaultValueFactory = ParseResult => Endian.Little };
             var verbose = new Option<bool>("--verbose") { DefaultValueFactory = ParseResult => false } ;
 
             var value = new Argument<string>("value")
@@ -24,11 +24,11 @@ namespace bdtool.Commands.Tools
                 Description = "Text to hash",
             };
 
-            endian.AcceptOnlyFromAmong("small", "big");
+            //endian.AcceptOnlyFromAmong("little", "big");
 
             cmd.Arguments.Add(value);
             //cmd.Options.Add(input);
-            cmd.Options.Add(endian);
+            //cmd.Options.Add(endian);
             cmd.Options.Add(verbose);
 
             cmd.SetAction(parseResult =>
@@ -36,25 +36,21 @@ namespace bdtool.Commands.Tools
                 string? parsedText = parseResult.GetValue(value);
                 if (string.IsNullOrEmpty(parsedText))
                 {
-                    Console.WriteLine("No text given.");
+                    ConsoleEx.Error("No text given.");
                     return 1;
                 }
 
-                var parsedEndianess = parseResult.GetValue(endian) == "small" ? Endianness.Small : Endianness.Big;
+                //var parsedEndian = parseResult.GetValue(endian);
                 var parsedVerbose = parseResult.GetValue(verbose);
 
-                var hashedText = Utilities.Hash.CalculateHash(parsedText);
+                var hashValue = Hash.CalculateHash(parsedText);
 
                 if (parsedVerbose)
                 {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"\nHashing Text '{parsedText}'");
-                    Console.ResetColor();
+                    ConsoleEx.Info($"\nHashing Text '{parsedText}'");
                 }
 
-                Console.WriteLine($"0x{hashedText:X8} ({hashedText})");
-
-                //ReadFile(parsedFile);
+                ConsoleEx.Info($"0x{hashValue:X8} ({hashValue})");
                 return 0;
             });
 

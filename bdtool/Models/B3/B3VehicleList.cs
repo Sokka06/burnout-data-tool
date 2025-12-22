@@ -50,7 +50,7 @@ namespace bdtool.Models.B3
             builder.AppendLine(string.Format("{0,-20} {1,-9} {2,-4} {3,-8} {4,-11} {5,-10}", "ID", "Name", "Rank", "Drivable", "Unk1", "Unk2"));
             for (int i = 0; i < VehicleCount; i++)
             {
-                builder.AppendLine(string.Format("{0,-20} {1,-9} {2,-4} {3,-8} {4,-11} {5,-10}", VehicleIDs[i], GtID.GtIDUnCompress(VehicleIDs[i]).TrimEnd(), RaceCarRanks[i], VehicleIsDriveable[i], Unk1[i], Unk2[i]));
+                builder.AppendLine(string.Format("{0,-20} {1,-9} {2,-4} {3,-8} {4,-11} {5,-10}", VehicleIDs[i], GtID.Uncompress(VehicleIDs[i]).TrimEnd(), RaceCarRanks[i], VehicleIsDriveable[i], Unk1[i], Unk2[i]));
             }
 
             return builder.ToString();

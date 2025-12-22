@@ -39,7 +39,7 @@ namespace bdtool.Dto
 
         public record DefaultValueEntry
         {
-            public int Hash { get; init; }
+            //public int Hash { get; init; }
             public required string Name { get; init; }
             public required string Path { get; init; }      // Category
             public required string FileName { get; init; }  // Source file

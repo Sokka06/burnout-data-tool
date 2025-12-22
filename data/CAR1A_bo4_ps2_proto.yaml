@@ -1,0 +1,1280 @@
+type: 2
+unk1: 5
+defaultValues:
+  - nameHash: -2134091607
+    name: Left Door Shatter Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 400
+  - nameHash: -2128097816
+    name: Steer Away Time (s)
+    path: Physics/Aggressive Driving Reaction
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.3
+  - nameHash: -2114725619
+    name: Rear Windscreen Shatter Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 120
+  - nameHash: -2113669818
+    name: Turn Momentum Slow
+    path: Physics/Drift
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 700
+  - nameHash: -2079849649
+    name: Rear Left Door Shatter Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 100
+  - nameHash: -2034185426
+    name: Roof
+    path: Physics/Deformation/Limits/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1
+  - nameHash: -2018163969
+    name: Turn Rate
+    path: Physics/Drift
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1.2
+  - nameHash: -1997689811
+    name: Front Windscreen Shatter Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 40
+  - nameHash: -1982724559
+    name: Spring Damping
+    path: Physics/Suspension/Rear
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 5000
+  - nameHash: -1962155067
+    name: Right Skirt Shatter Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -1
+  - nameHash: -1853739520
+    name: Accel Force Height
+    path: Physics/Race Car/Body Roll
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -0.3
+  - nameHash: -1850615230
+    name: Side
+    path: Physics/Deformation/Strength/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.2
+  - nameHash: -1848785576
+    name: Max Drift Angle
+    path: Physics/Drift
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 40
+  - nameHash: -1821701607
+    name: Boot Detach Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 500
+  - nameHash: -1776270840
+    name: Bonnet Shatter Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -1
+  - nameHash: -1775734131
+    name: Change Up RPM
+    path: Physics/Transmission/Engine
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 6200
+  - nameHash: -1764273606
+    name: Min Angle (degrees)
+    path: Physics/Steering
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 11.36
+  - nameHash: -1741664421
+    name: Rear Windscreen Cracking Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 10
+  - nameHash: -1725288250
+    name: Dump Valve Kick-in Max Falloff
+    path: VehicleAudio/Turbo
+    fileName: ../Data/Export/ValueDB/VehicleAudio/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -1000
+  - nameHash: -1701536672
+    name: Crashing Mass (Kg)
+    path: Physics/Vehicle
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 2000
+  - nameHash: -1661058317
+    name: Torque 2
+    path: Physics/Race Car/LSDM
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.9
+  - nameHash: -1658263529
+    name: Camera Offset
+    path: Camera/Bumper
+    fileName: ../Data/Export/ValueDB/Camera/MEDIUSCAR1A.cfg
+    value:
+      type: Pointer
+      address: 1344
+  - nameHash: -1624131781
+    name: Left Skirt Shatter Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -1
+  - nameHash: -1618942595
+    name: Maximum Value
+    path: Physics/Aftertouch
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1
+  - nameHash: -1615332255
+    name: Braking Factor
+    path: Physics/Race Car/Misc
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 2
+  - nameHash: -1589560103
+    name: Crumpling Factor
+    path: Physics/Deformation/Randomness
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 3
+  - nameHash: -1565329134
+    name: Engine Braking Factor
+    path: Physics/Race Car/Misc
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -9900
+  - nameHash: -1554550298
+    name: Front Windscreen Cracking Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 10
+  - nameHash: -1540047587
+    name: Attatch Height
+    path: Physics/Suspension/Rear
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.12
+  - nameHash: -1474315296
+    name: Bonnet Detach Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1500
+  - nameHash: -1468337016
+    name: Neutral
+    path: Physics/Transmission/Gear Ratios
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0
+  - nameHash: -1456628985
+    name: Rear Right Door Cracking Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 10
+  - nameHash: -1435393827
+    name: Spring Coeff
+    path: Camera/Follow
+    fileName: ../Data/Export/ValueDB/Camera/MEDIUSCAR1A.cfg
+    value:
+      type: Pointer
+      address: 1360
+  - nameHash: -1434068227
+    name: Boost Kick Torque
+    path: Physics/Transmission/Boost Kick
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 2
+  - nameHash: -1401675354
+    name: Bouncyness
+    path: Physics/Suspension
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.1
+  - nameHash: -1239685238
+    name: Rear Bumper Shatter Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -1
+  - nameHash: -1208641663
+    name: Front Bumper Detach Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 250
+  - nameHash: -1179660139
+    name: Boost Kick Time
+    path: Physics/Transmission/Boost Kick
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1
+  - nameHash: -1167577291
+    name: Dump Valve Volume Max
+    path: VehicleAudio/Turbo
+    fileName: ../Data/Export/ValueDB/VehicleAudio/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0
+  - nameHash: -1144723019
+    name: Right Door Shatter Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 400
+  - nameHash: -1142358816
+    name: Wall Collsion Penalty
+    path: Physics/Race Car/Misc
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1
+  - nameHash: -1077286155
+    name: Spring Force
+    path: Physics/Suspension/Rear
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 60000
+  - nameHash: -1012986901
+    name: ''
+    path: ''
+    fileName: ''
+    value:
+      type: None
+      value: 1067030938
+  - nameHash: -1006377010
+    name: Camera Offset
+    path: Camera/Look Back
+    fileName: ../Data/Export/ValueDB/Camera/MEDIUSCAR1A.cfg
+    value:
+      type: Pointer
+      address: 1376
+  - nameHash: -929795477
+    name: Attatch Height
+    path: Physics/Suspension/Front
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.105
+  - nameHash: -908073679
+    name: Vehicle-Vehicle factor
+    path: Physics/Deformation/Energy/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1
+  - nameHash: -883103300
+    name: Rear Corner
+    path: Physics/Deformation/Limits/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1
+  - nameHash: -865632695
+    name: Steering Drag Coef
+    path: Physics/Aggressive Driving Reaction
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.5
+  - nameHash: -760458979
+    name: Front Windscreen Detach Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1100
+  - nameHash: -714757393
+    name: Rear Left Door Detach Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 600
+  - nameHash: -705935325
+    name: Accel Multiplier
+    path: Physics/Race Car/Misc
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 4
+  - nameHash: -703722751
+    name: 2nd Gear
+    path: Physics/Transmission/Gear Ratios
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 2.2
+  - nameHash: -677052966
+    name: Left Skirt Loose Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 100
+  - nameHash: -673541218
+    name: Front
+    path: Physics/Deformation/Limits/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1
+  - nameHash: -669094937
+    name: Front Bumper Shatter Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 100
+  - nameHash: -660348956
+    name: Front Windscreen Loose Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 600
+  - nameHash: -660322746
+    name: Spring Length
+    path: Physics/Suspension/Rear
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.2
+  - nameHash: -659117681
+    name: Front Bumper Cracking Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 10
+  - nameHash: -653820403
+    name: Side
+    path: Physics/Deformation/Limits/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1
+  - nameHash: -639768642
+    name: Rear Bumper Loose Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 100
+  - nameHash: -529042714
+    name: Max Angle (degrees)
+    path: Physics/Steering
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 23.27
+  - nameHash: -524969492
+    name: Spoiler Detach Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 900
+  - nameHash: -477681842
+    name: 6th Gear
+    path: Physics/Transmission/Gear Ratios
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1.07
+  - nameHash: -477122458
+    name: 1st Gear
+    path: Physics/Transmission/Gear Ratios
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 3.3
+  - nameHash: -436557594
+    name: Right Door Detach Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 2500
+  - nameHash: -420354567
+    name: Rear Windscreen Detach Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1100
+  - nameHash: -397580209
+    name: Bonnet Cracking Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -1
+  - nameHash: -379381758
+    name: Front Corner
+    path: Physics/Deformation/Limits/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1
+  - nameHash: -338770035
+    name: Rear Windscreen Loose Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 600
+  - nameHash: -337923610
+    name: Rear Bumper Cracking Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -1
+  - nameHash: -326534482
+    name: Wheel displacement for loose
+    path: Physics/Deformation/Body Parts/Wheels/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.15
+  - nameHash: -269155254
+    name: Spoiler Shatter Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -1
+  - nameHash: -250528548
+    name: Rear Right Door Loose Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 100
+  - nameHash: -223778141
+    name: Rear Right Door Shatter Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 100
+  - nameHash: -151086809
+    name: Turn Momentum Fast
+    path: Physics/Drift
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1100
+  - nameHash: -94242765
+    name: Spring Damping
+    path: Physics/Suspension/Front
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 5000
+  - nameHash: -91792544
+    name: ''
+    path: ''
+    fileName: ''
+    value:
+      type: None
+      value: 1142292480
+  - nameHash: -50795712
+    name: Steer Force Height
+    path: Physics/Race Car/Body Roll
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -0.2
+  - nameHash: -50048761
+    name: Rear Corner
+    path: Physics/Deformation/Strength/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.2
+  - nameHash: -35513190
+    name: Max RPM
+    path: Physics/Transmission/Engine
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 6600
+  - nameHash: -8888580
+    name: 4th Gear
+    path: Physics/Transmission/Gear Ratios
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1.31
+  - nameHash: 15176765
+    name: Rear Left Door Cracking Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 10
+  - nameHash: 74934404
+    name: Steering Max Velocity
+    path: Physics/Aggressive Driving Reaction
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 50
+  - nameHash: 90862481
+    name: Min Drift Angle In Air
+    path: Physics/Race Car/Misc
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 5
+  - nameHash: 118557431
+    name: Boot Cracking Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -1
+  - nameHash: 209109740
+    name: Gear Change Time
+    path: Physics/Transmission/Gear Ratios
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.4
+  - nameHash: 226885091
+    name: Right Skirt Cracking Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -1
+  - nameHash: 231688951
+    name: Min Drift Speed
+    path: Physics/Drift
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 65
+  - nameHash: 235245949
+    name: Min Velocity
+    path: Physics/Steering
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 13
+  - nameHash: 242875062
+    name: Bonnet Loose Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 100
+  - nameHash: 246487956
+    name: Left Door Loose Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 100
+  - nameHash: 272146578
+    name: Boot Shatter Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -1
+  - nameHash: 280520975
+    name: Type (0 - 10)
+    path: Physics/Shockwave
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0
+  - nameHash: 289107088
+    name: Torque 1
+    path: Physics/Race Car/LSDM
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1
+  - nameHash: 331500436
+    name: Left Skirt Detach Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1100
+  - nameHash: 350800790
+    name: Boot Loose Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 10
+  - nameHash: 359043971
+    name: Front
+    path: Physics/Deformation/Strength/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.6
+  - nameHash: 365692510
+    name: Slide Min
+    path: Physics/Drift
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.6
+  - nameHash: 375352083
+    name: Drift Force Height
+    path: Physics/Race Car/Body Roll
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -0.17
+  - nameHash: 376290577
+    name: Spoiler Loose Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 100
+  - nameHash: 382338520
+    name: Drag Coef
+    path: Physics/Race Car/Misc
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1.78
+  - nameHash: 445362670
+    name: Peak Torque Revs
+    path: Physics/Transmission/Engine
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1000
+  - nameHash: 450840771
+    name: Driving Mass (Kg)
+    path: Physics/Vehicle
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1000
+  - nameHash: 466615636
+    name: Rpm to Turbo Min Rpm
+    path: VehicleAudio/Turbo
+    fileName: ../Data/Export/ValueDB/VehicleAudio/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 2000
+  - nameHash: 522516705
+    name: Final Gear
+    path: Physics/Transmission/Gear Ratios
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 3.1
+  - nameHash: 533994897
+    name: Drag Coef
+    path: Physics/Steering
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.01
+  - nameHash: 568593829
+    name: Speed Limit
+    path: Physics/Race Car/LSDM
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 15
+  - nameHash: 600143636
+    name: Rpm to Turbo Falloff Lag
+    path: VehicleAudio/Turbo
+    fileName: ../Data/Export/ValueDB/VehicleAudio/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -100
+  - nameHash: 610391706
+    name: Steering Angle
+    path: Physics/Race Car/LSDM
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 30
+  - nameHash: 615510719
+    name: Rear
+    path: Physics/Deformation/Limits/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1
+  - nameHash: 653078301
+    name: Camera Offset
+    path: Camera/Follow
+    fileName: ../Data/Export/ValueDB/Camera/MEDIUSCAR1A.cfg
+    value:
+      type: Pointer
+      address: 1392
+  - nameHash: 660249823
+    name: ''
+    path: ''
+    fileName: ''
+    value:
+      type: None
+      value: 1045220557
+  - nameHash: 684270960
+    name: Auto Drift Delay
+    path: Physics/Drift
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1.2
+  - nameHash: 702067987
+    name: Steering Multiplier
+    path: Physics/AI
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1
+  - nameHash: 727804342
+    name: Reverse
+    path: Physics/Transmission/Gear Ratios
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -4
+  - nameHash: 761552738
+    name: 5th Gear
+    path: Physics/Transmission/Gear Ratios
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1.13
+  - nameHash: 773412498
+    name: Response
+    path: Physics/Steering
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.118
+  - nameHash: 864604598
+    name: Ginsu Volume
+    path: VehicleAudio
+    fileName: ../Data/Export/ValueDB/VehicleAudio/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0
+  - nameHash: 877751020
+    name: Spring Length
+    path: Physics/Suspension/Front
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.19
+  - nameHash: 880801723
+    name: ''
+    path: ''
+    fileName: ''
+    value:
+      type: None
+      value: 1064011039
+  - nameHash: 885097339
+    name: Dump Valve Kick-in Min Falloff
+    path: VehicleAudio/Turbo
+    fileName: ../Data/Export/ValueDB/VehicleAudio/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -100
+  - nameHash: 926427604
+    name: Wave Attack Offset
+    path: VehicleAudio/Turbo
+    fileName: ../Data/Export/ValueDB/VehicleAudio/MEDIUSCAR1A.cfg
+    value:
+      type: RwInt32
+      value: 0
+  - nameHash: 927100989
+    name: Rpm to Turbo Max Rpm Volume
+    path: VehicleAudio/Turbo
+    fileName: ../Data/Export/ValueDB/VehicleAudio/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 7500
+  - nameHash: 929454936
+    name: Wheel displacement for detached
+    path: Physics/Deformation/Body Parts/Wheels/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.25
+  - nameHash: 1004026398
+    name: Focus Offset
+    path: Camera/Follow
+    fileName: ../Data/Export/ValueDB/Camera/MEDIUSCAR1A.cfg
+    value:
+      type: Pointer
+      address: 1408
+  - nameHash: 1004252911
+    name: Fall Off Torque Revs
+    path: Physics/Transmission/Engine
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 6100
+  - nameHash: 1015338193
+    name: Idle RPM
+    path: Physics/Transmission/Engine
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1000
+  - nameHash: 1054274917
+    name: Front Bumper Loose Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 50
+  - nameHash: 1114557450
+    name: Max Speed Pressure
+    path: Physics/Drift
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.5
+  - nameHash: 1148761599
+    name: Max Velocity
+    path: Physics/Steering
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 10.5
+  - nameHash: 1185197931
+    name: Torque
+    path: Physics/Transmission/Engine
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 960
+  - nameHash: 1221191437
+    name: Steering Max Angle (degrees)
+    path: Physics/Aggressive Driving Reaction
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 24
+  - nameHash: 1233786667
+    name: Left Door Cracking Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 10
+  - nameHash: 1239395855
+    name: Dump Valve Volume Min
+    path: VehicleAudio/Turbo
+    fileName: ../Data/Export/ValueDB/VehicleAudio/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0
+  - nameHash: 1308111492
+    name: Front Corner
+    path: Physics/Deformation/Strength/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.6
+  - nameHash: 1318935038
+    name: Car Volume
+    path: VehicleAudio
+    fileName: ../Data/Export/ValueDB/VehicleAudio/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.45
+  - nameHash: 1327589337
+    name: Right Skirt Loose Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 100
+  - nameHash: 1420886944
+    name: In Air Corkscrew Damping
+    path: Physics/Race Car/Misc
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.08
+  - nameHash: 1441195547
+    name: Down Angle
+    path: Camera/Follow
+    fileName: ../Data/Export/ValueDB/Camera/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1
+  - nameHash: 1469323436
+    name: Left Skirt Cracking Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -1
+  - nameHash: 1493935318
+    name: Right Door Loose Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 100
+  - nameHash: 1494456271
+    name: Rear Bumper Detach Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1200
+  - nameHash: 1538694372
+    name: Slide Max
+    path: Physics/Drift
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.7
+  - nameHash: 1555244251
+    name: Rear
+    path: Physics/Deformation/Strength/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.3
+  - nameHash: 1571832789
+    name: Right Door Cracking Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 10
+  - nameHash: 1642756211
+    name: Total Out-Of-Control Time (s)
+    path: Physics/Aggressive Driving Reaction
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1
+  - nameHash: 1717495158
+    name: Spring Force
+    path: Physics/Suspension/Front
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 60000
+  - nameHash: 1760314792
+    name: 3rd Gear
+    path: Physics/Transmission/Gear Ratios
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1.65
+  - nameHash: 1796453863
+    name: Roof
+    path: Physics/Deformation/Strength/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.3
+  - nameHash: 1849061439
+    name: Brake Force Height
+    path: Physics/Race Car/Body Roll
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -0.15
+  - nameHash: 1853409622
+    name: Gear Change Volume
+    path: VehicleAudio
+    fileName: ../Data/Export/ValueDB/VehicleAudio/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0
+  - nameHash: 1885050705
+    name: Rpm to Turbo Rising Lag
+    path: VehicleAudio/Turbo
+    fileName: ../Data/Export/ValueDB/VehicleAudio/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 100
+  - nameHash: 1894161845
+    name: Spoiler Cracking Threshold
+    path: Physics/Deformation/Body Parts/Glass Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: -1
+  - nameHash: 1923841838
+    name: Max Speed In Boost
+    path: Physics/Race Car/Misc
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 160
+  - nameHash: 1945519161
+    name: Rear Left Door Loose Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 100
+  - nameHash: 1946608863
+    name: ''
+    path: ''
+    fileName: ''
+    value:
+      type: None
+      value: 1034147594
+  - nameHash: 1954194815
+    name: ''
+    path: ''
+    fileName: ''
+    value:
+      type: None
+      value: 1065353216
+  - nameHash: 1968414644
+    name: Right Skirt Detach Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 1100
+  - nameHash: 1973254805
+    name: ''
+    path: ''
+    fileName: ''
+    value:
+      type: None
+      value: 0
+  - nameHash: 1981568158
+    name: ''
+    path: ''
+    fileName: ''
+    value:
+      type: None
+      value: 1058642330
+  - nameHash: 1982875586
+    name: Change Down RPM
+    path: Physics/Transmission/Engine
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 5650
+  - nameHash: 1988782786
+    name: Downforce Coef
+    path: Physics/Race Car/Misc
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 0.2
+  - nameHash: 2009028045
+    name: ''
+    path: ''
+    fileName: ''
+    value:
+      type: None
+      value: 1056964608
+  - nameHash: 2105488101
+    name: Left Door Detach Threshold
+    path: Physics/Deformation/Body Parts/Part Strengths/
+    fileName: ../Data/Export/ValueDB/VehiclePhysics/MEDIUSCAR1A.cfg
+    value:
+      type: RwReal
+      value: 2500
+values:
+  - address: 1332
+    rawValue: 10813442
+    data:
+      type: None
+      value: 10813442
+  - address: 1336
+    rawValue: 524774
+    data:
+      type: None
+      value: 524774
+  - address: 1340
+    rawValue: 3305456
+    data:
+      type: None
+      value: 3305456
+  - address: 1344
+    rawValue: 0
+    data:
+      type: None
+      value: 0
+  - address: 1348
+    rawValue: 1058642330
+    data:
+      type: None
+      value: 1058642330
+  - address: 1352
+    rawValue: 1065353216
+    data:
+      type: None
+      value: 1065353216
+  - address: 1356
+    rawValue: 1630630497
+    data:
+      type: None
+      value: 1630630497
+  - address: 1360
+    rawValue: 1057803469
+    data:
+      type: None
+      value: 1057803469
+  - address: 1364
+    rawValue: 1033476506
+    data:
+      type: None
+      value: 1033476506
+  - address: 1368
+    rawValue: 1096810496
+    data:
+      type: None
+      value: 1096810496
+  - address: 1372
+    rawValue: 1950825481
+    data:
+      type: None
+      value: 1950825481
+  - address: 1376
+    rawValue: 0
+    data:
+      type: None
+      value: 0
+  - address: 1380
+    rawValue: 0
+    data:
+      type: None
+      value: 0
+  - address: 1384
+    rawValue: 0
+    data:
+      type: None
+      value: 0
+  - address: 1388
+    rawValue: 222175858
+    data:
+      type: None
+      value: 222175858
+  - address: 1392
+    rawValue: 0
+    data:
+      type: None
+      value: 0
+  - address: 1396
+    rawValue: 1065772646
+    data:
+      type: None
+      value: 1065772646
+  - address: 1400
+    rawValue: -1060529766
+    data:
+      type: None
+      value: -1060529766
+  - address: 1404
+    rawValue: 741748272
+    data:
+      type: None
+      value: 741748272
+  - address: 1408
+    rawValue: 0
+    data:
+      type: None
+      value: 0
+  - address: 1412
+    rawValue: 0
+    data:
+      type: None
+      value: 0
+  - address: 1416
+    rawValue: 1071225242
+    data:
+      type: None
+      value: 1071225242
+  - address: 1420
+    rawValue: 1030059372
+    data:
+      type: None
+      value: 1030059372
+fileDefs:
+  - nameHash: -1307696992
+    fileName: ''
+    isActive: true
+  - nameHash: -852381264
+    fileName: ''
+    isActive: true
+  - nameHash: 285172009
+    fileName: ''
+    isActive: true
+  - nameHash: 1996810515
+    fileName: ''
+    isActive: true

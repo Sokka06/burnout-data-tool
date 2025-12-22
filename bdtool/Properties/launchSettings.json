@@ -2,15 +2,15 @@
   "profiles": {
     "vdb read": {
       "commandName": "Project",
-      "commandLineArgs": "vdb read\r\n\"..\\..\\..\\..\\data\\VDB_ps2_bo4_proto.BIN\""
+      "commandLineArgs": "vdb read\r\n\"..\\..\\..\\..\\data\\vdb\\VDB_ps2_bo4_proto.BIN\"\r\n--verbose"
     },
     "vdb write": {
       "commandName": "Project",
-      "commandLineArgs": "vdb write\r\n\"..\\..\\..\\..\\data\\VDB_ps2_bo4_proto.BIN\""
+      "commandLineArgs": "vdb write\r\n\"..\\..\\..\\..\\data\\vdb\\VDB_ps2_bo4_proto.BIN\""
     },
     "vlist read": {
       "commandName": "Project",
-      "commandLineArgs": "vlist read\r\n\"..\\..\\..\\..\\data\\vlist_ps2_bo4_proto.bin\"\r\n--verbose"
+      "commandLineArgs": "vlist read\r\n\"..\\..\\..\\..\\data\\vlist\\vlist_ps2_bo4_proto.bin\"\r\n--verbose"
     },
     "tools hash": {
       "commandName": "Project",
@@ -22,7 +22,7 @@
     },
     "tools verify": {
       "commandName": "Project",
-      "commandLineArgs": "tools verify\r\n\"..\\..\\..\\..\\data\\vdb_ps2_bo4_proto.bin\"\r\n\"..\\..\\..\\..\\import\\vdb_ps2_bo4_proto_import.bin\""
+      "commandLineArgs": "tools verify\r\n\"..\\..\\..\\..\\data\\vdb\\vdb_ps2_bo4_proto.bin\"\r\n\"..\\..\\..\\..\\import\\vdb_ps2_bo4_proto_import.bin\""
     },
     "vdb import": {
       "commandName": "Project",
@@ -30,7 +30,7 @@
     },
     "vdb export": {
       "commandName": "Project",
-      "commandLineArgs": "vdb export\r\n\"..\\..\\..\\..\\data\\VDB_ps2_bo4_proto.BIN\"\r\n\"..\\..\\..\\..\\export\\VDB_ps2_bo4_proto.yaml\""
+      "commandLineArgs": "vdb export\r\n\"..\\..\\..\\..\\data\\vdb\\VDB_ps2_bo4_proto.BIN\"\r\n\"..\\..\\..\\..\\export\\VDB_ps2_bo4_proto.yaml\""
     },
     "vlist import": {
       "commandName": "Project",
@@ -38,11 +38,11 @@
     },
     "vlist export": {
       "commandName": "Project",
-      "commandLineArgs": "vlist export\r\n\"..\\..\\..\\..\\data\\vlist_ps2_bo4_proto.BIN\"\r\n\"..\\..\\..\\..\\export\\vlist_ps2_bo4_proto.yaml\""
+      "commandLineArgs": "vlist export\r\n\"..\\..\\..\\..\\data\\vlist\\vlist_ps2_bo4_proto.BIN\"\r\n\"..\\..\\..\\..\\export\\vlist_ps2_bo4_proto.yaml\""
     },
     "bgv read": {
       "commandName": "Project",
-      "commandLineArgs": "vdata read\r\n\"..\\..\\..\\..\\data\\vlist_ps2_bo4_proto.bin\"\r\n--verbose"
+      "commandLineArgs": "vdata read\r\n\"..\\..\\..\\..\\data\\vlist\\vlist_ps2_bo4_proto.bin\"\r\n--verbose"
     }
   }
 }

@@ -15,6 +15,7 @@ using bdtool.Models.Types;
 using bdtool.Models.VDB;
 using bdtool.Utilities;
 using YamlDotNet.Core.Tokens;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 using static bdtool.Dto.VDB;
 using static bdtool.Dto.VDB.DefaultValue;
 
@@ -22,13 +23,19 @@ namespace bdtool.Converters
 {
     public static class VDBConverter
     {
+        /// <summary>
+        /// Convert raw VDB to Dto.
+        /// </summary>
+        /// <param name="vdb"></param>
+        /// <param name="definitions"></param>
+        /// <returns></returns>
         public static Dto.VDB ToDto(VDBFile vdb, DatabaseValueDefinitions definitions)
         {
             var defaultValues = new List<DefaultValue>(vdb.DefaultValues.Count);
             var values = new List<VDB.Value>(vdb.Values.Count);
             var fileDefs = new List<FileDef>(vdb.FileDefs.Count);
 
-            // create default values
+            // DEFAULT VALUES
             for (int i = 0; i < vdb.DefaultValues.Count; i++)
             {
                 var entry = vdb.DefaultValues[i];
@@ -45,7 +52,21 @@ namespace bdtool.Converters
                 // find matching definition file.
                 if (definitions.DefaultValues.TryGetValue(entry.NameHash, out var definition))
                 {
-                    value = TypeToValue(definition.Type, entry.Data);
+                    switch (definition.Type)
+                    {
+                        case DataType.RwReal: // float
+                            value = new FloatValue() { Type = definition.Type, Value = entry.Data.AsFloat() };
+                            break;
+                        case DataType.RwBool: // bool
+                            value = new BoolValue() { Type = definition.Type, Value = entry.Data.AsBool() };
+                            break;
+                        case DataType.Pointer: // address to a value
+                            value = new PointerValue() { Type = definition.Type, Address = entry.Data.RawValue };
+                            break;
+                        default:
+                            value = new IntValue() { Type = definition.Type, Value = entry.Data.RawValue };
+                            break;
+                    }
                     name = definition.Name;
                     path = definition.Path;
                     fileName = definition.FileName;
@@ -61,7 +82,7 @@ namespace bdtool.Converters
                 });
             }
 
-            // values
+            // VALUES
             for (int i = 0; i < vdb.Values.Count; i++)
             {
                 var entry = vdb.Values[i];
@@ -108,15 +129,15 @@ namespace bdtool.Converters
                     }
                 }
 
-                values.Add(new VDB.Value()
+                values.Add(new VDB.Value
                 {
                     Address = entry.Address,
-                    RawValue = entry.Value.RawValue,
+                    //RawValue = entry.Value.RawValue,
                     Data = data
                 });
             }
 
-            // file defs
+            // FILE DEFS
             for (int i = 0; i < vdb.FileDefs.Count; i++)
             {
                 var entry = vdb.FileDefs[i];
@@ -147,23 +168,76 @@ namespace bdtool.Converters
             };
         }
 
+        /// <summary>
+        /// Convert Dto VDB to raw.
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
         public static VDBFile FromDto(VDB dto)
         {
-
+            // DEFAULT VALUES
             var defaultValues = new List<DatabaseDefaultValue>();
             for (int i = 0; i < dto.DefaultValues.Count; i++)
             {
                 var entry = dto.DefaultValues[i];
-                defaultValues.Add(new DatabaseDefaultValue { NameHash = entry.NameHash, Data = ValueToData(entry.Value) });
+
+                DataElement data = new DataElement();
+                switch (entry.Value)
+                {
+                    case IntValue intValue:
+                        data = new DataElement(intValue.Value);
+                        break;
+                    case FloatValue floatValue:
+                        data = new DataElement(floatValue.Value);
+                        break;
+                    case BoolValue boolValue:
+                        data = new DataElement(boolValue.Value);
+                        break;
+                    //case Vector3Value vector3Value:
+                    //    return new DataElement(vector3Value.Value);
+                    case PointerValue pointerValue:
+                        data = new DataElement(pointerValue.Address);
+                        break;
+                    default:
+                        break;
+                }
+
+                defaultValues.Add(new DatabaseDefaultValue { NameHash = entry.NameHash, Data = data });
             }
 
+            // VALUES
             var values = new List<DatabaseValue>();
             for (int i = 0; i < dto.Values.Count; i++)
             {
                 var entry = dto.Values[i];
-                //DatabaseValue value = default;
-                if (entry.Data is Vector3Value vectorValue)
+                switch (entry.Data)
                 {
+                    case IntValue intValue:
+                        values.Add(new DatabaseValue { Address = entry.Address, Value = new DataElement(intValue.Value) });
+                        break;
+                    case FloatValue floatValue:
+                        values.Add(new DatabaseValue { Address = entry.Address, Value = new DataElement(floatValue.Value) });
+                        break;
+                    case BoolValue boolValue:
+                        values.Add(new DatabaseValue { Address = entry.Address, Value = new DataElement(boolValue.Value) });
+                        break;
+                    case PointerValue pointerValue:
+                        values.Add(new DatabaseValue { Address = entry.Address, Value = new DataElement(pointerValue.Address) });
+                        break;
+                    case Vector3Value vector3Value:
+                        // unpack the vector3 to float values
+                        values.Add(new DatabaseValue { Address = entry.Address, Value = new DataElement(vector3Value.Value.X) });
+                        values.Add(new DatabaseValue { Address = entry.Address + 4, Value = new DataElement(vector3Value.Value.Y) });
+                        values.Add(new DatabaseValue { Address = entry.Address + 8, Value = new DataElement(vector3Value.Value.Z) });
+                        values.Add(new DatabaseValue { Address = entry.Address + 12, Value = new DataElement(vector3Value.Value.Padding) });
+                        break;
+                    default:
+                        throw new Exception();
+                }
+                
+                /*if (entry.Data is Vector3Value vectorValue)
+                {
+                    // unpack the vector3 to float values
                     values.Add(new DatabaseValue { Address = entry.Address, Value = new DataElement(vectorValue.Value.X) });
                     values.Add(new DatabaseValue { Address = entry.Address + 4, Value = new DataElement(vectorValue.Value.Y) });
                     values.Add(new DatabaseValue { Address = entry.Address + 8, Value = new DataElement(vectorValue.Value.Z) });
@@ -171,37 +245,10 @@ namespace bdtool.Converters
                 } else
                 {
                     values.Add(new DatabaseValue { Address = entry.Address, Value = new DataElement(entry.RawValue) });
-                }
-
-                /*switch (entry.Data)
-                {
-                    case IntValue intValue:
-                        values.Add(new DatabaseValue { Address = entry.Address, Value = new DataElement(entry.RawValue) });
-                        continue;
-                    case FloatValue floatValue:
-                        values.Add(new DatabaseValue { Address = entry.Address, Value = new DataElement(entry.RawValue) });
-                        continue;
-                    case BoolValue boolValue:
-                        values.Add(new DatabaseValue { Address = entry.Address, Value = new DataElement(entry.RawValue) });
-                        continue;
-                    case Vector3Value vector3Value:
-                        return new DataElement(vector3Value.Value);
-                    case PointerValue pointerValue:
-                        values.Add(new DatabaseValue { Address = entry.Address, Value = new DataElement(entry.RawValue) });
-                        continue;
-                    default:
-                        value = new DatabaseValue();
-                        break;
-                }
-
-                if (entry.RawValue != ValueToData(entry.Data).RawValue)
-                {
-                    ConsoleEx.Warning($"Warning: Deserialized Raw data doesn't match the original!");
                 }*/
-
-                //values.Add(new DatabaseValue() { Address = entry.Address, Value = value });
             }
 
+            // FILE DEFS
             var fileDefs = new List<DatabaseFileDef>();
             for (int i = 0; i < dto.FileDefs.Count; i++)
             {
@@ -209,7 +256,7 @@ namespace bdtool.Converters
                 fileDefs.Add(new DatabaseFileDef(entry.IsActive, entry.NameHash));
             }
 
-
+            // HEADER
             var fileDefOffset =
                 VDBHeader.HEADER_LENGTH +
                 DatabaseDefaultValue.DEFAULT_VALUE_LENGTH * defaultValues.Count +
@@ -231,44 +278,6 @@ namespace bdtool.Converters
                 Values = values,
                 FileDefs = fileDefs
             };
-        }
-
-        private static DataValue TypeToValue(DataType type, DataElement data)
-        {
-            switch (type)
-            {
-                case DataType.None: // no type set
-                    return new IntValue() { Type = type, Value = data.RawValue };
-                case DataType.RwInt32: // int
-                    return new IntValue() { Type = type, Value = data.AsInt() };
-                case DataType.RwReal: // float
-                    return new FloatValue() { Type = type, Value = data.AsFloat() };
-                case DataType.RwBool: // bool
-                    return new BoolValue() { Type = type, Value = data.AsBool() };
-                case DataType.Pointer: // address to a vector3
-                    return new PointerValue() { Type = type, Address = data.RawValue };
-                default:
-                    return new IntValue() { Type = type, Value = data.RawValue };
-            }
-        }
-
-        private static DataElement ValueToData(DataValue value)
-        {
-            switch (value)
-            {
-                case IntValue intValue:
-                    return new DataElement(intValue.Value);
-                case FloatValue floatValue:
-                    return new DataElement(floatValue.Value);
-                case BoolValue boolValue:
-                    return new DataElement(boolValue.Value);
-                //case Vector3Value vector3Value:
-                //    return new DataElement(vector3Value.Value);
-                case PointerValue pointerValue:
-                    return new DataElement(pointerValue.Address);
-                default:
-                    return new DataElement();
-            }
         }
     }
 }

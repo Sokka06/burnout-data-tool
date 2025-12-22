@@ -17,104 +17,76 @@ namespace bdtool.Commands.VDB
         {
             var cmd = new Command("read", "Prints out VDB file data. \nBy default will print all sections, pass an array of sections as the second argument to select which sections to print.");
 
-            //var input = new Option<FileInfo>("--input", "-i") { Required = true, Description = "Path to the VDB file" };
-            var verbose = new Option<bool>("--verbose", "-v");
+            var verboseOpt = new Option<bool>("--verbose", "-v") 
+            {
+                DefaultValueFactory = ParseResult => false
+            };
 
-            var path = new Argument<FileInfo>("path")
+            var pathArg = new Argument<FileInfo>("path")
             {
                 Description = "Path to the VDB file."
             };
 
-            var sections = new Argument<string[]>("sections")
+            var sectionsOpt = new Option<string>("--sections", "-s")
             {
-                Description = "Sections to print (header, defaults, values, defs). Expects an array of strings, e.g. [\"header\", \"defs\"].",
-                DefaultValueFactory = parseResult => []
+                Description = "Sections to print (header, defaults, values, defs). Expects section names seperated by a comma, e.g. \"header, defs\".",
+                DefaultValueFactory = parseResult => ""
             };
 
-            var header = new Argument<bool>("header")
-            {
-                Description = "Print header.",
-                DefaultValueFactory = parseResult => true
-            };
+            cmd.Arguments.Add(pathArg);
+            cmd.Options.Add(sectionsOpt);
 
-            var defaultValues = new Argument<bool>("default")
-            {
-                Description = "Print default values.",
-                DefaultValueFactory = parseResult => true
-            };
-
-            var values = new Argument<bool>("values")
-            {
-                Description = "Print values.",
-                DefaultValueFactory = parseResult => true
-            };
-
-            var fileDefs = new Argument<bool>("defs")
-            {
-                Description = "Print file defs.",
-                DefaultValueFactory = parseResult => true
-            };
-
-            //cmd.Options.Add(input);
-
-            cmd.Arguments.Add(path);
-            cmd.Arguments.Add(sections);
-            //cmd.Arguments.Add(header);
-            //cmd.Arguments.Add(defaultValues);
-            //cmd.Arguments.Add(values);
-            //cmd.Arguments.Add(fileDefs);
-
-            cmd.Options.Add(verbose);
+            cmd.Options.Add(verboseOpt);
 
             cmd.SetAction(parseResult =>
             {
-                FileInfo? parsedFile = parseResult.GetValue(path);
+                var parsedFile = parseResult.GetValue(pathArg);
                 if (parsedFile == null || !parsedFile.Exists)
                 {
-                    Console.WriteLine($"Input file does not exist at '{parsedFile?.FullName}'.");
+                    ConsoleEx.Error($"Input file does not exist at '{parsedFile?.FullName}'.");
                     return 1;
                 }
+
+                var parsedVerbose = parseResult.GetValue(verboseOpt);
 
                 using var fs = File.OpenRead(parsedFile.FullName);
 
                 // Peek the first 4 bytes to get endianess.
-                byte[] headerBytes = new byte[4];
+                var headerBytes = new byte[4];
                 fs.Read(headerBytes, 0, 4);
 
                 // Detect Endianness
-                var endian = Utilities.Binary.DetectEndianness(headerBytes);
-                Console.WriteLine($"Using '{endian}' endian.");
+                var endian = Utilities.Binary.DetectEndian(headerBytes);
+
+                if (parsedVerbose)
+                    ConsoleEx.Info($"Using '{endian}' endian.");
 
                 // Rewind back to start
                 fs.Seek(0, SeekOrigin.Begin);
 
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("\nReading VDB Data...\n");
-                Console.ResetColor();
+                if (parsedVerbose)
+                    ConsoleEx.Info("Reading VDB Data...");
 
                 var reader = new BinaryReaderE(fs, endian);
 
                 var vdbParser = new VDBParser();
                 var vdbFile = vdbParser.Read(reader);
 
+                ConsoleEx.Break();
+
                 // Check header and warn
                 if (vdbFile.Header.Type != 2)
                 {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine($"\nWarning! VDB Header Type is {vdbFile.Header.Type}, data may not be compatible with this tool.");
-                    Console.ResetColor();
+                    ConsoleEx.Warning($"Warning! VDB Header Type is {vdbFile.Header.Type}, data may not be compatible with this tool.");
                 }
 
                 // Print sections
-                var parsedHeader = parseResult.GetValue(header);
-                var parsedDefaultValues = parseResult.GetValue(defaultValues);
-                var parsedValues = parseResult.GetValue(values);
-                var parsedFileDefs = parseResult.GetValue(fileDefs);
-                var parsedSections = parseResult.GetValue(sections);
+                var parsedSections = parseResult.GetValue(sectionsOpt);
+                var sections = parsedSections.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToArray();
 
-                if (parsedSections != null && parsedSections.Length > 0)
+                if (sections.Length > 0)
                 {
-                    foreach (var section in parsedSections)
+                    foreach (var section in sections)
                     {
                         switch (section.ToLower())
                         {
