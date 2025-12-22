@@ -21,7 +21,7 @@ namespace bdtool.Commands.Tools
                 Description = "Input value"
             };
 
-            var verboseOpt = new Option<bool>("--verbose") { DefaultValueFactory = ParseResult => false };
+            var verboseOpt = new Option<bool>("--verbose") { DefaultValueFactory = _ => false };
 
             compressCmd.Arguments.Add(inputArg);
             uncompressCmd.Arguments.Add(inputArg);
