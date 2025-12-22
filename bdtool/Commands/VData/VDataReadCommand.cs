@@ -50,14 +50,16 @@ namespace bdtool.Commands.VData
                 // Rewind back to start
                 fs.Seek(0, SeekOrigin.Begin);
 
-                ConsoleEx.Info($"\nReading {parsedFile.Extension.Substring(1).ToUpper()} Data...\n");
+                ConsoleEx.Info($"Reading {parsedFile.Extension.Substring(1).ToUpper()} Data...");
+                ConsoleEx.Break();
 
                 var reader = new BinaryReaderE(fs, endian);
 
                 var vdataParser = new VehicleDataParser();
                 var vdata = vdataParser.Read(reader);
 
-                ConsoleEx.Info(vdata.ToString());
+                ConsoleEx.Break();
+                Console.WriteLine(vdata.ToString());
                 return 0;
             });
 

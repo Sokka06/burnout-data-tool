@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using bdtool.Binary;
 using bdtool.Models.Common;
 using bdtool.Parsers.VList;
+using bdtool.Utilities;
 
 namespace bdtool.Parsers.VData
 {
@@ -21,13 +22,15 @@ namespace bdtool.Parsers.VData
 
             switch (version)
             {
+                case 21:
+                    return new B3VehicleDataParser().Read(br);
                 case 23:
                     return new B3VehicleDataParser().Read(br);
                 case 29:
                     //return new B4VehicleDataParser().Read(br);
                     break;
                 default:
-                    Console.WriteLine($"No Parser for VList Version '{version}'.");
+                    ConsoleEx.Error($"No Parser for Vehicle Data Version '{version}'.");
                     break;
             }
 
@@ -45,8 +48,8 @@ namespace bdtool.Parsers.VData
                     //new B4VehicleDataParser().Write(bw, obj);
                     break;
                 default:
-                    Console.WriteLine($"No Parser for VList Version '{obj.VersionNumber}'.");
-                    break;
+                    ConsoleEx.Error($"No Parser for Vehicle Data Version '{obj.VersionNumber}'.");
+                    throw new NotImplementedException();
             }
         }
     }
