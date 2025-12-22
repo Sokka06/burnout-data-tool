@@ -20,7 +20,7 @@ namespace bdtool
 
         public static RootCommand BuildRootCommand()
         {
-            var root = new RootCommand("Burnout Data Tools");
+            var root = new RootCommand("Burnout Data Tool by Sokka06.\nGithub repo: https://github.com/Sokka06/burnout-data-tool");
 
             var vdb = new Command("vdb")
             {

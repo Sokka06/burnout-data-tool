@@ -9,6 +9,7 @@
     <SelfContained>true</SelfContained>
     <DebugType>None</DebugType>
     <DebugSymbols>false</DebugSymbols>
+    <Version>0.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
