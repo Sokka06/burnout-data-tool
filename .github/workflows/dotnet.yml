@@ -15,8 +15,10 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        rid: [win-x86, linux-x64]
 
     steps:
     - uses: actions/checkout@v4
@@ -27,23 +29,23 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build and publish with dotnet
-      run: dotnet publish bdtool/bdtool.csproj -c Release -r win-x86
+      run: dotnet publish bdtool/bdtool.csproj -c Release -r ${{ matrix.rid }}
     #- name: Build
     #  run: dotnet build --no-restore
     #- name: Test
     #  run: dotnet test --no-build --verbosity normal
+    - name: Zip artifact
+      run: |
+        cd bdtool/bin/Release/net8.0/${{ matrix.rid }}/publish
+        zip bdtool-${{ github.ref_name }}-${{ matrix.rid }}.zip *
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: bdtool-win86-${{ github.ref_name }}
-        path: bdtool/bin/Release/net8.0/win-x86/publish/
-    - name: Zip artifact
-      run: |
-        cd bdtool/bin/Release/net8.0/win-x86/publish
-        zip bdtool-${{ github.ref_name }}-win-x86.zip *.exe
+        name: bdtool-${{ matrix.rid }}-${{ github.ref_name }}
+        path: bdtool/bin/Release/net8.0/${{ matrix.rid }}/publish/*.zip
     - name: Create GitHub release
       uses: softprops/action-gh-release@v2
       if: github.ref_type == 'tag'
       with:
         draft: true
-        files: bdtool/bin/Release/net8.0/win-x86/publish/*.zip
+        files: bdtool/bin/Release/net8.0/${{ matrix.rid }}/publish/*.zip
