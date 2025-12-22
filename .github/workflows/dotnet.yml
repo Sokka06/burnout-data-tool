@@ -37,9 +37,13 @@ jobs:
       with:
         name: bdtool-win86-${{ github.ref_name }}
         path: bdtool/bin/Release/net8.0/win-x86/publish/
+    - name: Zip artifact
+      run: |
+        cd bdtool/bin/Release/net8.0/win-x86/publish
+        zip bdtool-${{ github.ref_name }}-win-x86.zip *.exe
     - name: Create GitHub release
       uses: softprops/action-gh-release@v2
       if: github.ref_type == 'tag'
       with:
         draft: true
-        files: bdtool/bin/Release/net8.0/win-x86/publish/*.exe
+        files: bdtool/bin/Release/net8.0/win-x86/publish/*.zip
