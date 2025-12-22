@@ -39,6 +39,7 @@ jobs:
         path: bdtool/bin/Release/net8.0/win-x86/publish/
     - name: Create GitHub release
       uses: softprops/action-gh-release@v2
+      if: github.ref_type == 'tag'
       with:
         draft: true
         files: bdtool/bin/Release/net8.0/win-x86/publish/*.exe
