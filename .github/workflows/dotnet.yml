@@ -5,7 +5,6 @@ name: .NET
 
 on:
   push:
-    branches: [ "main" ]
     tags: ['v*']
   workflow_dispatch:
     inputs:
@@ -28,7 +27,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build and publish with dotnet
-      run: dotnet publish -c Release /p:PublishSingleFile=true --self-contained true
+      run: dotnet publish -c Release --self-contained true
     #- name: Build
     #  run: dotnet build --no-restore
     #- name: Test
