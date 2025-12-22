@@ -36,4 +36,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: release_windows
-        path: bdtool\bin\release\net8.0\publish\win-x86
+        path: bdtool/bin/release/net8.0/publish/win-x86
