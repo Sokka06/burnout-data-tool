@@ -73,6 +73,8 @@ namespace bdtool.Commands.VDB
                     Console.WriteLine("Input file does not exist.");
                     return 1;
                 }*/
+                
+                ConsoleEx.Break();
 
                 using var fs = File.OpenRead(parsedFile.FullName);
 
@@ -82,12 +84,13 @@ namespace bdtool.Commands.VDB
 
                 // Detect endian
                 var endian = Utilities.Binary.DetectEndian(headerBytes);
-                ConsoleEx.Info($"\nUsing '{endian}' endian.");
+                ConsoleEx.Info($"Using '{endian}' endian.");
 
                 // Rewind back to start
                 fs.Seek(0, SeekOrigin.Begin);
 
-                ConsoleEx.Info("Parsing VDB Data...\n");
+                ConsoleEx.Info("Parsing VDB Data...");
+                ConsoleEx.Break();
 
                 // Parse VDB file
                 var reader = new BinaryReaderE(fs, endian);
@@ -108,7 +111,7 @@ namespace bdtool.Commands.VDB
                         yamlText = serializer.Serialize(vdbFile);
                         break;
                     case VDBFormat.Dto:
-                        var definitions = new DatabaseValueDefinitions() { DefaultValues = [], Values = [], Files = [] };
+                        var definitions = new DatabaseValueDefinitions { DefaultValues = [], Values = [], Files = [] };
                         if (!string.IsNullOrEmpty(parsedDefinitions))
                         {
                             ConsoleEx.Info($"Loading definitions from '{parsedDefinitions}'...");
@@ -120,7 +123,6 @@ namespace bdtool.Commands.VDB
                             catch (Exception)
                             {
                                 ConsoleEx.Error("Failed to deserialize Definitions YAML!");
-                                //Console.WriteLine("Failed to deserialize Definitions YAML!");
                                 throw;
                             }
                         }

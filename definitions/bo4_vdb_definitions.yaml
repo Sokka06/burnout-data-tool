@@ -1,5 +1,5 @@
 # VDB definitions for Burnout 4 Revenge. 
-# Note that only traffic vehicle values are stored here, rest of the vehicle values are in the BGV files.
+# Note that only traffic vehicle values are stored here, rest of the vehicle values are found in the BGV files.
 # Default values in the VDB file are accessed using a hash, which is calculated from hashing together name, path and filename.
 
 # Data types: 
