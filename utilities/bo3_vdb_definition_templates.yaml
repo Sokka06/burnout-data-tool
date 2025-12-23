@@ -1,5 +1,5 @@
 # templates are used to automate definition generation for every vehicle in the vehicles list.
-# use the create_vehicle_variables.py script.
+# use the create_variables.py script.
 # %s in the fileName will be replaced with the ID of the vehicle.
 
 # Data Types:
