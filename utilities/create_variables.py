@@ -62,7 +62,6 @@ if __name__ == "__main__":
             hsh = hash_variable(name, path, fileName)
 
             entry = {
-                "hash": hsh,
                 "name": name,
                 "path": path,
                 "fileName": fileName,

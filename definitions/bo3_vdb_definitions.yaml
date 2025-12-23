@@ -1,4 +1,4 @@
-# VDB default value definitions for Burnout 3 Takedown.
+# VDB definitions for Burnout 3 Takedown.
 # Default values in the VDB file are accessed using a hash, which is calculated from hashing together name, path and filename.
 
 # The addresses of the 'values' section may not align if a different version than release is used.
