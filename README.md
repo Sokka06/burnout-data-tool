@@ -1,5 +1,5 @@
 # burnout-data-tool
-A console tool for reading and writing Burnout 3/Revenge-era data files, such as VDB, VList, and maybe more in the future.
+A C# command line tool for reading and writing Burnout 3/Revenge-era data files, such as VDB, VList, and maybe more in the future.
 
 ## Usage
 
