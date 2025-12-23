@@ -17,7 +17,7 @@ namespace bdtool.Commands.VData
         public static Command Build()
         {
             var cmd = new Command("insert", "Overwrites VDB Data in BGV/BTV files.");
-
+            
             var verboseOpt = new Option<bool>("--verbose", "-v");
 
             var targetArg = new Argument<FileInfo>("target")
@@ -39,19 +39,19 @@ namespace bdtool.Commands.VData
                 var parsedTarget = parseResult.GetValue(targetArg);
                 if (parsedTarget == null || !parsedTarget.Exists)
                 {
-                    Console.WriteLine($"Target file does not exist at '{parsedTarget?.FullName}'.");
+                    ConsoleEx.Error($"Target file does not exist at '{parsedTarget?.FullName}'.");
                     return 1;
                 }
                 
                 var parsedData = parseResult.GetValue(dataArg);
                 if (parsedData == null || !parsedData.Exists)
                 {
-                    Console.WriteLine($"Data file does not exist at '{parsedData?.FullName}'.");
+                    ConsoleEx.Error($"Data file does not exist at '{parsedData?.FullName}'.");
                     return 1;
                 }
                 
                 ConsoleEx.Break();
-                ConsoleEx.Info($"Reading {parsedTarget.Extension.Substring(1).ToUpper()} Data...");
+                ConsoleEx.Info($"Reading Vehicle Data...");
 
                 using var fsTarget = File.Open(parsedTarget.FullName, FileMode.Open, FileAccess.ReadWrite);
 
@@ -63,30 +63,36 @@ namespace bdtool.Commands.VData
                 var endian = Utilities.Binary.DetectEndian(headerBytes);
                 ConsoleEx.Info($"Using '{endian}' endian.");
 
-                var version = BitConverter.ToInt32(endian == Utilities.Binary.Endian.Little ? headerBytes : Utilities.Binary.Reverse(ref headerBytes), 0);
+                var version = BitConverterE.ToInt32(headerBytes, endian);
                 ConsoleEx.Info($"VData Version '{version}'.");
 
+                // Versions before Burnout Revenge don't have a VDB section.
                 if (version < 29)
                 {
                     ConsoleEx.Error($"Version doesn't have a VDB section.");
                     return 1;
                 }
-
-                // Rewind back to start
-                //fs.Seek(0x2174, SeekOrigin.Begin);
+                
+                // Xbox 360 version uses a different offset.
+                var startOffset = version switch
+                {
+                    37 => 0x2204,
+                    _ => 0x2174
+                };
                 
                 var vdbOffset = new byte[4];
                 var vdbLength = new byte[4];
                 
-                fsTarget.Seek(8564, SeekOrigin.Begin);
+                fsTarget.Seek(startOffset, SeekOrigin.Begin);
                 fsTarget.Read(vdbOffset, 0, 4);
                 fsTarget.Read(vdbLength, 0, 4);
 
-                var length = BitConverter.ToInt32(vdbLength, 0);
-                var offset = BitConverter.ToInt32(vdbOffset, 0);
+                var length = BitConverterE.ToInt32(vdbLength, endian);
+                var offset = BitConverterE.ToInt32(vdbOffset, endian);
                 
                 using var fsData = File.OpenRead(parsedData.FullName);
 
+                // Check VDB size difference.
                 if (length != fsData.Length)
                 {
                     ConsoleEx.Warning("Size does not match. \nPress Y to continue or ESC to abort...");
@@ -115,12 +121,13 @@ namespace bdtool.Commands.VData
                 
                 // write new length
                 var newLengthBytes = BitConverter.GetBytes(vdbBytes.Length);
-                fsTarget.Seek(8568, SeekOrigin.Begin);
-                fsTarget.Write(endian == Utilities.Binary.Endian.Little ? newLengthBytes : Utilities.Binary.Reverse(ref newLengthBytes),  0, newLengthBytes.Length);
+                if (endian == Utilities.Binary.Endian.Big)
+                    Utilities.Binary.Reverse(ref newLengthBytes);
+                
+                fsTarget.Seek(startOffset + 0x4, SeekOrigin.Begin);
+                fsTarget.Write(newLengthBytes, 0, newLengthBytes.Length);
                 
                 ConsoleEx.Info($"VDB data written to '{parsedTarget.FullName}'\n");
-                
-                // TODO: adjust VDB size in BGV header.
                 
                 return 0;
             });

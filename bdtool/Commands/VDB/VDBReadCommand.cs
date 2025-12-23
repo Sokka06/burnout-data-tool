@@ -51,7 +51,7 @@ namespace bdtool.Commands.VDB
 
                 using var fs = File.OpenRead(parsedFile.FullName);
 
-                // Peek the first 4 bytes to get endianess.
+                // Peek the first 4 bytes to get endian.
                 var headerBytes = new byte[4];
                 fs.Read(headerBytes, 0, 4);
 

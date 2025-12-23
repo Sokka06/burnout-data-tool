@@ -22,11 +22,17 @@ namespace bdtool.Parsers.VData
 
             switch (version)
             {
-                case 21:
+                case 21: // Burnout 3 Proto
                     return new B3VehicleDataParser().Read(br);
-                case 23:
+                case 23: // Burnout 3 Release, Legends, Dominator PSP
                     return new B3VehicleDataParser().Read(br);
-                case 29:
+                case 29: // Burnout Revenge Beta
+                    //return new B4VehicleDataParser().Read(br);
+                    break;
+                case 31: // Burnout Revenge Release, Dominator PS2
+                    //return new B4VehicleDataParser().Read(br);
+                    break;
+                case 37: // Burnout Revenge X360
                     //return new B4VehicleDataParser().Read(br);
                     break;
                 default:

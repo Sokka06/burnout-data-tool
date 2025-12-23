@@ -49,7 +49,8 @@ namespace bdtool
                 HashNameCommand.Build(),
                 IDCommand.Build(),
                 CompareCommand.Build(),
-                ReverseCommand.Build()
+                ReverseCommand.Build(),
+                ZLibCommand.Build(),
             };
 
             root.Subcommands.Add(vdb);

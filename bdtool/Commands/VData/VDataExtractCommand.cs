@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.CommandLine;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace bdtool.Commands.VData
         public static Command Build()
         {
             var cmd = new Command("extract", "Extracts Vehicle Data from BGV/BTV files.");
-
+            
             var verboseOpt = new Option<bool>("--verbose", "-v");
 
             var pathArg = new Argument<FileInfo>("path")
@@ -39,7 +40,7 @@ namespace bdtool.Commands.VData
                 var parsedFile = parseResult.GetValue(pathArg);
                 if (parsedFile == null || !parsedFile.Exists)
                 {
-                    Console.WriteLine($"Input file does not exist at '{parsedFile?.FullName}'.");
+                    ConsoleEx.Error($"Input file does not exist at '{parsedFile?.FullName}'.");
                     return 1;
                 }
                 
@@ -51,7 +52,7 @@ namespace bdtool.Commands.VData
                 }
 
                 using var fs = File.OpenRead(parsedFile.FullName);
-
+                
                 // Peek the first 4 bytes to get endian.
                 var headerBytes = new byte[4];
                 fs.Read(headerBytes, 0, 4);
@@ -60,7 +61,7 @@ namespace bdtool.Commands.VData
                 var endian = Utilities.Binary.DetectEndian(headerBytes);
                 ConsoleEx.Info($"Using '{endian}' endian.");
 
-                var version = BitConverter.ToInt32(endian == Utilities.Binary.Endian.Little ? headerBytes : Utilities.Binary.Reverse(ref headerBytes), 0);
+                var version = BitConverterE.ToInt32(headerBytes, endian);
                 ConsoleEx.Info($"VData Version '{version}'.");
 
                 if (version < 29)
@@ -68,27 +69,38 @@ namespace bdtool.Commands.VData
                     ConsoleEx.Error($"Version doesn't have a VDB section.");
                     return 1;
                 }
-
-                // Rewind back to start
-                //fs.Seek(0x2174, SeekOrigin.Begin);
                 
-                ConsoleEx.Info($"\nReading {parsedFile.Extension.Substring(1).ToUpper()} Data...\n");
+                ConsoleEx.Info($"\nReading Vehicle Data...\n");
                 
                 var vdbOffset = new byte[4];
                 var vdbLength = new byte[4];
-                
-                fs.Seek(8564, SeekOrigin.Begin);
+
+                var startOffset = version switch
+                {
+                    37 => 0x2204, // Xbox 360 version uses different offset.
+                    _ => 0x2174 // 
+                };
+
+                fs.Seek(startOffset, SeekOrigin.Begin);
                 fs.Read(vdbOffset, 0, 4);
                 fs.Read(vdbLength, 0, 4);
-
-                var length = BitConverter.ToInt32(vdbLength, 0);
-                var offset = BitConverter.ToInt32(vdbOffset, 0);
+                
+                var length = BitConverterE.ToInt32(vdbLength, endian);
+                var offset = BitConverterE.ToInt32(vdbOffset, endian);
                 
                 var vdbBytes = new byte[length];
                 fs.Seek(offset, SeekOrigin.Begin);
                 fs.Read(vdbBytes, 0, length);
 
-                ConsoleEx.Info($"Read VDB from file at {offset} with length {length}.");
+                //var vdbBytes = parsedCompressed ? ReadCompressed(fs) : ReadUncompressed(fs);
+
+                if (vdbBytes.Length == 0)
+                {
+                    ConsoleEx.Error($"Couldn't read file '{parsedFile.FullName}'.");
+                    return 1;
+                }
+
+                ConsoleEx.Info($"Read VDB from file with length {vdbBytes.Length}.");
                 
                 ConsoleEx.Info("Writing VDB data to file...");
                 File.WriteAllBytes(parsedOut, vdbBytes);
@@ -99,6 +111,91 @@ namespace bdtool.Commands.VData
             });
 
             return cmd;
+        }
+
+        private static byte[] ReadUncompressed(FileStream fs)
+        {
+            // Peek the first 4 bytes to get endian.
+            var headerBytes = new byte[4];
+            fs.Read(headerBytes, 0, 4);
+                
+            // Detect endian
+            var endian = Utilities.Binary.DetectEndian(headerBytes);
+            ConsoleEx.Info($"Using '{endian}' endian.");
+
+            var version = BitConverter.ToInt32(endian == Utilities.Binary.Endian.Little ? headerBytes : Utilities.Binary.Reverse(ref headerBytes), 0);
+            ConsoleEx.Info($"VData Version '{version}'.");
+
+            if (version < 29)
+            {
+                ConsoleEx.Error($"Version doesn't have a VDB section.");
+                return [];
+            }
+
+            // Rewind back to start
+            //fs.Seek(0x2174, SeekOrigin.Begin);
+                
+            ConsoleEx.Info($"\nReading Vehicle Data...\n");
+                
+            var vdbOffset = new byte[4];
+            var vdbLength = new byte[4];
+                
+            fs.Seek(8564, SeekOrigin.Begin);
+            fs.Read(vdbOffset, 0, 4);
+            fs.Read(vdbLength, 0, 4);
+
+            var offset = BitConverter.ToInt32(vdbOffset, 0);
+            var length = BitConverter.ToInt32(vdbLength, 0);
+                
+            var vdbBytes = new byte[length];
+            fs.Seek(offset, SeekOrigin.Begin);
+            fs.Read(vdbBytes, 0, length);
+
+            return vdbBytes;
+        }
+        
+        private static byte[] ReadCompressed(FileStream fs)
+        {
+            // Uncompress file.
+            var zlibStream = new ZLibStream(fs, CompressionMode.Decompress);
+            var buffer = new MemoryStream();
+            zlibStream.CopyTo(buffer);
+            buffer.Position = 0;
+            
+            // Peek the first 4 bytes to get endian.
+            var headerBytes = new byte[4];
+            buffer.Read(headerBytes, 0, 4);
+                
+            // X360 uses big endian.
+            var endian = Utilities.Binary.Endian.Big;
+            ConsoleEx.Info($"Using '{endian}' endian.");
+
+            var version = BitConverter.ToInt32(Utilities.Binary.Reverse(ref headerBytes), 0);
+            ConsoleEx.Info($"VData Version '{version}'.");
+
+            if (version < 29)
+            {
+                ConsoleEx.Error($"Version doesn't have a VDB section.");
+                return [];
+            }
+                
+            ConsoleEx.Info($"\nReading Vehicle Data...\n");
+                
+            var vdbOffset = new byte[4];
+            var vdbLength = new byte[4];
+                
+            buffer.Seek(0x2204, SeekOrigin.Begin);
+            buffer.Read(vdbOffset, 0, 4);
+            buffer.Read(vdbLength, 0, 4);
+
+            var offset = BitConverter.ToInt32(Utilities.Binary.Reverse(ref vdbOffset), 0);
+            var length = BitConverter.ToInt32(Utilities.Binary.Reverse(ref vdbLength), 0);
+                
+            var vdbBytes = new byte[length];
+            buffer.Seek(offset, SeekOrigin.Begin);
+            buffer.Read(vdbBytes, 0, length);
+
+            return vdbBytes;
         }
     }
 }
