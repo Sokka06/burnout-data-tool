@@ -1,4 +1,4 @@
-<img width="2048" height="1024" alt="bdtool-logo" src="https://github.com/user-attachments/assets/6fe783fc-014d-49aa-94f0-6ce2f09ab5b9" />
+<img width="2048" height="1024" alt="bdtool-logo-2" src="https://github.com/user-attachments/assets/b97f10ce-690e-486a-9233-fd9abdbf5b19" />
 
 # burnout-data-tool
 A C# command line tool for reading and writing Burnout 3/Revenge-era data files, such as VDB, VList, and maybe more in the future.
