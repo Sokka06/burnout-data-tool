@@ -1,4 +1,5 @@
 <img width="2048" height="1024" alt="bdtool-logo-2" src="https://github.com/user-attachments/assets/b97f10ce-690e-486a-9233-fd9abdbf5b19" />
+[![Bus VS Compact Cars](https://img.youtube.com/vi/YsoAnhhDEJo/0.jpg)](https://www.youtube.com/watch?v=YsoAnhhDEJo)
 
 # burnout-data-tool
 A C# command line tool for reading and writing Burnout 3/Revenge-era data files, such as VDB, VList, and maybe more in the future.
