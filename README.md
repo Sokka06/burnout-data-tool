@@ -27,7 +27,7 @@ Modifying BO4 values works the same way, except for per-vehicle values which are
 7. Replace the original BGV file in the vehicle's folder with your new BGV file and recreate the ISO using the correct software (differs by platform). Some software may also be used to replace the file in the ISO directly, if the size of the file wasn't changed.
 8. Play!
 
-Note that Xbox 360 version BGV files need to be first uncompressed before extracting the VDB from it with `bdtool.exe tools zlib uncompress "path/to/Car.BGV" "path/to/Car_uncompressed.BGV"` command.
+**Note:** Xbox 360 version BGV files need to be first uncompressed before extracting the VDB from it with `bdtool.exe tools zlib uncompress "path/to/Car.BGV" "path/to/Car_uncompressed.BGV"` command.
 
 After the modified VDB is inserted into the uncompressed BGV file, it needs to be compressed again with `bdtool.exe tools zlib compress "path/to/Car_uncompressed.BGV" "path/to/Car.BGV"` command.
 
