@@ -17,7 +17,7 @@ namespace bdtool.Commands.VData
     {
         public static Command Build()
         {
-            var cmd = new Command("extract", "Extracts Vehicle Data from BGV/BTV files.");
+            var cmd = new Command("extract", "Extracts VDB Data from BGV/BTV files. Only works for Burnout Revenge vehicles.");
             
             var verboseOpt = new Option<bool>("--verbose", "-v");
 
@@ -28,7 +28,7 @@ namespace bdtool.Commands.VData
             
             var outPathArg = new Argument<string>("out")
             {
-                Description = "Path to the output directory."
+                Description = "Path to the output file."
             };
 
             cmd.Arguments.Add(pathArg);
@@ -48,6 +48,12 @@ namespace bdtool.Commands.VData
                 if (string.IsNullOrEmpty(parsedOut) || Path.GetDirectoryName(parsedOut) == string.Empty)
                 {
                     ConsoleEx.Error($"Output path invalid: '{parsedOut}'");
+                    return 1;
+                }
+
+                if (!Path.HasExtension(parsedOut))
+                {
+                    ConsoleEx.Error($"No extension set for out path: '{parsedOut}'");
                     return 1;
                 }
 

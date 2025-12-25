@@ -22,28 +22,28 @@ namespace bdtool
         {
             var root = new RootCommand("Burnout Data Tool by Sokka06.\nGithub repo: https://github.com/Sokka06/burnout-data-tool");
 
-            var vdb = new Command("vdb")
+            var vdb = new Command("vdb", "VDB commands. Used for VDB files found in 'data' folder.")
             {
                 VDBReadCommand.Build(),
                 VDBExportCommand.Build(),
                 VDBImportCommand.Build()
             };
 
-            var vlist = new Command("vlist")
+            var vlist = new Command("vlist", "Vehicle List commands. Used for VList files found in 'pveh' folder.")
             {
                 VListReadCommand.Build(),
                 VListExportCommand.Build(),
                 VListImportCommand.Build()
             };
 
-            var vdata = new Command("vdata")
+            var vdata = new Command("vdata", "Vehicle Data commands. Used for BGV/BTV files found in 'pveh' folders.")
             {
                 VDataReadCommand.Build(),
                 VDataExtractCommand.Build(),
                 VDataInsertCommand.Build()
             };
 
-            var tools = new Command("tools")
+            var tools = new Command("tools", "Useful tools.")
             {
                 HashCommand.Build(),
                 HashNameCommand.Build(),

@@ -28,7 +28,6 @@ namespace bdtool.Commands.VDB
             var cmd = new Command("export", "Exports a VDB file to a YAML file.");
 
             var definitionsOpt = new Option<string>("--definitions", "-d") { Description = "", DefaultValueFactory = ParseResult => "" };
-            //var paddingOpt = new Option<int>("--padding", "-p") { Description = "Adjusts the padding length in bytes after Default values are parsed. The amount varies per game and platform, try 4 or 12. If some values seem to be missing, adjust in increments of 4.", DefaultValueFactory = ParseResult => 4 };
             var formatOpt = new Option<VDBFormat>("--format", "-f") { Description = "Specifies the format. Raw is a more accurate representation of the file, while DTO (Data Transfer Object) is more readable and easier to edit.", DefaultValueFactory = ParseResult => VDBFormat.Raw };
             var verboseOpt = new Option<bool>("--verbose", "-v");
 
@@ -39,14 +38,13 @@ namespace bdtool.Commands.VDB
 
             var outPathArg = new Argument<string>("out")
             {
-                Description = "Path to the output directory."
+                Description = "Path to the output file."
             };
             
             cmd.Arguments.Add(pathArg);
             cmd.Arguments.Add(outPathArg);
 
             cmd.Options.Add(definitionsOpt);
-            //cmd.Options.Add(paddingOpt);
             cmd.Options.Add(formatOpt);
             cmd.Options.Add(verboseOpt);
 
@@ -68,11 +66,6 @@ namespace bdtool.Commands.VDB
 
                 var parsedFormat = parseResult.GetValue(formatOpt);
                 var parsedDefinitions = parseResult.GetValue(definitionsOpt);
-                /*if (parsedDefinitions != null && !parsedDefinitions.Exists)
-                {
-                    Console.WriteLine("Input file does not exist.");
-                    return 1;
-                }*/
                 
                 ConsoleEx.Break();
 
@@ -129,8 +122,6 @@ namespace bdtool.Commands.VDB
 
                         ConsoleEx.Info($"Serializing VDB Data to YAML in '{parsedFormat}' format with definitions for 'defaultValues: {definitions.DefaultValues.Count}, values: {definitions.Values.Count}, files: {definitions.Files.Count}'...");
                         yamlText = serializer.Serialize(VDBConverter.ToDto(vdbFile, definitions));
-                        break;
-                    default:
                         break;
                 }
 

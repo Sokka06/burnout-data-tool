@@ -14,7 +14,7 @@ namespace bdtool.Commands.Tools
     {
         public static Command Build()
         {
-            var cmd = new Command("reverse", "Reverses a hex value. Used to convert a little endian value to big endian and vice versa.");
+            var cmd = new Command("reverse", "Reverses a 4 byte hex value. Used to convert a little endian value to big endian and vice versa.");
 
             var valueArg = new Argument<string>("value")
             {
@@ -34,8 +34,11 @@ namespace bdtool.Commands.Tools
                     ConsoleEx.Error("No Hex value given.");
                     return 1;
                 }
+                
+                // remove spaces between bytes
+                parsedText = parsedText.Replace(" ", "");
 
-                // prepare hex text.
+                // remove prefix
                 parsedText = (parsedText.StartsWith("0x", StringComparison.OrdinalIgnoreCase) ? parsedText[2..] : parsedText).Trim();
 
                 var parsedVerbose = parseResult.GetValue(verboseOpt);

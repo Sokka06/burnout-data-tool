@@ -18,7 +18,7 @@ namespace bdtool.Commands
                 Description = "Selects a section to print info about."
             };
 
-            sectionArg.AcceptOnlyFromAmong("vdb", "vlist");
+            sectionArg.AcceptOnlyFromAmong("vdb", "vlist", "vdata");
 
             //cmd.Options.Add(section);
             cmd.Arguments.Add(sectionArg);
@@ -28,7 +28,7 @@ namespace bdtool.Commands
                 var parsedSection = parseResult.GetValue(sectionArg);
                 if (string.IsNullOrEmpty(parsedSection))
                 {
-                    Console.WriteLine("No data type selected. Use \"vdb\", \"vlist\" values to select a type.");
+                    Console.WriteLine("No data type selected. Use \"vdb\", \"vlist\", \"vdata\" values to select a type.");
                     return 1;
                 }
 
@@ -41,6 +41,9 @@ namespace bdtool.Commands
                         break; 
                     case "vlist":
                         infoText = "Add info about the VList file here.";
+                        break;
+                    case "vdata":
+                        infoText = "Add info about the VData files here.";
                         break;
                     default:
                         break;

@@ -19,9 +19,6 @@ namespace bdtool.Commands.VList
         {
             var cmd = new Command("export", "Exports a VList file to a YAML file.");
 
-            //var input = new Option<FileInfo>("--input", "-i") { Required = true, Description = "Path to the VDB file" };
-            var verboseOpt = new Option<bool>("--verbose", "-v");
-
             var pathArg = new Argument<FileInfo>("path")
             {
                 Description = "Path to the VList file."
@@ -30,10 +27,10 @@ namespace bdtool.Commands.VList
             var outPathArg = new Argument<string>("out")
             {
                 Description = "Path to the output file.",
-                DefaultValueFactory = ParseResult => ""
+                DefaultValueFactory = _ => ""
             };
-
-            //cmd.Options.Add(input);
+            
+            var verboseOpt = new Option<bool>("--verbose", "-v");
 
             cmd.Arguments.Add(pathArg);
             cmd.Arguments.Add(outPathArg);
@@ -71,7 +68,7 @@ namespace bdtool.Commands.VList
                 var endian = Utilities.Binary.DetectEndian(headerBytes);
                 ConsoleEx.Info($"Using '{endian}' endian.");
 
-                var version = BitConverter.ToInt32(endian == Utilities.Binary.Endian.Little ? headerBytes : Utilities.Binary.Reverse(ref headerBytes), 0);
+                var version = BitConverterE.ToInt32(headerBytes, Utilities.Binary.Endian.Little);
                 ConsoleEx.Info($"VList Version '{version}'.");
 
                 // Rewind back to start

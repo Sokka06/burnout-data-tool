@@ -24,12 +24,12 @@ namespace bdtool.Commands.VDB
             var formatOpt = new Option<VDBFormat>("--format", "-f") 
             { 
                 Description = "Specifies the format. Raw is a more accurate representation of the file, while DTO (Data Transfer Object) is more readable and easier to edit.", 
-                DefaultValueFactory = ParseResult => VDBFormat.Raw 
+                DefaultValueFactory = _ => VDBFormat.Raw 
             };
             var endianOpt = new Option<Utilities.Binary.Endian>("--endian", "-e")
             {
-                Description = "Selects the endianness of the created file. Small by default.",
-                DefaultValueFactory = parseResult => Utilities.Binary.Endian.Little
+                Description = "Selects the endian of the created file. Small by default.",
+                DefaultValueFactory = _ => Utilities.Binary.Endian.Little
             };
             var verboseOpt = new Option<bool>("--verbose", "-v");
 
@@ -42,7 +42,7 @@ namespace bdtool.Commands.VDB
 
             var outPathArg = new Argument<string>("out")
             {
-                Description = "Path to the output directory."
+                Description = "Path to the output file."
             };
 
             //cmd.Options.Add(input);
@@ -80,12 +80,11 @@ namespace bdtool.Commands.VDB
                 using var vdbFile = File.Create(parsedOut);
                 var writer = new BinaryWriterE(vdbFile, parsedEndian);
                 var vdbParser = new VDBParser();
-
-                VDBFile vdb;
-
+                
                 // Write VDB file
                 ConsoleEx.Info($"\nDeserializing VDB Data to YAML from '{parsedFormat}' format...\n");
 
+                VDBFile vdb;
                 switch (parsedFormat)
                 {
                     case VDBFormat.Raw:

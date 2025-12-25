@@ -23,17 +23,7 @@ namespace bdtool.Commands.VList
         public static Command Build()
         {
             var cmd = new Command("import", "Build a VList file from a YAML VList file created with this tool.");
-
-            //var input = new Option<FileInfo>("--input", "-i") { Required = true, Description = "Path to the VDB file" };
-            var verboseOpt = new Option<bool>("--verbose", "-v");
-            var endianOpt = new Option<Utilities.Binary.Endian>("--endian", "-e")
-            {
-                Description = "Selects the endianness of the created file. Small by default.",
-                DefaultValueFactory = parseResult => Utilities.Binary.Endian.Little
-            };
-
-            //endianOpt.AcceptOnlyFromAmong("little", "big");
-
+            
             var pathArg = new Argument<FileInfo>("path")
             {
                 Description = "Path to the YAML VList file."
@@ -41,7 +31,14 @@ namespace bdtool.Commands.VList
 
             var outPathArg = new Argument<string>("out")
             {
-                Description = "Path to the output directory."
+                Description = "Path to the output file."
+            };
+            
+            var verboseOpt = new Option<bool>("--verbose", "-v");
+            var endianOpt = new Option<Utilities.Binary.Endian>("--endian", "-e")
+            {
+                Description = "Selects the endian of the created file. Small by default.",
+                DefaultValueFactory = _ => Utilities.Binary.Endian.Little
             };
 
             cmd.Arguments.Add(pathArg);
@@ -83,60 +80,7 @@ namespace bdtool.Commands.VList
                 
                 ConsoleEx.Info($"Total length: {vlistFile.Length} bytes.");
                 ConsoleEx.Info($"\nVList file saved to '{Path.GetFullPath(parsedOut)}' using '{parsedEndian}' endian!");
-
-                /*foreach (var version in versions)
-                {
-                    var hasDeserialized = false;
-                    switch (version)
-                    {
-                        case 6:
-                            try
-                            {
-                                // Try to deserialize YAML to VList object
-                                var vlist = reader.Deserialize<B3VehicleList>(yamlText);
-                                using var vlistFile = File.Create(parsedOut);
-                                var writer = new EndianBinaryWriter(vlistFile, parsedEndian);
-                                var parser = new B3VehicleListParser();
-                                parser.Write(writer, vlist);
-                                hasDeserialized = true;
-                            }
-                            catch (Exception e)
-                            {
-                                Console.ForegroundColor = ConsoleColor.Red;
-                                Console.WriteLine(e);
-                                Console.ResetColor();
-                                return 0;
-                                throw;
-                            }
-                            break;
-                        case 9:
-                            try
-                            {
-                                // Try to deserialize YAML to VList object
-                                var vlist = reader.Deserialize<B4VehicleList>(yamlText);
-                                using var vlistFile = File.Create(parsedOut);
-                                var writer = new EndianBinaryWriter(vlistFile, parsedEndian);
-                                var parser = new B4VehicleListParser();
-                                parser.Write(writer, vlist);
-                                hasDeserialized = true;
-                            }
-                            catch (Exception e)
-                            {
-                                Console.ForegroundColor = ConsoleColor.Red;
-                                Console.WriteLine(e);
-                                Console.ResetColor();
-                                return 0;
-                                throw;
-                            }
-                            break;
-                        default:
-                            break;
-                    }
-
-                    if (hasDeserialized)
-                        break;
-                }*/
-
+                
                 return 0;
             });
 

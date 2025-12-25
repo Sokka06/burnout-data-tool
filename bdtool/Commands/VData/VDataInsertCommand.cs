@@ -16,7 +16,7 @@ namespace bdtool.Commands.VData
     {
         public static Command Build()
         {
-            var cmd = new Command("insert", "Overwrites VDB Data in BGV/BTV files.");
+            var cmd = new Command("insert", "Writes VDB Data into BGV/BTV files. Only works for Burnout Revenge vehicles.");
             
             var verboseOpt = new Option<bool>("--verbose", "-v");
 

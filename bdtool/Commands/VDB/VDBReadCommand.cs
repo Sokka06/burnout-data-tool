@@ -15,11 +15,11 @@ namespace bdtool.Commands.VDB
     {
         public static Command Build()
         {
-            var cmd = new Command("read", "Prints out VDB file data. \nBy default will print all sections, pass an array of sections as the second argument to select which sections to print.");
+            var cmd = new Command("read", "Prints out VDB file data. \nBy default will print all sections, use --sections option to only print some sections.");
 
             var verboseOpt = new Option<bool>("--verbose", "-v") 
             {
-                DefaultValueFactory = ParseResult => false
+                DefaultValueFactory = _ => false
             };
 
             var pathArg = new Argument<FileInfo>("path")
@@ -30,7 +30,7 @@ namespace bdtool.Commands.VDB
             var sectionsOpt = new Option<string>("--sections", "-s")
             {
                 Description = "Sections to print (header, defaults, values, defs). Expects section names seperated by a comma, e.g. \"header, defs\".",
-                DefaultValueFactory = parseResult => ""
+                DefaultValueFactory = _ => ""
             };
 
             cmd.Arguments.Add(pathArg);

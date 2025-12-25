@@ -32,11 +32,11 @@ Note that Xbox 360 version BGV files need to be first uncompressed before extrac
 After the modified VDB is inserted into the uncompressed BGV file, it needs to be compressed again with `bdtool.exe tools zlib compress "path/to/Car_uncompressed.BGV" "path/to/Car.BGV"` command.
 
 ## Supported Types
-- VDB (Value Database)
-- VList (Vehicle List)
-- BGV/BTV (Drivable/Traffic Vehicle Data)
+- VDB (Value Database) - Read/Write
+- VList (Vehicle List) - Read/Write
+- BGV/BTV (Drivable/Traffic Vehicle Data) - Partial Read/Partial write
 
-Initially the plan was to make a tool for specifically editing VDB values, so support for other Burnout data file types is still limited.
+Initially the plan was to make this tool for specifically editing VDB values, so support for other Burnout data file types is still limited.
 
 ## NOTE
 This tool is still in development, keep backups of your game files and be aware that there may still be changes to the exported formats!

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using bdtool.Binary;
 using bdtool.Parsers;
+using bdtool.Parsers.VList;
 using bdtool.Utilities;
 
 namespace bdtool.Commands.VList
@@ -14,17 +15,14 @@ namespace bdtool.Commands.VList
     {
         public static Command Build()
         {
-            var cmd = new Command("read", "Prints out VList file data. By default prints all sections, pass bool arguments to print only some sections.");
-
-            //var input = new Option<FileInfo>("--input", "-i") { Required = true, Description = "Path to the VList file" };
-            var verboseOpt = new Option<bool>("--verbose", "-v");
-
+            var cmd = new Command("read", "Prints out VList file data.");
+            
             var pathArg = new Argument<FileInfo>("path")
             {
                 Description = "Path to the VList file."
             };
 
-            var headerArg = new Argument<bool>("header")
+            /*var headerArg = new Argument<bool>("header")
             {
                 Description = "Print header.",
                 DefaultValueFactory = parseResult => true
@@ -46,17 +44,18 @@ namespace bdtool.Commands.VList
             {
                 Description = "Print file defs.",
                 DefaultValueFactory = parseResult => true
-            };
-
-            //cmd.Options.Add(input);
-            cmd.Options.Add(verboseOpt);
+            };*/
+            
+            var verboseOpt = new Option<bool>("--verbose", "-v");
 
             cmd.Arguments.Add(pathArg);
-            cmd.Arguments.Add(headerArg);
+            /*cmd.Arguments.Add(headerArg);
             cmd.Arguments.Add(defaultValuesArg);
             cmd.Arguments.Add(valuesArg);
-            cmd.Arguments.Add(fileDefsArg);
-
+            cmd.Arguments.Add(fileDefsArg);*/
+            
+            cmd.Options.Add(verboseOpt);
+            
             cmd.SetAction(parseResult =>
             {
                 var parsedFile = parseResult.GetValue(pathArg);
@@ -85,24 +84,11 @@ namespace bdtool.Commands.VList
 
                 ConsoleEx.Info("\nReading VList Data...\n");
                 var reader = new BinaryReaderE(fs, endian);
-                
-                switch (version)
-                {
-                    case 6:
-                        var vlistParserBo3 = new Parsers.VList.B3VehicleListParser();
-                        var vlistFileBo3 = vlistParserBo3.Read(reader);
-                        Console.WriteLine(vlistFileBo3.ToString());
-                        break;
-                    case 9:
-                        var vlistParserBo4 = new Parsers.VList.B4VehicleListParser();
-                        var vlistFileBo4 = vlistParserBo4.Read(reader);
-                        Console.WriteLine(vlistFileBo4.ToString());
-                        break;
-                    default:
-                        ConsoleEx.Error($"No Parser for Version '{version}'.");
-                        break;
-                }
 
+                var parser = new VListParser();
+                var vlist = parser.Read(reader);
+                Console.WriteLine(vlist.ToString());
+                
                 return 0;
             });
 

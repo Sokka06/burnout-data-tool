@@ -22,9 +22,11 @@ namespace bdtool.Parsers.VList
 
             switch (version)
             {
-                case 6:
+                //case 2: // Revenge
+                case 6: // Takedown
                     return new B3VehicleListParser().Read(br);
-                case 9:
+                //case 7: // Legends/Revenge Proto?
+                case 9: // Revenge
                     return new B4VehicleListParser().Read(br);
                 default:
                     Console.WriteLine($"No Parser for VList Version '{version}'.");
@@ -41,6 +43,9 @@ namespace bdtool.Parsers.VList
                 case 6:
                     new B3VehicleListParser().Write(bw, obj);
                     break;
+                //case 7:
+               //     new B3VehicleListParser().Write(bw, obj);
+                //    break;
                 case 9:
                     new B4VehicleListParser().Write(bw, obj);
                     break;
