@@ -12,7 +12,7 @@ Burnout 3 stores all values in the VDB file, including every vehicle's values.
 2. Export the VDB file to YAML in raw format with `bdtool.exe vdb export "path/to/vdb.xml" "path/to/vdb.yaml"`, or to a more readable format with `bdtool.exe vdb export "path/to/vdb.bin" "path/to/vdb.yaml" --format dto --definitions "path/to/bo3_vdb_definitions.yaml"`.
 3. Edit the values in the exported YAML file.
 4. Import the YAML file back to a binary file with `bdtool.exe vdb import "path/to/vdb.yaml" "path/to/vdb.xml"`, or `bdtool.exe vdb import "path/to/vdb.yaml" "path/to/vdb.xml" --format dto`, if `dto` format was used to export in step 2.
-5. Replace the original VDB file in the data folder with your new VDB file and recreate the ISO using the correct software (differs by platform). Some software may also be used to replace the file in the ISO directly, if the size of the file wasn't changed.
+5. Replace the original VDB file in the data folder with your new VDB file and recreate the ISO using the appropriate software (differs by platform). Some software may also allow you to replace the file in the ISO directly, if the size of the file wasn't changed.
 6. Play!
 
 ### Editing Burnout 4 VDB values
@@ -24,7 +24,7 @@ Modifying BO4 values works the same way, except for per-vehicle values which are
 4. Edit the values in the exported YAML file.
 5. Import the YAML file back to a binary file with `bdtool.exe vdb import "path/to/car_vdb.yaml" "path/to/car_vdb.bin"`, or `bdtool.exe vdb import "path/to/car_vdb.yaml" "path/to/car_vdb.bin" --format dto`, if `dto` format was used to export in step 3.
 6. Insert the VDB binary data back into the BGV file with `bdtool.exe vdata insert "path/to/Car.BGV" "path/to/car_vdb.bin"`
-7. Replace the original BGV file in the vehicle's folder with your new BGV file and recreate the ISO using the correct software (differs by platform). Some software may also be used to replace the file in the ISO directly, if the size of the file wasn't changed.
+7. Replace the original BGV file in the vehicle's folder with your new BGV file and recreate the ISO using the appropriate software (differs by platform). Some software may also allow you to replace the file in the ISO directly, if the size of the file wasn't changed.
 8. Play!
 
 **Note:** Xbox 360 version BGV files need to be first uncompressed before extracting the VDB from it with `bdtool.exe tools zlib uncompress "path/to/Car.BGV" "path/to/Car_uncompressed.BGV"` command.
