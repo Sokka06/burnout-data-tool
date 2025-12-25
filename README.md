@@ -1,6 +1,4 @@
 <img width="2048" height="1024" alt="bdtool-logo-2" src="https://github.com/user-attachments/assets/b97f10ce-690e-486a-9233-fd9abdbf5b19" />
-[![Bus VS Compact Cars](https://img.youtube.com/vi/YsoAnhhDEJo/0.jpg)](https://www.youtube.com/watch?v=YsoAnhhDEJo)
-
 # burnout-data-tool
 A C# command line tool for reading and writing Burnout 3/Revenge-era data files, such as VDB, VList, and maybe more in the future.
 
@@ -40,6 +38,9 @@ After the modified VDB is inserted into the uncompressed BGV file, it needs to b
 ## NOTES
 - This tool is still in development, keep backups of your game files and be aware that there may still be changes to the exported formats!
 - Initially the plan was to make this tool for specifically editing VDB values, so support for other Burnout data file types is still limited.
+
+## Video
+[![Bus VS Compact Cars](https://img.youtube.com/vi/YsoAnhhDEJo/0.jpg)](https://www.youtube.com/watch?v=YsoAnhhDEJo)
 
 ## Resources
 Thanks to:
