@@ -26,9 +26,11 @@ Modifying BO4 values works the same way, except for per-vehicle values which are
 7. Replace the original BGV file in the vehicle's folder with your new BGV file and recreate the ISO using the appropriate software (differs by platform). Some software may also allow you to replace the file in the ISO directly, if the size of the file wasn't changed.
 8. Play!
 
-**Note:** Xbox 360 version BGV files need to be uncompressed first before extracting the VDB from it with `bdtool.exe tools zlib uncompress "path/to/Car.BGV" "path/to/Car_uncompressed.BGV"` command.
+**Note:** Xbox 360 version BGV files need to be uncompressed first before extracting the VDB from it by using `bdtool.exe tools zlib uncompress "path/to/Car.BGV" "path/to/Car_uncompressed.BGV"` command.
 
-After the modified VDB is inserted into the uncompressed BGV file, it needs to be compressed again with `bdtool.exe tools zlib compress "path/to/Car_uncompressed.BGV" "path/to/Car.BGV"` command.
+After the modified VDB is inserted into the uncompressed BGV file, it needs to be compressed again by using `bdtool.exe tools zlib compress "path/to/Car_uncompressed.BGV" "path/to/Car.BGV"` command.
+
+You should also specify the endian with `--endian big` option when using the `vdb import` command for Xbox 360 files.
 
 ## Supported Types
 - VDB (Value Database): Read/Write
@@ -42,6 +44,9 @@ After the modified VDB is inserted into the uncompressed BGV file, it needs to b
 
 ## Video
 [![Bus VS Compact Cars](https://img.youtube.com/vi/YsoAnhhDEJo/0.jpg)](https://www.youtube.com/watch?v=YsoAnhhDEJo)
+
+## Wiki
+More info about the data files and usage of this tool can be found in the [Wiki](https://github.com/Sokka06/burnout-data-tool/wiki)!
 
 ## Resources
 Thanks to:
